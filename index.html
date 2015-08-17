@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Central Mart - Homepage</title>
+<link href="css/main.less" rel="stylesheet/less" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/less-min.js"></script>
+<script src="js/bxslider.js"></script>
+<script src="js/common.js"></script>
+<script>
+	$(document).ready(function (){
+		$('.cm_prodImgGallUl li a img').click(function(){
+			$('.cm_weekProdMainImage').fadeOut(600, function(){
+				$(this).attr('src', $(this).attr('data-big-src'));
+			}).fadeIn(300);
+		});
+		
+		$('.cm_filterByCatSubMenu li a').on('click', function (e){
+			var txt = $(this).text();
+			console.log($('.cm_filterByMenu li.cm_setMeFirst').children('a:first').length)
+			$('.cm_filterByMenu li.cm_setMeFirst').children('a:first').text(txt);
+			e.preventDefault();
+		});
+		
+		/**Big Banner Initialization**/
+		 var slider = $('.cm_bannerSlider').bxSlider({
+			mode: 'horizontal', //mode: 'fade',            
+			pause: 8000,
+			auto: true,
+			autoHover: true
+		});
+
+		$('.cm_itemPointer').on('click',function () {
+			if ($(this).hasClass('open')) {
+				$(this).siblings('.cm_itemPointDetails').hide();
+				$(this).removeClass('open');
+				$(this).parent().removeClass('cm_minus').addClass('cm_plus');
+			} else {
+				$(this).siblings('.cm_itemPointDetails').show();
+				$(this).addClass('open');
+				$(this).parent().removeClass('cm_plus').addClass('cm_minus');
+				
+			}
+		});
+		
+		
+	
+	});/*doc ends*/
+	
+
+</script>
+</head>
+<body>
+<div class="cm_wrapper">
+	<section class="cm_fullBoundary cm_trackOder pad20LR">
+		<section class="cm_grid970">
+			<span class="cm_latestOffers dispInBlk floatLeft">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet asgdf.</span>
+			<span class="cm_userSupport dispInBlk floatRight">
+				<a href="javascript:void(0)" class="cm_headerIcons cm_www">We Work <span class="cm_brandClr">Worldwide</span></a>
+				<label class="pipe">|</label>
+				<a href="javascript:void(0)" class="cm_headerIcons cm_trackOrdrIco">Track Order</a>
+				<label class="pipe mr10">|</label>
+				<a href="javascript:void(0)" class="cm_headerIcons cm_supportIco">+91 8080 740 740</a>
+			</span>
+			<div class="clear"></div>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_trackOder -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_header">
+		<section class="cm_grid970">
+			<img src="images/header/logo.png" title="Centralmart.in" alt="Centralmart.in Home Improvement Simplified"/>
+			<ul>
+				<li>
+					<label class="cm_headerIcons cm_design"></label>
+					<a href="javascript: void(0)" title="Shop Online">
+						<p class="cm_txtLbl">Shop Online</p>
+						<p class="cm_subTxtLbl">Building &amp; Home<br>Products</p>
+					</a>
+				</li>
+				<li>
+					<label class="cm_headerIcons cm_build"></label>
+					<a href="javascript: void(0)" title="Design+Build">
+						<p class="cm_txtLbl">Design+Build</p>
+						<p class="cm_subTxtLbl">Turnkey Solutions</p>
+					</a>
+				</li>
+				<li>
+					<label class="cm_headerIcons cm_blog"></label>
+					<a href="javascript: void(0)" title="Ideate">
+						<p class="cm_txtLbl">Ideate</p>
+						<p class="cm_subTxtLbl">Inspirations<br>&amp; New Trends</p>
+					</a>
+				</li>
+			</ul>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_header -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_searchBar">
+		<section class="cm_grid970">
+			<div class="cm_shopByCatDv posRel">
+					<span class="cm_fff cm_shopByCatHandle">EXPLORE<label class="cm_headerIcons cm_shopMainArrUp"></label></span>
+					<div class="cm_shopbyCatMainDv posAbs">
+						<div class="posRel ">
+							<!-- <span class="posAbs cm_diffAllCatArr cm_headerIcons"></span> -->
+							<ul class="cm_diffCatTopLevel">
+								<span class="cm_shopCatArrow" style="left: 68px;"></span>
+								<li class='active' data-cat-key="cm_shopByCatLi"><a href="javascript: void(0)">Shop by Categories</a></li>  
+								<li data-cat-key="cm_createBoqLi"><a href="javascript: void(0)">Create BOQ</a></li>  
+								<li data-cat-key="cm_bulkOrderLi"><a href="javascript: void(0)">Bulk Orders</a></li>  
+								<li data-cat-key="cm_designBuildLi"><a href="javascript: void(0)">Design + Build</a></li>  
+								<li data-cat-key="cm_ideateLi"><a href="javascript: void(0)">Ideate</a></li>  
+								<li data-cat-key="cm_proRewardLi"><a href="javascript: void(0)" class="cm_brandClr">Pro-Rewards</a></li> 
+							</ul>
+							<!-- <div class="arrow"></div> -->
+						</div>
+						<div class="cm_shopByCatAllDv cm_shopByCatLi">
+							<ul class="cm_shopByCatAllMenu">
+								<li><a href="javascript: void(0)">Bathroom Fittings</a>
+									<div class="cm_shopCatSubview">
+										Bathroom fittings
+									</div><!--.cm_shopCatSubview-->
+								</li>
+								<li><a href="javascript: void(0)">Building Materials</a></li>
+								<li><a href="javascript: void(0)">Doors &amp; Windows</a></li>
+								<li><a href="javascript: void(0)">Electrical</a></li>
+								<li><a href="javascript: void(0)">Flooring</a></li>
+								<li><a href="javascript: void(0)">Hardware</a>
+									<div class="cm_shopCatSubview showAlways">
+										<ul class="cm_shopCatSubCatg mb20 dispInBlk">
+											<li>
+												<img src="images/category/img1.jpg"  alt=""/>
+												<p><a href="javascript: void(0)">Accessories</a></p>
+											</li>
+											<li>
+												<img src="images/category/img2.jpg"  alt=""/>
+												<p><a href="javascript: void(0)">Handles</a></p>
+											</li>
+											<li>
+												<img src="images/category/img3.jpg"  alt=""/>
+												<p><a href="javascript: void(0)">Computer Fittings</a></p>
+											</li>
+											<li>
+												<img src="images/category/img4.jpg"  alt=""/>
+												<p><a href="javascript: void(0)">Brackets &amp; Clamps</a></p>
+											</li>
+											<li>
+												<img src="images/category/img5.jpg"  alt=""/>
+												<p><a href="javascript: void(0)">Hinges</a></p>
+											</li>
+										</ul>
+										<div class="clear"></div>
+										<div class="cm_subMoreCatDv cm_moreCatDv">
+											<section>
+												<header class="cm_subHead">
+													<h4>MORE CATEGORIES</h4>
+												</header>
+												<ul class="mr30">
+													<li><a href="javascript: void(0)">- Kitchen Drawer Systems</a></li>
+													<li><a href="javascript: void(0)">- Knobs</a></li>
+													<li><a href="javascript: void(0)">- Ladder Systems</a></li>
+												</ul>
+												<ul>
+													<li><a href="javascript: void(0)">- Locks & Latches</a></li>
+													<li><a href="javascript: void(0)">- Nuts & Bolts</a></li>
+													<li><a href="javascript: void(0)">- Sign Plates</a></li>
+												</ul>
+											</section>
+											<span class="cm_moreCatShowAll">
+												<a href="javascript: void(0)" class="cm_brandClr">Show All Hardware <label class="cm_rightArrow-line cm_headerIcons"></label></a>
+											</span>
+										</div>
+										
+										<div class="cm_subMoreCatDv cm_guide">
+											<header class="cm_subHead">
+												<h4>Related Guides/ Help</h4>
+											</header>
+											<ul>
+												<li><a href="javascript: void(0)">- Hardware buying guide</a></li>
+												<li><a href="javascript: void(0)">- Hardware assembling Guide</a></li>
+											</ul>
+										</div>
+									</div><!--.cm_shopCatSubview-->
+							
+								</li>
+								<li><a href="javascript: void(0)">Home Decor</a>
+									<div class="cm_shopCatSubview">
+										Home decor
+									</div><!--.cm_shopCatSubview-->
+								</li>
+								<li><a href="javascript: void(0)">Kitchen</a></li>
+								<li><a href="javascript: void(0)">Lightings</a></li>
+								<li><a href="javascript: void(0)">Plumbing</a></li>
+								<li><a href="javascript: void(0)">Safety &amp; Security</a></li>
+								<li><a href="javascript: void(0)">Wall Coverings</a></li>
+								<li><a href="javascript: void(0)">Wood &amp; Laminates</a></li>
+								<li class='last'><a href="javascript: void(0)">Lux Products</a></li>
+							</ul>
+						</div>
+						<div class="cm_shopByCatAllDv cm_createBoqLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_bulkOrderLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_designBuildLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_ideateLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_proRewardLi">
+						
+						</div>
+					</div><!--.cm_shopbyCatMainDv-->
+			
+			</div><!--.cm_shopByCatDv-->
+			<div class="cm_filterByCat">
+				<input type="text" placeholder="What are you looking for?" class='cm_filterInp'/>
+				<label class="cm_pipeFilter"></label>
+				<ul class="cm_filterByMenu">
+					<li class="cm_setMeFirst itHasPopup">
+						
+						<a href="javascript: void(0)">Wood &amp; Laminates</a><label class="cm_headerIcons cm_filterDropArr"></label>
+						<span class='popup_pullout'>
+							<ul class="cm_filterByCatSubMenu">
+								<li><a href="javascript: void(0)">All</a></li>
+								<li><a href="javascript: void(0)">Bathroom Fittings</a></li>
+								<li><a href="javascript: void(0)">Building Materials</a></li>
+								<li><a href="javascript: void(0)">Doors &amp; Windows</a></li>
+								<li><a href="javascript: void(0)">Electrical</a></li>
+								<li><a href="javascript: void(0)">Flooring</a></li>
+								<li><a href="javascript: void(0)">Hardware</a></li>
+								<li><a href="javascript: void(0)">Home Decor</a></li>
+								<li><a href="javascript: void(0)">Kitchen</a></li>
+								<li><a href="javascript: void(0)">Lightings</a></li>
+								<li><a href="javascript: void(0)">Plumbing</a></li>
+								<li><a href="javascript: void(0)">Safety &amp; Security</a></li>
+								<li><a href="javascript: void(0)">Wall Coverings</a></li>
+								<li><a href="javascript: void(0)">Wood &amp; Laminates</a></li>
+								<li><a href="javascript: void(0)">Premium Products</a></li>
+								<li><a href="javascript: void(0)">Shop By Brands</a></li>
+							</ul>
+						</span>
+					</li>
+				</ul>
+				
+			</div><!--.cm_filterByCat-->
+			<input type="button" class="cm_headerIcons cm_searchFilterBtn" />
+			
+		<!-- </section> -->
+		<div class="cm_userPref">
+			<span class="cm_userDetOnBar">
+				<span class="cm_loginAndReg disNone">
+					<a href="javascript: void(0)" >Login</a> or
+					<a href="javascript: void(0)" class="cm_brandClr">Register</a>
+				</span>
+				
+				<span class="cm_myAcc posRel itHasPopup mr10 dispInBlk">
+					<a href="javascript: void(0)" >My Account <label class="cm_headerIcons cm_filterDropArr"></label></a>
+					<span class="popup_pullout">
+						<ul class="">
+							<li><a href="javascript: void(0)">Account Information</a></li>
+							<li><a href="javascript: void(0)">Orders</a></li>
+							<li><a href="javascript: void(0)">Wishlist</a></li>
+							<li><a href="javascript: void(0)">Address Book</a></li>
+							<li><a href="javascript: void(0)">Projects</a></li>
+							<li><a href="javascript: void(0)">Product Reviews</a></li>
+						</ul>
+					</span>
+				</span>
+			</span>
+			
+			<span class="cm_userPreIcons">
+				<a href="javascript: void(0)" class=" ml10 cm_headerIcons cm_wishListIcon"></a>
+				<span class="posRel dispInBlk  ml10">
+					<a href="javascript: void(0)" class="cm_headerIcons cm_cartIcon"></a>
+					<label class="cm_wishCount">10</label>
+				</span>
+			</span>
+		</div>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_searchBar -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_trendTopic">
+		<section class="cm_grid970">
+			<div class="cm_trenHead">
+				<span class='cm_trenHeadLbl'>Trending:</span>
+				<ul>
+					<li><a href="javascript: void(0)">bathroom,</a></li> 
+					<li><a href="javascript: void(0)">kitchen faucets,</a></li> 
+					<li><a href="javascript: void(0)">ceiling fans,</a></li> 
+					<li><a href="javascript: void(0)">tiles,</a></li> 
+					<li><a href="javascript: void(0)">wallpapers,</a></li> 
+					<li><a href="javascript: void(0)">faucets,</a></li> 
+					<li><span class='cm_brandClr'><a href="javascript: void(0)" class="cm_brandClr">View More...</a></span></li> 
+				</ul>	
+			</div>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_trendTopic -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_bigBanner">
+		<section class="cm_grid970">
+		<ul class="cm_bannerSlider">
+			<li>
+				<img src="images/banner/slide1.jpg">
+				<div class="cm_itemIndicator one cm_plus"> <span class="cm_itemPointer"></span>
+					<div class="cm_itemPointDetails">
+						<img src="images/banner/slide1Images/item1.png" />
+						<p>Towel</p>
+						<p><a href="javascript: void(0)" class="cm_brandClr">Rs. 299</a></p>
+					</div>
+				</div>
+				<div class="cm_itemIndicator two cm_plus"> <span class="cm_itemPointer"></span>
+					<div class="cm_itemPointDetails">
+						<img src="images/banner/slide1Images/item1.png" />
+						<p>Towel</p>
+						<p><a href="javascript: void(0)" class="cm_brandClr">Rs. 299</a></p>
+					</div>
+				</div>
+			</li>
+			<li>
+				<img src="images/banner/slide2.jpg" />
+			</li>
+			<li>
+				<img src="images/banner/slide3.jpg" />
+			</li>
+			<li>
+				<img src="images/banner/slide4.jpg" />
+			</li>
+			<li>
+				<img src="images/banner/slide5.jpg" />
+			</li>
+			<li>
+				<img src="images/banner/slide6.jpg" />
+			</li>
+			
+		</ul>
+		<div class="cm_slideProgress"></div>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_bigBanner -->
+	<div class="clear"></div>
+	<section class="cm_homeContent cm_grid970">
+		<section class="cm_whyBuy mt40">
+			<header class="cm_sectionHead">
+				<h2 class="cm_toUpperCase">How It works?</h2>
+			</header>
+
+			<section class="">
+				<ul class="mt10">
+					<li class="mb40">
+						<p><label class="cm_headerIcons icon_shopEasy"></label></p>
+						<h4 class="cm_toUpperCase">Shopping Made Easy</h4>
+					</li>
+					<li class="mb40">
+						<p><label class="cm_headerIcons icon_genuine"></label></p>
+						<h4 class="cm_toUpperCase">50,000+ Genuine Products</h4>
+					</li>
+					<li>
+						<p><label class="cm_headerIcons icon_inStock"></label></p>
+						<h4 class="cm_toUpperCase">IN-Stock &amp;<br>ready to deliver</h4>
+					</li>
+					<li>
+						<p><label class="cm_headerIcons icon_savePiggy"></label></p>
+						<h4 class="cm_toUpperCase">Save More on every product</h4>
+					</li>
+				</ul>
+				<!-- <iframe id="youtube" width="480" height="290" src="http://www.youtube.com/embed/LpKyzSxVhk4" frameborder="0" allowfullscreen></iframe> -->
+			</section>
+		</section><!-- .cm_whyBuy -->
+		<div class="clear"></div>
+		<section class="cm_arctOfWk cm_commonAllSliders">
+			<header class="cm_sectionHead">
+				<h2 class="cm_toUpperCase">Featured Projects</h2>
+				<div class="cm_galleryBtns">
+					<span class="cm_previousBtn cm_nextPrevImgs cm_previous" title="Previous"></span>
+					<span class="cm_nextBtn  cm_nextPrevImgs cm_next" title="Next"></span>
+				</div>
+			</header>
+			<section class="cm_commonGallerySection">
+				<ul class="cm_commonGallerySectionIndiv">
+					<li>
+						<img src="images/architect/architectDsgn.jpg"/>
+						<section class="cm_arctWithDetail">
+							<img src="images/architect/architectImg.jpg" class="cm_arctAvtar" />
+							<div class="cm_archPersonalDetail">
+								<header>
+									<h4 class="cm_toUpperCase">Alok SHetty, <span class="cm_capitalize">Bangalore</span></h4>
+								</header>
+								<p>
+									A 28-year-old Indian architect has been named "young leader of tomorrow" by Time magazine for his pioneering work in designing affordable flood-proof hous es for slum dwellers...<a href="javascript: void(0)" class="cm_toUpperCase cm_brandClr">KNOW MORE</a>
+								</p>
+							</div>				
+						</section><!-- .cm_arctWithDetail -->
+					</li>
+				</ul>
+				<ul class="cm_commonGallerySectionIndiv">				
+					<li>
+						<img src="images/architect/architectDsgn.jpg"/>
+						<section class="cm_arctWithDetail">
+							<img src="images/architect/architectImg.jpg" class="cm_arctAvtar" />
+							<div class="cm_archPersonalDetail">
+								<header>
+									<h4 class="cm_toUpperCase">Yakub Memon, <span class="cm_capitalize">Mumbai</span></h4>
+								</header>
+								<p>
+									A 32-year-old Indian architect has been named "young leader of tomorrow" by Time magazine for his pioneering work in designing affordable flood-proof hous es for slum dwellers...<a href="javascript: void(0)" class="cm_toUpperCase cm_brandClr">KNOW MORE</a>
+								</p>
+							</div>				
+						</section><!-- .cm_arctWithDetail -->
+					</li>
+				</ul>
+			</section>
+			
+		</section><!-- .cm_arctOfWk -->
+		<div class="clear"></div>
+		<section class="cm_arctJoinUs">
+			<img src="images/cm_joinUsImg.jpg"/>
+			<div class="cm_joinUsDetail">
+				<header class="cm_subHead">
+					<h3 class="cm_toUpperCase">You love to build something amazing!? </h3>
+				</header>
+				<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>
+				<a href="javascript: void(0)" class="mt15 cm_toUpperCase cm_primaryBtn cm_brandClr">Join Us <label class="cm_headerIcons primBtnWhiteArr"></label></a>
+			</div>
+		</section><!-- .cm_arctJoinUs -->
+		<div class="clear"></div>
+		<section class="cm_prodOfWk mt40">
+			<header class="cm_sectionHead">
+				<h2 class="cm_toUpperCase">Featured Products</h2>
+			</header>
+			<section class="cm_weekProduct">
+				<div class="cm_weekprodDetail">
+					<div class="cm_weekProdDesc">
+						<header class="cm_subHead">
+							<h3 class="cm_toUpperCase">Add some Luxury to your BATHroom!</h3>
+						</header>
+						<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
+						<div class="cm_priceBar mb20">
+							<span class='cm_priceBefore'>Rs. 5,499</span> <span class='cm_priceDisc'>23%</span>  <span class="cm_priceAfter">Rs. 4045.00</span>
+						</div>
+						<footer>
+							<a class="cm_toUpperCase cm_primaryBtn cm_partPrimaryBtn floatLeft" style="padding-left: 44px; padding-right: 44px;" href="javascript: void(0)">Buy Now</a>
+							<a href="javascript: void(0)" class="cm_headerIcons cm_likeProdBtn ml20"></a>
+						</footer>
+					</div>
+					<div class="cm_weekProdGallery cm_prodImgGallery">
+						<img src="images/weeklyProduct/prod.jpg" class="cm_weekProdMainImage" width="238" height="258" />
+						<!-- <ul class="cm_prodImgGallUl">
+							<li><a href="javascript: void(0)"><img src="images/weeklyProduct/smallProd2.jpg" data-big-src="images/weeklyProduct/prod.jpg"/></a></li>
+							<li><a href="javascript: void(0)"><img src="images/weeklyProduct/smallProd1.jpg" data-big-src="images/weeklyProduct/prod.jpg"/></a></li>
+							<li><a href="javascript: void(0)"><img src="images/weeklyProduct/smallProd1.jpg" data-big-src="images/weeklyProduct/prod.jpg"/></a></li>
+							<li><a href="javascript: void(0)"><img src="images/weeklyProduct/smallProd1.jpg" data-big-src="images/weeklyProduct/prod.jpg"/></a></li>
+							<li><a href="javascript: void(0)"><img src="images/weeklyProduct/smallProd1.jpg" data-big-src="images/weeklyProduct/prod.jpg"/></a></li>
+						</ul> -->
+					</div>
+					
+				</div>
+			</section>
+			<section class="cm_partnerWithUs">
+				<img src="images/weeklyProduct/handshake.jpg"/>
+				<div class="cm_partnerBtn">
+					<header class="cm_subHead cm_partAdv">
+						<h3>ONLINE SELLING NOW MADE EASY!</h3>
+					</header>
+					<a href="javascript: void(0)" class="cm_toUpperCase cm_primaryBtn cm_partPrimaryBtn">Partner With Us <label class="cm_headerIcons primBtnWhiteArr"></label></a>
+				</div>
+				
+				
+			</section>
+			
+		</section><!-- .cm_prodOfWk -->
+		<div class="clear"></div>
+		
+		<section class="cm_exclusiveProd mt40">
+			<header class="cm_sectionHead">
+				<h2 class="cm_toUpperCase">LUX Products</h2>
+			</header>
+			<article class="cm_indivExclProd">
+				<div class="cm_exclProdDesc">
+					<header class="cm_subHead">
+						<h3 class="cm_toUpperCase">Bestlite BL7 Wall-lamp</h3>
+					</header>
+					<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a</p>
+					<a href="javascript: void(0)" class="mt15 cm_toUpperCase cm_brandClr cm_knowMoreLink">Know More <label class="cm_rightArrow-line cm_headerIcons"></label></a>
+				</div>
+				<img src="images/exclusive/exclProd1.jpg" class="cm_exclProdImg"/>
+			</article>
+			<article class="cm_indivExclProd">
+				<img src="images/exclusive/exclProd2.jpg" class="cm_exclProdImg" />
+				<div class="cm_exclProdDesc">
+					<header class="cm_subHead">
+						<h3 class="cm_toUpperCase">Fountainhaus Single Hole/Single Faucet</h3>
+					</header>
+					<p>Fountainhaus Single Hole/Single Lever Lavatory Faucet With Cherry Wood Handle And Pop-Up Waste. Whitehaus Collection is known across the world for offering the finest quality products in the kitchen and bath industry...</p>
+					<a href="javascript: void(0)" class="mt15 cm_toUpperCase cm_brandClr cm_knowMoreLink">Know More <label class="cm_rightArrow-line cm_headerIcons"></label></a>
+				</div>
+			</article>
+			<article class="cm_indivExclProd">
+				<div class="cm_exclProdDesc">
+					<header class="cm_subHead">
+						<h3 class="cm_toUpperCase">freestanding bath tubs</h3>
+					</header>
+					<p>The unit is highly rated by customers who have it already. Relaxing in tranquility in a freestanding tub with jets will become the mostly enjoyed time for you. Sit deep in the water and get a hydro massage. You will feel how you get rid of your tiredness after you spend</p>
+					<a href="javascript: void(0)" class="mt15 cm_toUpperCase cm_brandClr cm_knowMoreLink">Know More <label class="cm_rightArrow-line cm_headerIcons"></label></a>
+				</div>
+				<img src="images/exclusive/exclProd3.jpg" class="cm_exclProdImg" />
+			</article>
+		</section><!-- .cm_exclusiveProd -->
+		<div class="clear"></div>
+		<section class="cm_blogSection mt40">
+			<header class="cm_sectionHead">
+				<h2 class="cm_toUpperCase">Ideate</h2>
+			</header>
+			<section class="cm_blogHomeLeft">
+				<article class="cm_blogPosts">
+					<header class="cm_subHead">
+						<h3 class="cm_toUpperCase">Duis dapibus aliquam mi, eget euismod sem</h3>
+						<p class="cm_blogPostsDate">23 September, 2013</p>
+					</header>
+					<img src="images/blog/blogImg.jpg" alt="" class="mt10">
+					<p class="cm_blogDesc mt10">Nunc nec massa et risus iaculis interdum et sed mi. Nam viverra 
+ac neque eu aliquet. Maecenas posuere, neque non vestibulum 
+sodales, arcu diam interdum nulla, in molestie magna magna vitae 
+justo. Aenean semper volutpat sapien eu porta. Etiam vestibulum 
+pharetra risus vel ultricies.</p>
+					<a href="javascript: void(0)" class="mt15 cm_toUpperCase cm_brandClr cm_knowMoreLink">Know More <label class="cm_rightArrow-line cm_headerIcons"></label></a>
+			
+				</article>
+			</section>
+			
+			<section class="cm_blogHomeRight">
+				<article>
+					<img src="images/blog/blog-small1.jpg" alt=""/>
+					<p class="cm_blogDesc">Lorem ipsum dolor sit amet, conse ctetur adip iscing elit.Morbi blandit velit id dolor ferm entum, non 
+posuere libero posuere.</p>
+					<p class="cm_blogPostsDate">16 July, 2015</p>
+				</article>
+				<article>
+					<img src="images/blog/blog-small2.jpg" alt=""/>
+					<p class="cm_blogDesc">Lorem ipsum dolor sit amet, conse ct etur adi piscing elit.Morbi blandit velit id dolor fermen tum, non 
+posuere libero posuere.</p>
+					<p class="cm_blogPostsDate">20 August, 2015</p>
+				</article>
+				<article>
+					<img src="images/blog/blog-small3.jpg" alt=""/>
+					<p class="cm_blogDesc">Lorem ipsum dolor sit amet, cons ectetur adipiscing elit.Morbi blandit velit id dolor fermen tum, non 
+posuere libero posuere.</p>
+					<p class="cm_blogPostsDate">06 January, 2015</p>
+				</article>
+				<article>
+					<img src="images/blog/blog-small4.jpg" alt=""/>
+					<p class="cm_blogDesc">Lorem ipsum dolor sit amet, con sec tetur adipi ing elit.Morbi blandit velit id dolor fermen tum, non 
+posuere libero posuere.</p>
+					<p class="cm_blogPostsDate">16 July, 2015</p>
+				</article>
+				
+			</section>
+		</section>
+		<div class="clear"></div>
+		<section class="cm_ourStory mt40">
+			<header class="cm_sectionHead">
+				<h2 class="cm_toUpperCase">Our Story</h2>
+			</header>
+			<section class="cm_ourStoryDetail posRel">
+				<header class="cm_subHead">
+					<label class="cm_headerIcons icon_camera posAbs" style="left: 0; top: 50px;"></label>
+					<h3 class="cm_toUpperCase">Here's what went behind <span class="cm_brandClr">centralmart.in</span></h3>
+				</header>
+				<p class="mt15 mb10">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare.</p>
+				
+				<footer>
+					<div class="cm_storySocialLinks mb30">
+						<a href="javascript: void(0)"><img src="images/social/linkedIn-black.png" title="LinkedIn" alt="LinkedIn"/></a>
+						<a href="javascript: void(0)"><img src="images/social/facebook-black.png" title="Facebook" alt="Facebook"/></a>
+					</div>
+					<a href="javascript: void(0)" class="cm_toUpperCase cm_brandClr cm_knowMoreLink">Know More <label class="cm_rightArrow-line cm_headerIcons"></label></a>
+				</footer>
+			</section>
+			<!-- <iframe id="youtube" width="580" height="430" src="http://www.youtube.com/embed/LpKyzSxVhk4" frameborder="0" allowfullscreen></iframe> -->
+		</section><!-- .cm_ourStory -->
+		<div class="clear"></div>
+			<section class="cm_testimonials mt40 cm_commonAllSliders">
+				<header class="cm_sectionHead">
+					<h2 class="cm_toUpperCase">Testimonials</h2>
+					<div class="cm_galleryBtns">
+						<span class="cm_previousBtn cm_nextPrevImgs cm_previous" title="Previous"></span>
+						<span class="cm_nextBtn  cm_nextPrevImgs cm_next" title="Next"></span>
+					</div>
+				</header>
+				<section class="cm_commonGallerySection">
+					<ul class="cm_commonGallerySectionIndiv">
+						<li>
+							<img src="images/testimonial/amanda.png" class="cm_testAvtar" />
+							<div class="cm_testiIndDesc">
+								<span class="cm_ArrowGray-testi"></span>
+								<p class="cm_testiDesc">Curabitur elit tellus, cursus dapibus posuere eget, facilisis nec dui. Duis interdum, est ut vehicula eleifend, sem turpis imperdiet nisl, at tempor orci nisi sit amet dui </p>
+								<p class="cm_testiUser mt10">Amanda Flores</p>
+							</div>
+						</li>
+						
+						<li>
+							<img src="images/testimonial/galvin.png" class="cm_testAvtar" />
+							<div class="cm_testiIndDesc">
+								<span class="cm_ArrowGray-testi"></span>
+								<p class="cm_testiDesc">Curabitur elit tellus, cursus dapibus posuere eget, facilisis nec dui. Duis interdum, est ut vehicula eleifend, sem turpis imperdiet nisl, at tempor orci nisi sit amet dui. </p>
+								<p class="cm_testiUser mt10">Galvin Coleman</p>
+							</div>
+						</li>
+					</ul>
+					<ul class="cm_commonGallerySectionIndiv">
+						<li>
+							<img src="images/testimonial/amanda.png" class="cm_testAvtar" />
+							<div class="cm_testiIndDesc">
+								<span class="cm_ArrowGray-testi"></span>
+								<p class="cm_testiDesc">Curabitur elit tellus, cursus dapibus posuere eget, facilisis nec dui. Duis interdum, est ut vehicula eleifend, sem turpis imperdiet nisl, at tempor orci nisi sit amet dui </p>
+								<p class="cm_testiUser mt10">Robert Silva</p>
+							</div>
+						</li>
+						
+						<li>
+							<img src="images/testimonial/galvin.png" class="cm_testAvtar" />
+							<div class="cm_testiIndDesc">
+								<span class="cm_ArrowGray-testi"></span>
+								<p class="cm_testiDesc">Curabitur elit tellus, cursus dapibus posuere eget, facilisis nec dui. Duis interdum, est ut vehicula eleifend, sem turpis imperdiet nisl, at tempor orci nisi sit amet dui. </p>
+								<p class="cm_testiUser mt10">Joshua Randy</p>
+							</div>
+						</li>
+					</ul>
+					<ul class="cm_commonGallerySectionIndiv">
+						<li>
+							<img src="images/testimonial/amanda.png" class="cm_testAvtar" />
+							<div class="cm_testiIndDesc">
+								<span class="cm_ArrowGray-testi"></span>
+								<p class="cm_testiDesc">Curabitur elit tellus, cursus dapibus posuere eget, facilisis nec dui. Duis interdum, est ut vehicula eleifend, sem turpis imperdiet nisl, at tempor orci nisi sit amet dui </p>
+								<p class="cm_testiUser mt10">Louis Henry</p>
+							</div>
+						</li>
+						
+						<li>
+							<img src="images/testimonial/galvin.png" class="cm_testAvtar" />
+							<div class="cm_testiIndDesc">
+								<span class="cm_ArrowGray-testi"></span>
+								<p class="cm_testiDesc">Curabitur elit tellus, cursus dapibus posuere eget, facilisis nec dui. Duis interdum, est ut vehicula eleifend, sem turpis imperdiet nisl, at tempor orci nisi sit amet dui. </p>
+								<p class="cm_testiUser mt10">Debra Morgan</p>
+							</div>
+						</li>
+					</ul>
+					<ul class="cm_commonGallerySectionIndiv">
+						<li>
+							<img src="images/testimonial/amanda.png" class="cm_testAvtar" />
+							<div class="cm_testiIndDesc">
+								<span class="cm_ArrowGray-testi"></span>
+								<p class="cm_testiDesc">Curabitur elit tellus, cursus dapibus posuere eget, facilisis nec dui. Duis interdum, est ut vehicula eleifend, sem turpis imperdiet nisl, at tempor orci nisi sit amet dui </p>
+								<p class="cm_testiUser mt10">Jessy Pinkman</p>
+							</div>
+						</li>
+						
+						<li>
+							<img src="images/testimonial/galvin.png" class="cm_testAvtar" />
+							<div class="cm_testiIndDesc">
+								<span class="cm_ArrowGray-testi"></span>
+								<p class="cm_testiDesc">Curabitur elit tellus, cursus dapibus posuere eget, facilisis nec dui. Duis interdum, est ut vehicula eleifend, sem turpis imperdiet nisl, at tempor orci nisi sit amet dui. </p>
+								<p class="cm_testiUser mt10">Dexter Morgan</p>
+							</div>
+						</li>
+					</ul>
+				</section>
+		</section><!-- .cm_testimonials -->
+		<div class="clear"></div>
+		<section class="cm_media mt40 cm_commonAllSliders posRel">
+			<!-- <header class="cm_sectionHead">
+				<h2 class="cm_toUpperCase">Media</h2>
+				<div class="cm_galleryBtns">
+					<span class="cm_previousBtn cm_nextPrevImgs cm_previous" title="Previous"></span>
+					<span class="cm_nextBtn  cm_nextPrevImgs cm_next" title="Next"></span>
+				</div>
+			</header> -->
+			<div class="cm_galleryBtns md_prev posAbs">
+				<span class="bx-prev cm_previousBtn cm_nextPrevImgs cm_previous" title="Previous"></span>
+			</div>
+			<section class="cm_commonGallerySection">
+				<ul class="cm_commonGallerySectionIndiv cm_allMediaPart">
+					<li><img src="images/media/ie.jpg" alt="Indian Express"></li>
+					<li><img src="images/media/ys.jpg" alt="Your Story"></li>
+					<li><img src="images/media/ws.jpg" alt="WithStartups"></li>
+				</ul>
+				<ul class="cm_commonGallerySectionIndiv cm_allMediaPart">
+					<li><img src="images/media/ie.jpg" alt="Indian Express"></li>
+					<li><img src="images/media/ys.jpg" alt="Your Story"></li>
+					<li><img src="images/media/ws.jpg" alt="WithStartups"></li>
+				</ul>
+			</section>
+			<div class="cm_galleryBtns md_next posAbs">
+				<span class="cm_nextBtn  cm_nextPrevImgs cm_next" title="Next"></span>
+			</div>
+			
+		</section><!-- .cm_media -->
+		<div class="clear"></div>
+		<section class="cm_ourPartners mt40 cm_commonAllSliders">
+			<header class="cm_sectionHead">
+				<h2 class="cm_toUpperCase">Brand Spotlight</h2>
+				<div class="cm_galleryBtns">
+					<span class="cm_previousBtn cm_nextPrevImgs cm_previous" title="Previous"></span>
+					<span class="cm_nextBtn  cm_nextPrevImgs cm_next" title="Next"></span>
+				</div>
+			</header>
+			<section class="cm_commonGallerySection">
+				<ul class="cm_commonGallerySectionIndiv cm_partnersUl">
+					<li><img src="images/partners/kohler.jpg" alt="The Bold Look Of Kohler"></li>
+					<li><img src="images/partners/americanStd.jpg" alt="American Standard"></li>
+					<li><img src="images/partners/artize.jpg" alt="Artize craftmanship in water"></li>
+					<li><img src="images/partners/hindware.jpg" alt="Hindware"></li>
+					<li><img src="images/partners/pergo.jpg" alt="PERGO Designed for generations"></li>
+					<li><img src="images/partners/philips.jpg" alt="Philips"></li>
+					<li><img src="images/partners/havells.jpg" alt="Havells"></li>
+					<li><img src="images/partners/wipro.jpg" alt="Wipro Appluing thought"></li>
+					<li><img src="images/partners/hettich.jpg" alt="Hettich"></li>
+					<li><img src="images/partners/godrej.jpg" alt="Godrej Security Solutions"></li>
+				</ul>
+				<ul class="cm_commonGallerySectionIndiv cm_partnersUl">
+					<li><img src="images/partners/kohler.jpg" alt="The Bold Look Of Kohler"></li>
+					<li><img src="images/partners/americanStd.jpg" alt="American Standard"></li>
+					<li><img src="images/partners/artize.jpg" alt="Artize craftmanship in water"></li>
+					<li><img src="images/partners/hindware.jpg" alt="Hindware"></li>
+					<li><img src="images/partners/pergo.jpg" alt="PERGO Designed for generations"></li>
+					<li><img src="images/partners/philips.jpg" alt="Philips"></li>
+					<li><img src="images/partners/havells.jpg" alt="Havells"></li>
+					<li><img src="images/partners/wipro.jpg" alt="Wipro Appluing thought"></li>
+					<li><img src="images/partners/hettich.jpg" alt="Hettich"></li>
+					<li><img src="images/partners/godrej.jpg" alt="Godrej Security Solutions"></li>
+				</ul>
+				<ul class="cm_commonGallerySectionIndiv cm_partnersUl">
+					<li><img src="images/partners/kohler.jpg" alt="The Bold Look Of Kohler"></li>
+					<li><img src="images/partners/americanStd.jpg" alt="American Standard"></li>
+					<li><img src="images/partners/artize.jpg" alt="Artize craftmanship in water"></li>
+					<li><img src="images/partners/hindware.jpg" alt="Hindware"></li>
+					<li><img src="images/partners/pergo.jpg" alt="PERGO Designed for generations"></li>
+					<li><img src="images/partners/philips.jpg" alt="Philips"></li>
+					<li><img src="images/partners/havells.jpg" alt="Havells"></li>
+					<li><img src="images/partners/wipro.jpg" alt="Wipro Appluing thought"></li>
+					<li><img src="images/partners/hettich.jpg" alt="Hettich"></li>
+					<li><img src="images/partners/godrej.jpg" alt="Godrej Security Solutions"></li>
+				</ul>
+			</section>
+			
+		</section><!-- .cm_ourPartners -->
+		<div class="clear"></div>
+		
+	</section><!-- .cm_homeContent -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_subscribe mt30 posRel">
+		<section class="cm_grid970 ">
+			<div class="cm_scrollToTop posAbs scrollToTop fixScroll">
+				<a href="javascript: void(0)" title="Scroll To Top" class="cm_headerIcons"></a>
+			</div>
+			<div class="dispInBlk">
+				<h4 class="cm_toUpperCase">Subscribe:</h4>
+				<input placeholder="Your E-mail" class="toUpperCase" type='text'/>
+				<a href="javascript: void(0)" class="cm_toUpperCase cm_primaryBtn cm_brandClr">Sign Up <label class="cm_headerIcons primBtnWhiteArr"></label></a>
+			</div>
+			<div class="dispInBlk cm_weAccept">
+				<h4 class="cm_toUpperCase">We Accept:</h4>
+				<ul>
+					<li><label class="cm_headerIcons cm_visaIco" title="Visa"></label></li>	
+					<li><label class="cm_headerIcons cm_mcIco" title="MasterCard"></label></li>
+					<li><label class="cm_headerIcons cm_aeIco" title="American Express"></label></li>
+					<li><label class="cm_headerIcons cm_maestroIco" title="Maestro"></label></li>
+					<li><label class="cm_headerIcons cm_emiIco" title="EMI"></label></li>
+					<li><label class="cm_headerIcons cm_cashIco" title="Cash"></label></li>
+					<li><label class="cm_headerIcons cm_netBankIco" title="Net Banking"></label></li>
+					<li><label class="cm_headerIcons cm_chequeIco" title="Cheque"></label></li>
+				</ul>
+			</div>
+		</section>
+	</section><!-- .cm_fullBoundary.cm_subscribe -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_footer">
+		<section class="cm_grid970">
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Central Mart</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Know Us</a></li>
+					<li><a href="javascript: void(0)">Careers</a></li>
+					<li><a href="javascript: void(0)">Reach Us</a></li>
+					<li><a href="javascript: void(0)">News</a></li>
+					<li><a href="javascript: void(0)">Blog</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Customer Service</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Contact</a></li>
+					<li><a href="javascript: void(0)">FAQ</a></li>
+					<li><a href="javascript: void(0)">Terms of payment</a></li>
+					<li><a href="javascript: void(0)">Terms of sale</a></li>
+					<li><a href="javascript: void(0)">Delivery terms &amp; conditions</a></li>
+					<li><a href="javascript: void(0)">Returns and Refunds</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Categories</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Bathroom Fittings</a></li>
+					<li><a href="javascript: void(0)">Building Materials</a></li>
+					<li><a href="javascript: void(0)">Doors & Windows</a></li>
+					<li><a href="javascript: void(0)">Electrical</a></li>
+					<li><a href="javascript: void(0)">Flooring</a></li>
+					<li class="cm_moreCateg"><a href="javascript: void(0)" class="cm_toUpperCase cm_brandClr">More</a></li>
+
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Partner</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Make money With us</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Social</h3>
+				</header>
+				<ul>
+					<li class="mt10"><a href="javascript: void(0)"><label class="cm_headerIcons cm_ghar360Ico"></label></a></li>
+					<li class="mt10"><a href="javascript: void(0)"><label class="cm_headerIcons cm_spaceFixIco"></label></a></li>
+				</ul>
+			</article>
+			
+		</section>
+		<section class="cm_grid970 cm_footAboutUs" style="padding: 20px 0 30px;">
+			<h4>About CentralMart</h4>
+			<p>
+				This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+			</p>
+		</section>
+	</section><!-- .cm_fullBoundary.cm_footer -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_footerLinks">
+		<section class="cm_grid970">
+			<ul>
+				<li><a href="javascript: void(0)">Privacy &amp; Cookies</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">Terms &amp; Conditions</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">Accessibility</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">Store Directory</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">About Us</a></li>
+			</ul>
+			<span class="fltRt cm_copyright">
+				&copy; centralmart.in <br>All Rights Reserved
+			</span>
+		</section>
+	</section><!-- .cm_fullBoundary.cm_footerLinks -->
+</div><!-- .cm_wrapper -->
+
+</body>
+</html>
