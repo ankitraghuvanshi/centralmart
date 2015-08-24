@@ -41,7 +41,7 @@
 			
 			$('.cm_listGridViewUL li').on('click', function(){
 				var state = $(this).find('a').attr('data-viewState');
-				$('.cm_allListingItems').removeClass().addClass('cm_allListingItems '+state);
+				$('.cm_listingAllItems .cm_allListingItems').removeClass().addClass('cm_allListingItems '+state);
 				$(this).find('a').addClass('selected').parent('li').siblings('li').find('a').removeClass('selected');
 				if(state == 'cm_gridViewActive'){$('.cm_viewDrop').hide();}else{$('.cm_viewDrop').show();}
 			});
@@ -551,7 +551,6 @@ Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti soci
 								<li><a href="javascript: void(0)">Discount</a></li>
 							</ul>
 						</div>
-						
 						<div class="allSortingSec cm_viewDrop">
 							<label class="cm_toUpperCase" style="margin-top:2px; margin-right: 10px;">View:</label>
 							<div class="cm_viewDropdown">
@@ -566,275 +565,263 @@ Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti soci
 							
 						</div>
 					</div>
-					<div class="clear"></div>
-					<div class="cm_compareItemBar">
-						<span class="dispInBlk floatLeft mt5 mr10">Select 2 to 4 Items to Compare</span>
-						<a class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr" href="javascript: void(0)">Compare</a>
-						<ul class="cm_compProdList">
-							<li>
-								<a href="javascript: void(0)">
-									<img src = "images/listing/item.jpg" width="25" height="25" />
-								</a>
-							</li>
-						</ul>
-					</div>
-					
-					<section class="cm_allListingItems cm_listViewActive">
-						<article>
-							<header>
-								<div class="cm_gridVwCompare">
-									<input type="checkbox" /> Compare	
-								</div>
-								<div class="cm_listItemProdImg">
-									<img src="images/listing/item.jpg" />
-								</div>
-							</header>
-							<p class="cm_listItemTitle">
-								Cera Cindrella Premium Wash 
-								Basin For Children Of 565 X 45...
-							</p>
-							<div class="cm_viewProdTitleDv">
-								<p class="cm_listItemTitle cm_listItemTitleForListView">
-									Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow White Finish (7700, 7800)
-								</p>
-								
-								<ul class="cm_prodSubListDesc mt20 mb10">
-									<li>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin.</li>
-									<li>Proin gravida nibh vel velit auctor aliquet.</li>
-									<li>Proin gravida nibh vel velit auctor aliquet aenean</li>
-								</ul>
-							</div>
-							<div class="cm_listingDataDesc">
-								<p class="cm_listPriceBar">
-									<span class="cm_oldPrice">Rs.2,499</span>
-									<span class="cm_discRate"><label class="cm_discSqBrct">[</label>43%<label class="cm_discSqBrct">]</label></span>
-									<span class="cm_finalPrice">Rs.1,045.00</span>
-								</p>
-								
-								<footer>
-									<a href="javascript: void(0)" class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr">Add to Cart</a>
-									<a href="javascript: void(0)" class="floatLeft cm_headerIcons cm_likeProdBtn ml10"></a>
-									<br>
-									<div class="floatLeft cm_listVwCompare mt40">
+					<section class="cm_listingAllItems"> 
+						<section class="cm_allListingItems cm_listViewActive">
+							<article>
+								<header>
+									<div class="cm_gridVwCompare">
 										<input type="checkbox" /> Compare	
 									</div>
-								</footer>
-							</div>
-							
-						</article>
-						<article>
-							<header>
-								<div class="cm_gridVwCompare">
-									<input type="checkbox" /> Compare	
-								</div>
-								<div class="cm_listItemProdImg">
-									<img src="images/listing/item.jpg" />
-								</div>
-							</header>
-							<p class="cm_listItemTitle">
-								Cera Cindrella Premium Wash 
-								Basin For Children Of 565 X 45...
-							</p>
-							<div class="cm_viewProdTitleDv">
-								<p class="cm_listItemTitle cm_listItemTitleForListView">
-									Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow White Finish (7700, 7800)
+									<div class="cm_listItemProdImg">
+										<img src="images/listing/item.jpg" />
+									</div>
+								</header>
+								<p class="cm_listItemTitle">
+									Cera Cindrella Premium Wash 
+									Basin For Children Of 565 X 45...
 								</p>
+								<div class="cm_viewProdTitleDv">
+									<p class="cm_listItemTitle cm_listItemTitleForListView">
+										Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow White Finish (7700, 7800)
+									</p>
+									
+									<ul class="cm_prodSubListDesc mt20 mb10">
+										<li>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin.</li>
+										<li>Proin gravida nibh vel velit auctor aliquet.</li>
+										<li>Proin gravida nibh vel velit auctor aliquet aenean</li>
+									</ul>
+								</div>
+								<div class="cm_listingDataDesc">
+									<p class="cm_listPriceBar">
+										<span class="cm_oldPrice">Rs.2,499</span>
+										<span class="cm_discRate"><label class="cm_discSqBrct">[</label>43%<label class="cm_discSqBrct">]</label></span>
+										<span class="cm_finalPrice">Rs.1,045.00</span>
+									</p>
+									
+									<footer>
+										<a href="javascript: void(0)" class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr">Add to Cart</a>
+										<a href="javascript: void(0)" class="floatLeft cm_headerIcons cm_likeProdBtn ml10"></a>
+										<br>
+										<div class="floatLeft cm_listVwCompare mt40">
+											<input type="checkbox" /> Compare	
+										</div>
+									</footer>
+								</div>
 								
-								<ul class="cm_prodSubListDesc mt20 mb10">
-									<li>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin.</li>
-									<li>Proin gravida nibh vel velit auctor aliquet.</li>
-									<li>Proin gravida nibh vel velit auctor aliquet aenean</li>
-								</ul>
-							</div>
-							<div class="cm_listingDataDesc">
-								<p class="cm_listPriceBar">
-									<span class="cm_oldPrice">Rs.2,499</span>
-									<span class="cm_discRate"><label class="cm_discSqBrct">[</label>43%<label class="cm_discSqBrct">]</label></span>
-									<span class="cm_finalPrice">Rs.1,045.00</span>
-								</p>
-								
-								<footer>
-									<a href="javascript: void(0)" class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr">Add to Cart</a>
-									<a href="javascript: void(0)" class="floatLeft cm_headerIcons cm_likeProdBtn ml10"></a>
-									<br>
-									<div class="floatLeft cm_listVwCompare mt40">
+							</article>
+							<article>
+								<header>
+									<div class="cm_gridVwCompare">
 										<input type="checkbox" /> Compare	
 									</div>
-								</footer>
-							</div>
-							
-						</article>
-						<article>
-							<header>
-								<div class="cm_gridVwCompare">
-									<input type="checkbox" /> Compare	
-								</div>
-								<div class="cm_listItemProdImg">
-									<img src="images/listing/item.jpg" />
-								</div>
-							</header>
-							<p class="cm_listItemTitle">
-								Cera Cindrella Premium Wash 
-								Basin For Children Of 565 X 45...
-							</p>
-							<div class="cm_viewProdTitleDv">
-								<p class="cm_listItemTitle cm_listItemTitleForListView">
-									Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow White Finish (7700, 7800)
+									<div class="cm_listItemProdImg">
+										<img src="images/listing/item.jpg" />
+									</div>
+								</header>
+								<p class="cm_listItemTitle">
+									Cera Cindrella Premium Wash 
+									Basin For Children Of 565 X 45...
 								</p>
+								<div class="cm_viewProdTitleDv">
+									<p class="cm_listItemTitle cm_listItemTitleForListView">
+										Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow White Finish (7700, 7800)
+									</p>
+									
+									<ul class="cm_prodSubListDesc mt20 mb10">
+										<li>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin.</li>
+										<li>Proin gravida nibh vel velit auctor aliquet.</li>
+										<li>Proin gravida nibh vel velit auctor aliquet aenean</li>
+									</ul>
+								</div>
+								<div class="cm_listingDataDesc">
+									<p class="cm_listPriceBar">
+										<span class="cm_oldPrice">Rs.2,499</span>
+										<span class="cm_discRate"><label class="cm_discSqBrct">[</label>43%<label class="cm_discSqBrct">]</label></span>
+										<span class="cm_finalPrice">Rs.1,045.00</span>
+									</p>
+									
+									<footer>
+										<a href="javascript: void(0)" class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr">Add to Cart</a>
+										<a href="javascript: void(0)" class="floatLeft cm_headerIcons cm_likeProdBtn ml10"></a>
+										<br>
+										<div class="floatLeft cm_listVwCompare mt40">
+											<input type="checkbox" /> Compare	
+										</div>
+									</footer>
+								</div>
 								
-								<ul class="cm_prodSubListDesc mt20 mb10">
-									<li>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin.</li>
-									<li>Proin gravida nibh vel velit auctor aliquet.</li>
-									<li>Proin gravida nibh vel velit auctor aliquet aenean</li>
-								</ul>
-							</div>
-							<div class="cm_listingDataDesc">
-								<p class="cm_listPriceBar">
-									<span class="cm_oldPrice">Rs.2,499</span>
-									<span class="cm_discRate"><label class="cm_discSqBrct">[</label>43%<label class="cm_discSqBrct">]</label></span>
-									<span class="cm_finalPrice">Rs.1,045.00</span>
-								</p>
-								
-								<footer>
-									<a href="javascript: void(0)" class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr">Add to Cart</a>
-									<a href="javascript: void(0)" class="floatLeft cm_headerIcons cm_likeProdBtn ml10"></a>
-									<br>
-									<div class="floatLeft cm_listVwCompare mt40">
+							</article>
+							<article>
+								<header>
+									<div class="cm_gridVwCompare">
 										<input type="checkbox" /> Compare	
 									</div>
-								</footer>
-							</div>
-							
-						</article>
-						<article>
-							<header>
-								<div class="cm_gridVwCompare">
-									<input type="checkbox" /> Compare	
-								</div>
-								<div class="cm_listItemProdImg">
-									<img src="images/listing/item.jpg" />
-								</div>
-							</header>
-							<p class="cm_listItemTitle">
-								Cera Cindrella Premium Wash 
-								Basin For Children Of 565 X 45...
-							</p>
-							<div class="cm_viewProdTitleDv">
-								<p class="cm_listItemTitle cm_listItemTitleForListView">
-									Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow White Finish (7700, 7800)
+									<div class="cm_listItemProdImg">
+										<img src="images/listing/item.jpg" />
+									</div>
+								</header>
+								<p class="cm_listItemTitle">
+									Cera Cindrella Premium Wash 
+									Basin For Children Of 565 X 45...
 								</p>
+								<div class="cm_viewProdTitleDv">
+									<p class="cm_listItemTitle cm_listItemTitleForListView">
+										Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow White Finish (7700, 7800)
+									</p>
+									
+									<ul class="cm_prodSubListDesc mt20 mb10">
+										<li>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin.</li>
+										<li>Proin gravida nibh vel velit auctor aliquet.</li>
+										<li>Proin gravida nibh vel velit auctor aliquet aenean</li>
+									</ul>
+								</div>
+								<div class="cm_listingDataDesc">
+									<p class="cm_listPriceBar">
+										<span class="cm_oldPrice">Rs.2,499</span>
+										<span class="cm_discRate"><label class="cm_discSqBrct">[</label>43%<label class="cm_discSqBrct">]</label></span>
+										<span class="cm_finalPrice">Rs.1,045.00</span>
+									</p>
+									
+									<footer>
+										<a href="javascript: void(0)" class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr">Add to Cart</a>
+										<a href="javascript: void(0)" class="floatLeft cm_headerIcons cm_likeProdBtn ml10"></a>
+										<br>
+										<div class="floatLeft cm_listVwCompare mt40">
+											<input type="checkbox" /> Compare	
+										</div>
+									</footer>
+								</div>
 								
-								<ul class="cm_prodSubListDesc mt20 mb10">
-									<li>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin.</li>
-									<li>Proin gravida nibh vel velit auctor aliquet.</li>
-									<li>Proin gravida nibh vel velit auctor aliquet aenean</li>
-								</ul>
-							</div>
-							<div class="cm_listingDataDesc">
-								<p class="cm_listPriceBar">
-									<span class="cm_oldPrice">Rs.2,499</span>
-									<span class="cm_discRate"><label class="cm_discSqBrct">[</label>43%<label class="cm_discSqBrct">]</label></span>
-									<span class="cm_finalPrice">Rs.1,045.00</span>
-								</p>
-								
-								<footer>
-									<a href="javascript: void(0)" class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr">Add to Cart</a>
-									<a href="javascript: void(0)" class="floatLeft cm_headerIcons cm_likeProdBtn ml10"></a>
-									<br>
-									<div class="floatLeft cm_listVwCompare mt40">
+							</article>
+							<article>
+								<header>
+									<div class="cm_gridVwCompare">
 										<input type="checkbox" /> Compare	
 									</div>
-								</footer>
-							</div>
-							
-						</article>
-						<article>
-							<header>
-								<div class="cm_gridVwCompare">
-									<input type="checkbox" /> Compare	
-								</div>
-								<div class="cm_listItemProdImg">
-									<img src="images/listing/item.jpg" />
-								</div>
-							</header>
-							<p class="cm_listItemTitle">
-								Cera Cindrella Premium Wash 
-								Basin For Children Of 565 X 45...
-							</p>
-							<div class="cm_viewProdTitleDv">
-								<p class="cm_listItemTitle cm_listItemTitleForListView">
-									Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow White Finish (7700, 7800)
+									<div class="cm_listItemProdImg">
+										<img src="images/listing/item.jpg" />
+									</div>
+								</header>
+								<p class="cm_listItemTitle">
+									Cera Cindrella Premium Wash 
+									Basin For Children Of 565 X 45...
 								</p>
+								<div class="cm_viewProdTitleDv">
+									<p class="cm_listItemTitle cm_listItemTitleForListView">
+										Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow White Finish (7700, 7800)
+									</p>
+									
+									<ul class="cm_prodSubListDesc mt20 mb10">
+										<li>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin.</li>
+										<li>Proin gravida nibh vel velit auctor aliquet.</li>
+										<li>Proin gravida nibh vel velit auctor aliquet aenean</li>
+									</ul>
+								</div>
+								<div class="cm_listingDataDesc">
+									<p class="cm_listPriceBar">
+										<span class="cm_oldPrice">Rs.2,499</span>
+										<span class="cm_discRate"><label class="cm_discSqBrct">[</label>43%<label class="cm_discSqBrct">]</label></span>
+										<span class="cm_finalPrice">Rs.1,045.00</span>
+									</p>
+									
+									<footer>
+										<a href="javascript: void(0)" class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr">Add to Cart</a>
+										<a href="javascript: void(0)" class="floatLeft cm_headerIcons cm_likeProdBtn ml10"></a>
+										<br>
+										<div class="floatLeft cm_listVwCompare mt40">
+											<input type="checkbox" /> Compare	
+										</div>
+									</footer>
+								</div>
 								
-								<ul class="cm_prodSubListDesc mt20 mb10">
-									<li>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin.</li>
-									<li>Proin gravida nibh vel velit auctor aliquet.</li>
-									<li>Proin gravida nibh vel velit auctor aliquet aenean</li>
-								</ul>
-							</div>
-							<div class="cm_listingDataDesc">
-								<p class="cm_listPriceBar">
-									<span class="cm_oldPrice">Rs.2,499</span>
-									<span class="cm_discRate"><label class="cm_discSqBrct">[</label>43%<label class="cm_discSqBrct">]</label></span>
-									<span class="cm_finalPrice">Rs.1,045.00</span>
-								</p>
-								
-								<footer>
-									<a href="javascript: void(0)" class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr">Add to Cart</a>
-									<a href="javascript: void(0)" class="floatLeft cm_headerIcons cm_likeProdBtn ml10"></a>
-									<br>
-									<div class="floatLeft cm_listVwCompare mt40">
+							</article>
+							<article>
+								<header>
+									<div class="cm_gridVwCompare">
 										<input type="checkbox" /> Compare	
 									</div>
-								</footer>
-							</div>
-							
-						</article>
-						<article>
-							<header>
-								<div class="cm_gridVwCompare">
-									<input type="checkbox" /> Compare	
-								</div>
-								<div class="cm_listItemProdImg">
-									<img src="images/listing/item.jpg" />
-								</div>
-							</header>
-							<p class="cm_listItemTitle">
-								Cera Cindrella Premium Wash 
-								Basin For Children Of 565 X 45...
-							</p>
-							<div class="cm_viewProdTitleDv">
-								<p class="cm_listItemTitle cm_listItemTitleForListView">
-									Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow White Finish (7700, 7800)
+									<div class="cm_listItemProdImg">
+										<img src="images/listing/item.jpg" />
+									</div>
+								</header>
+								<p class="cm_listItemTitle">
+									Cera Cindrella Premium Wash 
+									Basin For Children Of 565 X 45...
 								</p>
+								<div class="cm_viewProdTitleDv">
+									<p class="cm_listItemTitle cm_listItemTitleForListView">
+										Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow White Finish (7700, 7800)
+									</p>
+									
+									<ul class="cm_prodSubListDesc mt20 mb10">
+										<li>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin.</li>
+										<li>Proin gravida nibh vel velit auctor aliquet.</li>
+										<li>Proin gravida nibh vel velit auctor aliquet aenean</li>
+									</ul>
+								</div>
+								<div class="cm_listingDataDesc">
+									<p class="cm_listPriceBar">
+										<span class="cm_oldPrice">Rs.2,499</span>
+										<span class="cm_discRate"><label class="cm_discSqBrct">[</label>43%<label class="cm_discSqBrct">]</label></span>
+										<span class="cm_finalPrice">Rs.1,045.00</span>
+									</p>
+									
+									<footer>
+										<a href="javascript: void(0)" class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr">Add to Cart</a>
+										<a href="javascript: void(0)" class="floatLeft cm_headerIcons cm_likeProdBtn ml10"></a>
+										<br>
+										<div class="floatLeft cm_listVwCompare mt40">
+											<input type="checkbox" /> Compare	
+										</div>
+									</footer>
+								</div>
 								
-								<ul class="cm_prodSubListDesc mt20 mb10">
-									<li>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin.</li>
-									<li>Proin gravida nibh vel velit auctor aliquet.</li>
-									<li>Proin gravida nibh vel velit auctor aliquet aenean</li>
-								</ul>
-							</div>
-							<div class="cm_listingDataDesc">
-								<p class="cm_listPriceBar">
-									<span class="cm_oldPrice">Rs.2,499</span>
-									<span class="cm_discRate"><label class="cm_discSqBrct">[</label>43%<label class="cm_discSqBrct">]</label></span>
-									<span class="cm_finalPrice">Rs.1,045.00</span>
-								</p>
-								
-								<footer>
-									<a href="javascript: void(0)" class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr">Add to Cart</a>
-									<a href="javascript: void(0)" class="floatLeft cm_headerIcons cm_likeProdBtn ml10"></a>
-									<br>
-									<div class="floatLeft cm_listVwCompare mt40">
+							</article>
+							<article>
+								<header>
+									<div class="cm_gridVwCompare">
 										<input type="checkbox" /> Compare	
 									</div>
-								</footer>
-							</div>
+									<div class="cm_listItemProdImg">
+										<img src="images/listing/item.jpg" />
+									</div>
+								</header>
+								<p class="cm_listItemTitle">
+									Cera Cindrella Premium Wash 
+									Basin For Children Of 565 X 45...
+								</p>
+								<div class="cm_viewProdTitleDv">
+									<p class="cm_listItemTitle cm_listItemTitleForListView">
+										Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow White Finish (7700, 7800)
+									</p>
+									
+									<ul class="cm_prodSubListDesc mt20 mb10">
+										<li>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin.</li>
+										<li>Proin gravida nibh vel velit auctor aliquet.</li>
+										<li>Proin gravida nibh vel velit auctor aliquet aenean</li>
+									</ul>
+								</div>
+								<div class="cm_listingDataDesc">
+									<p class="cm_listPriceBar">
+										<span class="cm_oldPrice">Rs.2,499</span>
+										<span class="cm_discRate"><label class="cm_discSqBrct">[</label>43%<label class="cm_discSqBrct">]</label></span>
+										<span class="cm_finalPrice">Rs.1,045.00</span>
+									</p>
+									
+									<footer>
+										<a href="javascript: void(0)" class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr">Add to Cart</a>
+										<a href="javascript: void(0)" class="floatLeft cm_headerIcons cm_likeProdBtn ml10"></a>
+										<br>
+										<div class="floatLeft cm_listVwCompare mt40">
+											<input type="checkbox" /> Compare	
+										</div>
+									</footer>
+								</div>
+								
+							</article>
 							
-						</article>
-						
+						</section>
 					</section>
-					
 					<a href="javascript: void(0)" class="mt20 mb50 cm_showMoreArticles">Show More</a>
 				</section>
 			</section>

@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Central Mart - Listing</title>
+<link href="css/main.less" rel="stylesheet/less" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/less-min.js"></script>
+<script src="js/bxslider.js"></script>
+<script src="js/nouislider.js"></script>
+<script src="js/common.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function (){
+		
+		$('.cm_sngProdSpecTabs li a').on('click', function (){
+			$(this).parent().addClass('active');
+			$(this).parent().siblings('li').removeClass('active');
+			var id = $(this).parent().attr('data-currentTab');
+			$("#"+id).show();
+			$("#"+id).siblings('.cm_sngProdSpecRes').hide();
+			reviewSlider.bxSlider();
+			
+		});
+		var reviewSlider = $('.cm_sgnAllReviewMain').bxSlider({
+				minSlides: 2,
+				slideWidth: 970,
+				moveSlides: 2,
+				nextText: '',
+				prevText: '',
+				nextSelector: $('.cm_slideReviews').find('.cm_next'),
+				prevSelector: $('.cm_slideReviews').find('.cm_previous'),
+				pager: false,
+				infiniteLoop: false,
+				hideControlOnEnd: true
+				
+			});
+		$('.cm_sngProRevDesc .cm_selfExpandLnk').on('click', function (){
+			if($(this).hasClass('close')){
+				$(this).siblings('.cm_sngProdRecCommtComplete').hide();
+				$(this).siblings('.cm_sngProdRecCommt').show();
+				$(this).removeClass('close');
+				$(this).text('[Expand]');
+			}else{
+				$(this).siblings('.cm_sngProdRecCommtComplete').show();
+				$(this).siblings('.cm_sngProdRecCommt').hide();
+				$(this).addClass('close');
+				$(this).text('[Collapse]');
+			}
+			
+		});
+		
+		$('.cm_expandAlll').on('click', function (){
+			$('.cm_sngProReview .cm_selfExpandLnk').click();
+			if($(this).hasClass('close')){
+				$(this).text('Expand All');
+				$(this).removeClass('close');
+			}else{
+				$(this).text('Collapse All');
+				$(this).addClass('close');
+			}
+		});
+	
+		$('.cm_sngProdImgSlider').bxSlider({
+			slideWidth: 64,
+			minSlides: 2,
+			maxSlides: 4,
+			moveSlides: 1,
+			slideMargin: 4,
+			nextText: '',
+			prevText: '',
+			nextSelector: $('.cm_sngProdGallery').find('.cm_next'),
+			prevSelector: $('.cm_sngProdGallery').find('.cm_previous'),
+			pager: false,
+			infiniteLoop: false,
+			hideControlOnEnd: true
+			
+		});
+		
+		$('.cm_sngProdImgSlider li a').on('click', function(){
+			var src = $(this).children('img').attr('src');
+			$('.cm_sngProdBigImg img').attr('src', src);
+		});
+		
+		if($('.cm_sngProdImgSlider li').length<=4){
+			$('.cm_sngProdGallery').find('.cm_nextPrevImgs').hide();
+		}else{
+			$('.cm_sngProdGallery').find('.cm_nextPrevImgs').show();
+		}
+		
+		if($('.cm_sngProdImgSlider li').length==0){
+			$('.cm_sngProdImgSliderpager').hide();
+		}else{
+			$('.cm_sngProdImgSliderpager').show();
+		}
+		
+		$('.cm_selectSizeUl li a').on('click', function (){
+			var priceTableFevi = '';
+			var trIndex = $(this).parent().index();
+				$('.cm_feviPriceDiv').css("display","block");
+			if($(this).parent().hasClass('selected')){
+				$(this).parent().removeClass('selected');
+				$('.cm_feviPriceTable tr.index_'+trIndex).remove();
+				
+				if($('.cm_feviPriceTable tr.priceRow').length==0){
+					$('.cm_feviPriceDiv').css("display","none");
+				}
+			}else{
+				$(this).parent().addClass('selected');
+				
+				priceTableFevi += '<tr class="priceRow index_'+trIndex+'">'+
+										'<td class="textLeft">Fevicol SH - '+$(this).parent().text()+'</td>'+
+										'<td class="textLeft"><span class="cm_808080 strike">Rs. 23</span> <strong class="font18 cm_333 ml5">Rs. 20</strong></td>'+
+										'<td>1</td>'+
+										'<td width="50"><input type="text" /></td>'+
+									'</tr>';
+				
+			}
+			$('.cm_feviPriceTable').append(priceTableFevi);
+		});
+		
+		
+		
+	});/*doc ends*/
+	
+</script>
+</head>
+<body>
+<div class="cm_wrapper">
+	<section class="cm_fullBoundary cm_trackOder pad20LR">
+		<section class="cm_grid970">
+			<span class="cm_latestOffers dispInBlk floatLeft">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet asgdf.</span>
+			<span class="cm_userSupport dispInBlk floatRight">
+				<a href="javascript:void(0)" class="cm_headerIcons cm_www">We Work <span class="cm_brandClr">Worldwide</span></a>
+				<label class="pipe">|</label>
+				<a href="javascript:void(0)" class="cm_headerIcons cm_trackOrdrIco">Track Order</a>
+				<label class="pipe mr10">|</label>
+				<a href="javascript:void(0)" class="cm_headerIcons cm_supportIco">+91 8080 740 740</a>
+			</span>
+			<div class="clear"></div>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_trackOder -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_header">
+		<section class="cm_grid970">
+			<img src="images/header/logo.png" title="Centralmart.in" alt="Centralmart.in Home Improvement Simplified"/>
+			<ul>
+				<li>
+					<label class="cm_headerIcons cm_design"></label>
+					<a href="javascript: void(0)" title="Shop Online">
+						<p class="cm_txtLbl">Shop Online</p>
+						<p class="cm_subTxtLbl">Building &amp; Home<br>Products</p>
+					</a>
+				</li>
+				<li>
+					<label class="cm_headerIcons cm_build"></label>
+					<a href="javascript: void(0)" title="Design+Build">
+						<p class="cm_txtLbl">Design+Build</p>
+						<p class="cm_subTxtLbl">Turnkey Solutions</p>
+					</a>
+				</li>
+				<li>
+					<label class="cm_headerIcons cm_blog"></label>
+					<a href="javascript: void(0)" title="Ideate">
+						<p class="cm_txtLbl">Ideate</p>
+						<p class="cm_subTxtLbl">Inspirations<br>&amp; New Trends</p>
+					</a>
+				</li>
+			</ul>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_header -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_searchBar">
+		<section class="cm_grid970">
+			<div class="cm_shopByCatDv posRel">
+					<span class="cm_fff cm_shopByCatHandle">EXPLORE<label class="cm_headerIcons cm_shopMainArrUp"></label></span>
+					<div class="cm_shopbyCatMainDv posAbs">
+						<div class="posRel ">
+							<!-- <span class="posAbs cm_diffAllCatArr cm_headerIcons"></span> -->
+							<ul class="cm_diffCatTopLevel">
+								<span class="cm_shopCatArrow" style="left: 68px;"></span>
+								<li class='active' data-cat-key="cm_shopByCatLi"><a href="javascript: void(0)">Shop by Categories</a></li>  
+								<li data-cat-key="cm_createBoqLi"><a href="javascript: void(0)">Create BOQ</a></li>  
+								<li data-cat-key="cm_bulkOrderLi"><a href="javascript: void(0)">Bulk Orders</a></li>  
+								<li data-cat-key="cm_designBuildLi"><a href="javascript: void(0)">Design + Build</a></li>  
+								<li data-cat-key="cm_ideateLi"><a href="javascript: void(0)">Ideate</a></li>  
+								<li data-cat-key="cm_proRewardLi"><a href="javascript: void(0)" class="cm_brandClr">Pro-Rewards</a></li> 
+							</ul>
+							<!-- <div class="arrow"></div> -->
+						</div>
+						<div class="cm_shopByCatAllDv cm_shopByCatLi">
+							<ul class="cm_shopByCatAllMenu">
+								<li><a href="javascript: void(0)">Bathroom Fittings</a>
+									<div class="cm_shopCatSubview">
+										Bathroom fittings
+									</div><!--.cm_shopCatSubview-->
+								</li>
+								<li><a href="javascript: void(0)">Building Materials</a></li>
+								<li><a href="javascript: void(0)">Doors &amp; Windows</a></li>
+								<li><a href="javascript: void(0)">Electrical</a></li>
+								<li><a href="javascript: void(0)">Flooring</a></li>
+								<li><a href="javascript: void(0)">Hardware</a>
+									<div class="cm_shopCatSubview showAlways">
+										<ul class="cm_shopCatSubCatg mb20 dispInBlk">
+											<li>
+												<a href="javascript: void(0)">
+												<img src="images/category/img1.jpg"  alt=""/>
+												<p>Accessories</p>
+												</a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img2.jpg"  alt=""/>
+												<p>Handles</p></a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img3.jpg"  alt=""/>
+												<p>Computer Fittings</p></a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img4.jpg"  alt=""/>
+												<p>Brackets &amp; Clamps</p></a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img5.jpg"  alt=""/>
+												<p>Hinges</p></a>
+											</li>
+										</ul>
+										<div class="clear"></div>
+										<div class="cm_subMoreCatDv cm_moreCatDv">
+											<section>
+												<header class="cm_subHead">
+													<h4>MORE CATEGORIES</h4>
+												</header>
+												<ul class="mr30">
+													<li><a href="javascript: void(0)">- Kitchen Drawer Systems</a></li>
+													<li><a href="javascript: void(0)">- Knobs</a></li>
+													<li><a href="javascript: void(0)">- Ladder Systems</a></li>
+												</ul>
+												<ul>
+													<li><a href="javascript: void(0)">- Locks & Latches</a></li>
+													<li><a href="javascript: void(0)">- Nuts & Bolts</a></li>
+													<li><a href="javascript: void(0)">- Sign Plates</a></li>
+												</ul>
+											</section>
+											<span class="cm_moreCatShowAll">
+												<a href="javascript: void(0)" class="cm_brandClr">Show All Hardware <label class="cm_rightArrow-line cm_headerIcons"></label></a>
+											</span>
+										</div>
+										
+										<div class="cm_subMoreCatDv cm_guide">
+											<header class="cm_subHead">
+												<h4>Related Guides/ Help</h4>
+											</header>
+											<ul>
+												<li><a href="javascript: void(0)">- Hardware buying guide</a></li>
+												<li><a href="javascript: void(0)">- Hardware assembling Guide</a></li>
+											</ul>
+										</div>
+									</div><!--.cm_shopCatSubview-->
+							
+								</li>
+								<li><a href="javascript: void(0)">Home Decor</a>
+									<div class="cm_shopCatSubview">
+										Home decor
+									</div><!--.cm_shopCatSubview-->
+								</li>
+								<li><a href="javascript: void(0)">Kitchen</a></li>
+								<li><a href="javascript: void(0)">Lightings</a></li>
+								<li><a href="javascript: void(0)">Plumbing</a></li>
+								<li><a href="javascript: void(0)">Safety &amp; Security</a></li>
+								<li><a href="javascript: void(0)">Wall Coverings</a></li>
+								<li><a href="javascript: void(0)">Wood &amp; Laminates</a></li>
+								<li class='last'><a href="javascript: void(0)">Lux Products</a></li>
+							</ul>
+						</div>
+						<div class="cm_shopByCatAllDv cm_createBoqLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_bulkOrderLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_designBuildLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_ideateLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_proRewardLi">
+						
+						</div>
+					</div><!--.cm_shopbyCatMainDv-->
+			
+			</div><!--.cm_shopByCatDv-->
+			<div class="cm_filterByCat">
+				<input type="text" placeholder="What are you looking for?" class='cm_filterInp'/>
+				<label class="cm_pipeFilter"></label>
+				<ul class="cm_filterByMenu">
+					<li class="cm_setMeFirst itHasPopup">
+						
+						<a href="javascript: void(0)">Wood &amp; Laminates</a><label class="cm_headerIcons cm_filterDropArr"></label>
+						<span class='popup_pullout'>
+							<ul class="cm_filterByCatSubMenu">
+								<li><a href="javascript: void(0)">All</a></li>
+								<li><a href="javascript: void(0)">Bathroom Fittings</a></li>
+								<li><a href="javascript: void(0)">Building Materials</a></li>
+								<li><a href="javascript: void(0)">Doors &amp; Windows</a></li>
+								<li><a href="javascript: void(0)">Electrical</a></li>
+								<li><a href="javascript: void(0)">Flooring</a></li>
+								<li><a href="javascript: void(0)">Hardware</a></li>
+								<li><a href="javascript: void(0)">Home Decor</a></li>
+								<li><a href="javascript: void(0)">Kitchen</a></li>
+								<li><a href="javascript: void(0)">Lightings</a></li>
+								<li><a href="javascript: void(0)">Plumbing</a></li>
+								<li><a href="javascript: void(0)">Safety &amp; Security</a></li>
+								<li><a href="javascript: void(0)">Wall Coverings</a></li>
+								<li><a href="javascript: void(0)">Wood &amp; Laminates</a></li>
+								<li><a href="javascript: void(0)">Premium Products</a></li>
+								<li><a href="javascript: void(0)">Shop By Brands</a></li>
+							</ul>
+						</span>
+					</li>
+				</ul>
+				
+			</div><!--.cm_filterByCat-->
+			<input type="button" class="cm_headerIcons cm_searchFilterBtn" />
+			
+		<!-- </section> -->
+		<div class="cm_userPref">
+			<span class="cm_userDetOnBar">
+				<span class="cm_loginAndReg disNone">
+					<a href="javascript: void(0)" >Login</a> or
+					<a href="javascript: void(0)" class="cm_brandClr">Register</a>
+				</span>
+				
+				<span class="cm_myAcc posRel itHasPopup mr10 dispInBlk">
+					<a href="javascript: void(0)" >My Account <label class="cm_headerIcons cm_filterDropArr"></label></a>
+					<span class="popup_pullout">
+						<ul class="">
+							<li><a href="javascript: void(0)">Account Information</a></li>
+							<li><a href="javascript: void(0)">Orders</a></li>
+							<li><a href="javascript: void(0)">Wishlist</a></li>
+							<li><a href="javascript: void(0)">Address Book</a></li>
+							<li><a href="javascript: void(0)">Projects</a></li>
+							<li><a href="javascript: void(0)">Product Reviews</a></li>
+						</ul>
+					</span>
+				</span>
+			</span>
+			
+			<span class="cm_userPreIcons">
+				<a href="javascript: void(0)" class=" ml10 cm_headerIcons cm_wishListIcon"></a>
+				<span class="posRel dispInBlk  ml10">
+					<a href="javascript: void(0)" class="cm_headerIcons cm_cartIcon"></a>
+					<label class="cm_wishCount">10</label>
+				</span>
+			</span>
+		</div>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_searchBar -->
+	<div class="clear"></div>
+	
+	<section class="cm_fullBoundary cm_pdpContent brdrTopGrey mt15">
+		<section class="cm_grid970 ">
+			<ul class="cm_prodItembreadCrumb mb20 mt10">
+				<li><a href="javascript: void(0)">Home &gt;</a></li>
+				<li><a href="javascript: void(0)">Bathroom &gt;</a></li>
+				<li><a href="javascript: void(0)">Sanitaryware &gt;</a></li>
+				<li class='active'><a href="javascript: void(0)">Wash Basin</a></li>
+			</ul>
+			<div class="cm_sngProdGallery">
+				
+				<div class="cm_sngProdBigImg">
+					<img src="images/pdp/bigTile.jpg" width="338" height="350" />	
+				</div>
+				
+				<section class="mt15 cm_sngProdImgSliderpager">
+					<div class="md_prev floatLeft mt10">
+						<span class="bx-prev cm_previousBtn cm_nextPrevImgs cm_previous" title="Previous"></span>
+					</div>
+					
+					<ul class="cm_sngProdImgSlider bxslider-pager floatLeft" id="bx-pager">
+					
+					</ul>
+					<div class="md_next floatRight mt10">
+						<span class="cm_nextBtn cm_nextPrevImgs cm_next" title="Next"></span>
+					</div>
+				</section>
+				
+			</div><!--.cm_sngProdGallery-->
+			<div class="cm_sngProdInfoDesc">
+				<header>
+					<div>
+						<h2>Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow)</h2>
+						<img src="images/pdp/brand.jpg" />
+					</div>
+					<div class="clear"></div>
+					<p>Product Code:<span> 1310100001c</span></p>
+				</header>
+				
+				
+				<div class="cm_sngProdDetails">
+					<div class="cm_sngProdTopActionBar">
+						<a href="javascript: void(0)" class="cm_headerIcons cm_editDeatils cm_sngProdIcons">Write Review</a>
+						<a href="javascript: void(0)" class="cm_headerIcons cm_likeProdBtnGrey cm_sngProdIcons">Add to Wishlist</a>
+						<a href="javascript: void(0)" class="cm_headerIcons cm_emailFrnd cm_sngProdIcons">E-mail a Friend</a>
+						<div class="dispInBlk">
+							<input type="checkbox" style="display: none;">
+							Compare
+						</div>
+					</div>
+					<div class="cm_sngProdDescSpecsheet">
+						<table cellpadding="0" cellspacing="0">
+							<tr>
+								<td><p><strong>Size</strong></p>6 X 24 Inch</td>
+								<td><p><strong>Carton Capacity</strong></p>12 Tiles</td>
+								<td style="padding-right: 50px;"><p><strong>Shape</strong></p>Rectangle</td>
+								<td><p><strong>Color / Finish</strong></p>
+									Toasted Walnut
+								</td>
+							</tr>
+							<tr>
+								<td><p><strong>Material</strong></p>Wood</td>
+								<td><p><strong>Related Guide</strong></p><a href="javascript: void(0)" class="cm_brandClr">How To Measure a Room</a></td>
+								<td colspan="2"><p><label class="cm_headerIcons cm_truck mr10 cm_sngProdIcons">7-8 business days</label></p></td>
+								
+							</tr>
+						</table>
+						<a href="javascript: void(0)" class="cm_moreSngSpecLnk cm_brandClr posRel floatRight" >More</a>
+					</div>
+					
+					<div class="cm_sngProdPriceBar ">
+						<div class="cm_selectFeetDv cm_customPriceSelect posRel">
+							<div class="cm_chooseFeet">
+								<input type="text" />
+								<strong class="font18 cm_333">Sq.ft</strong>
+							</div>
+					
+						</div>
+						
+						<div class="cm_sngProdBottomActionBar mt10"> 
+							<div class="cm_showPincode">
+								<input type="text" placeholder="Enter Your Pincode"/><button class="cm_headerIcons cm_pinCode"></button>
+							</div>
+							<div class="floatRight">
+								<a class="floatLeft cm_toUpperCase cm_primaryBtn cm_brandClr primToned" href="javascript: void(0)">Add to Cart</a>
+								<a class="floatLeft cm_toUpperCase cm_secondaryBtn ml20 cm_brandClr primToned" href="javascript: void(0)">Buy Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!--.cm_sngProdInfoDesc-->
+			<div class="clear"></div>
+			<div class="cm_sngProdSpecDv mt40">
+				<header class="cm_sectionHead">
+					<h2 class="cm_toUpperCase">Our Promises</h2>
+				</header>
+				
+				<ul class="cm_ourPromises">
+					<li><label class="cm_headerIcons cm_assBuy"></label><label class="mt10 ml10">Assisted Buying</label></li>
+					<li><label class="cm_headerIcons cm_unbeatPrice"></label><label class="mt10 ml10">Unbeatable Low Prices</label></li>
+					<li><label class="cm_headerIcons cm_securePay"></label><label class="mt10 ml10">Secure Payments</label></li>
+					<li><label class="cm_headerIcons cm_warrantSupp"></label><label class="mt10 ml10">Warranty &amp; Support</label></li>
+				</ul>
+				<ul class="cm_sngProdSpecTabs mt40">
+					<li class="active" data-currentTab="cm_sngProdTab"><a href="javascript: void(0)">Product Specifications</a></li>
+					<li class="" data-currentTab="cm_sngProdReviewTab" ><a href="javascript: void(0)">Reviews</a></li>
+					<li class="" data-currentTab="cm_sngProdDescTab"><a href="javascript: void(0)">Description</a></li>
+					
+				</ul>
+				<div class="clear"></div>
+				<div id="cm_sngProdTab" class="cm_sngProdSpecRes" style="padding: 20px 55px;">
+					<a href="javascript: void(0)" class="cm_downloadIco">Download</a>
+					<table width="100%" cellpadding="0" cellspacing="0" class="cm_specTable">
+						<tr>
+							<td>In the box</td>
+							<td>Faucet, Basin Flange </td>
+						</tr>
+						<tr>
+							<td>Brand</td>
+							<td>MonoTero</td>
+						</tr>
+						<tr>
+							<td>Model Number</td>
+							<td>CUBE1</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Table Top Basin</td>
+						</tr>
+						<tr>
+							<td>Color</td>
+							<td>White, Brown</td>
+						</tr>
+						<tr>
+							<td>Weight</td>
+							<td>5 kg</td>
+						</tr>
+						<tr>
+							<td>Height</td>
+							<td>40 cm</td>
+						</tr>
+						<tr>
+							<td>Width</td>
+							<td>40 cm</td>
+						</tr>
+						<tr>
+							<td>Depth</td>
+							<td>13 cm</td>
+						</tr>
+						<tr>
+							<td>Covered in Warranty</td>
+							<td>Only Manufacturing Defects And Internal Metal Parts Are Covered </td>
+						</tr>
+						<tr>
+							<td>Warranty Summary</td>
+							<td>7 Year Manufacturer Warranty</td>
+						</tr>
+						<tr>
+							<td>Warranty Service Type</td>
+							<td>On-Site Service, Customer Needs To Call The Nearby Authorized Service Center, Service Engineer Will Come To The Site To Get The Product Repaired Or Inspected.</td>
+						</tr>
+						<tr>
+							<td>Not Covered in Warranty</td>
+							<td>Chrome Plating & Rubber Parts Are Not Covered In Warranty</td>
+						</tr>
+					</table>
+				</div>
+				<div id="cm_sngProdReviewTab" class="cm_sngProdSpecRes" style=" display: none">
+					<div class="cm_sortRevBar">
+						<label class="floatLeft">1-5 of 10 Written Reviews</label>
+						<p class="font12 floatLeft ml20">
+							<span class="mr20">Overall Rating<label class="cm_red">*</label></span>
+							<label class="cm_starIco cm_headerIcons">1</label>
+							<label class="cm_starIco cm_headerIcons">2</label>
+							<label class="cm_starIco cm_headerIcons">3</label>
+							<label class="cm_starGreyIco cm_headerIcons">4</label>
+							<label class="cm_starGreyIco cm_headerIcons">5</label>
+						</p>
+						<a href="javascript: void(0)" class="cm_brandClr floatRight cm_expandAlll">Expand All</a>
+						
+						<span class="posRel itHasPopup cm_sortReview floatRight mr20">
+							<a href="javascript: void(0)">Sort <label class="cm_headerIcons cm_filterDropArr"></label></a>
+							<span class="popup_pullout">
+								<ul class="">
+									<li><a href="javascript: void(0)">Most Helpful</a></li>
+									<li><a href="javascript: void(0)">Most Rated</a></li>
+									<li><a href="javascript: void(0)">Least Rated</a></li>
+								</ul>
+							</span>
+						</span>
+					</div>
+					<div class="clear"></div>
+					<section class="cm_sgnAllReviewMain">
+						<section class="cm_sgnAllReview">
+							<article class="cm_sngProReview">
+								<div class="cm_sngProRating">
+									<p class="mb10">
+										<label class="cm_starIco cm_headerIcons">1</label>
+										<label class="cm_starIco cm_headerIcons">2</label>
+										<label class="cm_starIco cm_headerIcons">3</label>
+										<label class="cm_starGreyIco cm_headerIcons">4</label>
+										<label class="cm_starGreyIco cm_headerIcons">5</label>
+									</p>
+									<p>Ruchika Desai</p>
+									<p>May 23, 2015</p>
+								</div>
+								<div class="cm_sngProRevDesc">
+									<header>
+										<h2>This is the best product EVER!!</h2>
+									</header>
+									<p class="cm_sngProdRecCommt">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per...</p>
+									<p class="cm_sngProdRecCommtComplete">
+										Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+										Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+									</p>
+									<a href="javascript: void(0)" class="cm_brandClr cm_selfExpandLnk">[Expand]</a>
+									
+									<p class="cm_wasThisHelp font14 mt30">Was this review helpful?
+										<a href="javascript: void(0)" class="cm_headerIcons cm_yesIco"> Yes</a>
+										<a href="javascript: void(0)" class="cm_headerIcons cm_noIco"> No</a>
+									</p>
+									<label class="floatLeft font12">
+										<strong>199</strong> of <strong>213</strong> users found this review helpful
+									</label>
+									<span class="cm_showPerma floatRight">
+										<a href="javascript: void(0)" class="font12 floatRight cm_333">Report Abuse</a>
+										<a href="javascript: void(0)" class="font12 floatRight cm_333 mr10">Permalink</a>
+									</span>
+								</div>
+							</article>
+							<article class="cm_sngProReview">
+								<div class="cm_sngProRating">
+									<p class="mb10">
+										<label class="cm_starIco cm_headerIcons">1</label>
+										<label class="cm_starIco cm_headerIcons">2</label>
+										<label class="cm_starIco cm_headerIcons">3</label>
+										<label class="cm_starIco cm_headerIcons">4</label>
+										<label class="cm_starIco cm_headerIcons">5</label>
+									</p>
+									<p>Ruchika Desai</p>
+									<p>May 23, 2015</p>
+								</div>
+								<div class="cm_sngProRevDesc">
+									<header>
+										<h2>This is the best product EVER!!</h2>
+									</header>
+									<p class="cm_sngProdRecCommt">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per...</p>
+									<p class="cm_sngProdRecCommtComplete">
+										Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+										Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+									</p>
+									<a href="javascript: void(0)" class="cm_brandClr cm_selfExpandLnk">[Expand]</a>
+									
+									<p class="cm_wasThisHelp font14 mt30">Was this review helpful?
+										<a href="javascript: void(0)" class="cm_headerIcons cm_yesIco"> Yes</a>
+										<a href="javascript: void(0)" class="cm_headerIcons cm_noIco"> No</a>
+									</p>
+									<label class="floatLeft font12">
+										<strong>199</strong> of <strong>213</strong> users found this review helpful
+									</label>
+									<span class="cm_showPerma floatRight">
+										<a href="javascript: void(0)" class="font12 floatRight cm_333">Report Abuse</a>
+										<a href="javascript: void(0)" class="font12 floatRight cm_333 mr10">Permalink</a>
+									</span>
+								</div>
+							</article>
+						</section>
+						<section class="cm_sgnAllReview">
+							<article class="cm_sngProReview">
+								<div class="cm_sngProRating">
+									<p class="mb10">
+										<label class="cm_starIco cm_headerIcons">1</label>
+										<label class="cm_starIco cm_headerIcons">2</label>
+										<label class="cm_starIco cm_headerIcons">3</label>
+										<label class="cm_starIco cm_headerIcons">4</label>
+										<label class="cm_starIco cm_headerIcons">5</label>
+									</p>
+									<p>Ruchika Desai</p>
+									<p>May 23, 2015</p>
+								</div>
+								<div class="cm_sngProRevDesc">
+									<header>
+										<h2>This is the best product EVER!!</h2>
+									</header>
+									<p class="cm_sngProdRecCommt">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per...</p>
+									<p class="cm_sngProdRecCommtComplete">
+										Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+										Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+									</p>
+									<a href="javascript: void(0)" class="cm_brandClr cm_selfExpandLnk">[Expand]</a>
+									
+									<p class="cm_wasThisHelp font14 mt30">Was this review helpful?
+										<a href="javascript: void(0)" class="cm_headerIcons cm_yesIco"> Yes</a>
+										<a href="javascript: void(0)" class="cm_headerIcons cm_noIco"> No</a>
+									</p>
+									<label class="floatLeft font12">
+										<strong>199</strong> of <strong>213</strong> users found this review helpful
+									</label>
+									<span class="cm_showPerma floatRight">
+										<a href="javascript: void(0)" class="font12 floatRight cm_333">Report Abuse</a>
+										<a href="javascript: void(0)" class="font12 floatRight cm_333 mr10">Permalink</a>
+									</span>
+								</div>
+							</article>
+							<article class="cm_sngProReview">
+								<div class="cm_sngProRating">
+									<p class="mb10">
+										<label class="cm_starIco cm_headerIcons">1</label>
+										<label class="cm_starIco cm_headerIcons">2</label>
+										<label class="cm_starIco cm_headerIcons">3</label>
+										<label class="cm_starIco cm_headerIcons">4</label>
+										<label class="cm_starIco cm_headerIcons">5</label>
+									</p>
+									<p>Ruchika Desai</p>
+									<p>May 23, 2015</p>
+								</div>
+								<div class="cm_sngProRevDesc">
+									<header>
+										<h2>This is the best product EVER!!</h2>
+									</header>
+									<p class="cm_sngProdRecCommt">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per...</p>
+									<p class="cm_sngProdRecCommtComplete">
+										Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+										Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+									</p>
+									<a href="javascript: void(0)" class="cm_brandClr cm_selfExpandLnk">[Expand]</a>
+									
+									<p class="cm_wasThisHelp font14 mt30">Was this review helpful?
+										<a href="javascript: void(0)" class="cm_headerIcons cm_yesIco"> Yes</a>
+										<a href="javascript: void(0)" class="cm_headerIcons cm_noIco"> No</a>
+									</p>
+									<label class="floatLeft font12">
+										<strong>199</strong> of <strong>213</strong> users found this review helpful
+									</label>
+									<span class="cm_showPerma floatRight">
+										<a href="javascript: void(0)" class="font12 floatRight cm_333">Report Abuse</a>
+										<a href="javascript: void(0)" class="font12 floatRight cm_333 mr10">Permalink</a>
+									</span>
+								</div>
+							</article>
+						</section>
+						
+						<section class="cm_sgnAllReview">
+							<article class="cm_sngProReview">
+								<div class="cm_sngProRating">
+									<p class="mb10">
+										<label class="cm_starIco cm_headerIcons">1</label>
+										<label class="cm_starIco cm_headerIcons">2</label>
+										<label class="cm_starIco cm_headerIcons">3</label>
+										<label class="cm_starIco cm_headerIcons">4</label>
+										<label class="cm_starIco cm_headerIcons">5</label>
+									</p>
+									<p>Ruchika Desai</p>
+									<p>May 23, 2015</p>
+								</div>
+								<div class="cm_sngProRevDesc">
+									<header>
+										<h2>This is the best product EVER!!</h2>
+									</header>
+									<p class="cm_sngProdRecCommt">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per...</p>
+									<p class="cm_sngProdRecCommtComplete">
+										Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+										Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+									</p>
+									<a href="javascript: void(0)" class="cm_brandClr cm_selfExpandLnk">[Expand]</a>
+									
+									<p class="cm_wasThisHelp font14 mt30">Was this review helpful?
+										<a href="javascript: void(0)" class="cm_headerIcons cm_yesIco"> Yes</a>
+										<a href="javascript: void(0)" class="cm_headerIcons cm_noIco"> No</a>
+									</p>
+									<label class="floatLeft font12">
+										<strong>199</strong> of <strong>213</strong> users found this review helpful
+									</label>
+									<span class="cm_showPerma floatRight">
+										<a href="javascript: void(0)" class="font12 floatRight cm_333">Report Abuse</a>
+										<a href="javascript: void(0)" class="font12 floatRight cm_333 mr10">Permalink</a>
+									</span>
+								</div>
+							</article>
+							
+						</section>
+					</section><!--.cm_sgnAllReviewMain-->
+					<div class="cm_sortRevBar">
+						<label class="floatLeft">1-5 of 10 Written Reviews</label>
+						
+						<div class="floatRight cm_slideReviews">
+							<div class="md_prev floatLeft mt10 mr5">
+								<span class="bx-prev cm_previousBtn cm_nextPrevImgs cm_previous" title="Previous"></span>
+							</div>
+							<div class="md_prev floatLeft mt10 ml5">
+								<span class="cm_nextBtn cm_nextPrevImgs cm_next" title="Next"></span>
+							</div>
+						</div>
+						
+					</div>
+					<div class="clear"></div>
+					<div class="cm_postComment mt20 mb20">
+						<header>
+							<h2 class="mb20">Review for Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow White Finish (7700, 7800)</h2>
+							<p class="font14 mb20">
+								<span class="mr20">Overall Rating<label class="cm_red">*</label></span>
+								<label class="cm_starBigIco cm_headerIcons">1</label>
+								<label class="cm_starBigIco cm_headerIcons">2</label>
+								<label class="cm_starBigIco cm_headerIcons">3</label>
+								<label class="cm_starBigIco cm_headerIcons">4</label>
+								<label class="cm_starBigGreyIco cm_headerIcons">5</label>
+							</p>
+						</header>
+						<fieldset>
+							<input type="text" placeholder="Full Name*" class="error"/>
+						</fieldset>
+						<fieldset>
+							<input type="text" placeholder="Title of your review*"/>
+						</fieldset>
+						<fieldset>
+							<textarea placeholder="Your review*"></textarea>
+						</fieldset>
+						<a class="cm_toUpperCase cm_primaryBtn cm_brandClr" href="javascript: void(0)">Submit</a>
+					</div>
+				</div><!--.cm_sngProdSpecRes-->
+				
+				<div id="cm_sngProdDescTab" class="cm_sngProdSpecRes" style="display: none">
+					<table width="100%" cellpadding="0" cellspacing="0" class="cm_specTable">
+						<tr>
+							<td>In the box</td>
+							<td>Faucet, Basin Flange </td>
+						</tr>
+						<tr>
+							<td>Brand</td>
+							<td>MonoTero</td>
+						</tr>
+						<tr>
+							<td>Model Number</td>
+							<td>CUBE1</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Table Top Basin</td>
+						</tr>
+						<tr>
+							<td>Color</td>
+							<td>White, Brown</td>
+						</tr>
+						<tr>
+							<td>Weight</td>
+							<td>5 kg</td>
+						</tr>
+						<tr>
+							<td>Height</td>
+							<td>40 cm</td>
+						</tr>
+						<tr>
+							<td>Width</td>
+							<td>40 cm</td>
+						</tr>
+						<tr>
+							<td>Depth</td>
+							<td>13 cm</td>
+						</tr>
+						<tr>
+							<td>Covered in Warranty</td>
+							<td>Only Manufacturing Defects And Internal Metal Parts Are Covered </td>
+						</tr>
+						<tr>
+							<td>Warranty Summary</td>
+							<td>7 Year Manufacturer Warranty</td>
+						</tr>
+						<tr>
+							<td>Warranty Service Type</td>
+							<td>On-Site Service, Customer Needs To Call The Nearby Authorized Service Center, Service Engineer Will Come To The Site To Get The Product Repaired Or Inspected.</td>
+						</tr>
+						<tr>
+							<td>Not Covered in Warranty</td>
+							<td>Chrome Plating & Rubber Parts Are Not Covered In Warranty</td>
+						</tr>
+					</table>
+				</div>
+				
+				
+			</div><!--.cm_sngProdSpecDv-->
+			
+			<div class="clear"></div>
+			<section class="cm_allListingItems cm_gridViewActive cm_relatedProductsDv">
+				<header class="cm_sectionHead mt20">
+					<h2 class="cm_toUpperCase">Related Products</h2>
+				</header>
+				<section class="cm_allRelProd">
+					<article>
+						<header>
+							<div class="cm_listItemProdImg">
+								<img src="images/relatedProds/1.jpg" />
+							</div>
+						</header>
+						<p class="cm_listItemTitle">
+							Cera Cindrella Premium Wash 
+							Basin For Children Of 565 X 45...
+						</p>
+						<div class="cm_listingDataDesc">
+							<p class="cm_listPriceBar">
+								<span class="cm_oldPrice">Rs.2,499</span>
+								<span class="cm_discRate">[43%]</span>
+								<span class="cm_finalPrice">Rs.1,045</span>
+							</p>
+						</div>
+						
+					</article>
+					<article>
+						<header>
+							<div class="cm_listItemProdImg">
+								<img src="images/relatedProds/2.jpg" />
+							</div>
+						</header>
+						<p class="cm_listItemTitle">
+							Cera Cindrella Premium Wash 
+							Basin For Children Of 565 X 45...
+						</p>
+						<div class="cm_listingDataDesc">
+							<p class="cm_listPriceBar">
+								<span class="cm_oldPrice">Rs.2,499</span>
+								<span class="cm_discRate">[43%]</span>
+								<span class="cm_finalPrice">Rs.1,045</span>
+							</p>
+						</div>
+						
+					</article>
+					<article>
+						<header>
+							<div class="cm_listItemProdImg">
+								<img src="images/relatedProds/3.jpg" />
+							</div>
+						</header>
+						<p class="cm_listItemTitle">
+							Cera Cindrella Premium Wash 
+							Basin For Children Of 565 X 45...
+						</p>
+						<div class="cm_listingDataDesc">
+							<p class="cm_listPriceBar">
+								<span class="cm_oldPrice">Rs.2,499</span>
+								<span class="cm_discRate">[43%]</span>
+								<span class="cm_finalPrice">Rs.1,045</span>
+							</p>
+						</div>
+						
+					</article>
+					<article>
+						<header>
+							<div class="cm_listItemProdImg">
+								<img src="images/relatedProds/4.jpg" />
+							</div>
+						</header>
+						<p class="cm_listItemTitle">
+							Cera Cindrella Premium Wash 
+							Basin For Children Of 565 X 45...
+						</p>
+						<div class="cm_listingDataDesc">
+							<p class="cm_listPriceBar">
+								<span class="cm_oldPrice">Rs.2,499</span>
+								<span class="cm_discRate">[43%]</span>
+								<span class="cm_finalPrice">Rs.1,045</span>
+							</p>
+						</div>
+						
+					</article>
+				</section>
+			</section>
+		</section>
+	</section>
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_subscribe mt30 posRel">
+		<section class="cm_grid970 ">
+			<div class="cm_scrollToTop posAbs scrollToTop fixScroll">
+				<a href="javascript: void(0)" title="Scroll To Top" class="cm_headerIcons"></a>
+			</div>
+			<div class="dispInBlk">
+				<h4 class="cm_toUpperCase">Subscribe:</h4>
+				<input placeholder="Your E-mail" class="toUpperCase" type='text'/>
+				<a href="javascript: void(0)" class="cm_toUpperCase cm_primaryBtn cm_brandClr">Sign Up <label class="cm_headerIcons primBtnWhiteArr"></label></a>
+			</div>
+			<div class="dispInBlk cm_weAccept">
+				<h4 class="cm_toUpperCase">We Accept:</h4>
+				<ul>
+					<li><label class="cm_headerIcons cm_visaIco" title="Visa"></label></li>	
+					<li><label class="cm_headerIcons cm_mcIco" title="MasterCard"></label></li>
+					<li><label class="cm_headerIcons cm_aeIco" title="American Express"></label></li>
+					<li><label class="cm_headerIcons cm_maestroIco" title="Maestro"></label></li>
+					<li><label class="cm_headerIcons cm_emiIco" title="EMI"></label></li>
+					<li><label class="cm_headerIcons cm_cashIco" title="Cash"></label></li>
+					<li><label class="cm_headerIcons cm_netBankIco" title="Net Banking"></label></li>
+					<li><label class="cm_headerIcons cm_chequeIco" title="Cheque"></label></li>
+				</ul>
+			</div>
+		</section>
+	</section><!-- .cm_fullBoundary.cm_subscribe -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_footer">
+		<section class="cm_grid970">
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Central Mart</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Know Us</a></li>
+					<li><a href="javascript: void(0)">Careers</a></li>
+					<li><a href="javascript: void(0)">Reach Us</a></li>
+					<li><a href="javascript: void(0)">News</a></li>
+					<li><a href="javascript: void(0)">Blog</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Customer Service</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Contact</a></li>
+					<li><a href="javascript: void(0)">FAQ</a></li>
+					<li><a href="javascript: void(0)">Terms of payment</a></li>
+					<li><a href="javascript: void(0)">Terms of sale</a></li>
+					<li><a href="javascript: void(0)">Delivery terms &amp; conditions</a></li>
+					<li><a href="javascript: void(0)">Returns and Refunds</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Categories</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Bathroom Fittings</a></li>
+					<li><a href="javascript: void(0)">Building Materials</a></li>
+					<li><a href="javascript: void(0)">Doors & Windows</a></li>
+					<li><a href="javascript: void(0)">Electrical</a></li>
+					<li><a href="javascript: void(0)">Flooring</a></li>
+					<li class="cm_hiddenCat"><a href="javascript: void(0)">Building Materials</a></li>
+					<li class="cm_hiddenCat"><a href="javascript: void(0)">Doors & Windows</a></li>
+					<li class="cm_hiddenCat"><a href="javascript: void(0)">Electrical</a></li>
+					<li class="cm_hiddenCat"><a href="javascript: void(0)">Flooring</a></li>
+					<li class="cm_moreCateg"><a href="javascript: void(0)" class="cm_toUpperCase cm_brandClr" onclick="showMoreFooterCat(this)">More</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Partner</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Make money With us</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Social</h3>
+				</header>
+				<ul>
+					<li class="mt10"><a href="javascript: void(0)"><label class="cm_headerIcons cm_ghar360Ico"></label></a></li>
+					<li class="mt10"><a href="javascript: void(0)"><label class="cm_headerIcons cm_spaceFixIco"></label></a></li>
+				</ul>
+			</article>
+			
+		</section>
+		<section class="cm_grid970 cm_footAboutUs" style="padding: 20px 0 30px;">
+			<h4>About CentralMart</h4>
+			<p>
+				This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+			</p>
+		</section>
+	</section><!-- .cm_fullBoundary.cm_footer -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_footerLinks">
+		<section class="cm_grid970">
+			<ul>
+				<li><a href="javascript: void(0)">Privacy &amp; Cookies</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">Terms &amp; Conditions</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">Accessibility</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">Store Directory</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">About Us</a></li>
+			</ul>
+			<span class="fltRt cm_copyright">
+				&copy; centralmart.in <br>All Rights Reserved
+			</span>
+		</section>
+	</section><!-- .cm_fullBoundary.cm_footerLinks -->
+</div><!-- .cm_wrapper -->
+
+</body>
+</html>

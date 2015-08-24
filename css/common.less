@@ -11,15 +11,25 @@
 	@brand: #ed6663;
 	@primary-btnBorder: #a94745;
 	@brandPrimHover: #db5e5c;
+	
+	@secondBtn: #6db823;
+	@second-btnBorder: #529014;
+	@brandSecondHover: #68b020;
 /*LESS ends*/
 
 
 /*Global CSS*/
+	.brdrTopGrey{border-top: 1px solid #d0d0d0;}
 	.floatLeft{float: left;}
 	.floatRight{float: right;}
 	.pad20LR{padding-left: 20px; padding-right: 20px; }
+	.textLeft{text-align: left!important;}
 	/*.cm_fullBoundary{width: 100%;}*/
 	.cm_fff{color: #fff;}
+	.cm_333{color: #333;}
+	.cm_808080{color: #808080;}
+	.strike{text-decoration: line-through};
+	.cm_red{color: #ff0000;}
 	.disNone{display: none;}
 	.mt5{margin-top: 5px;}
 	.mt10{margin-top: 10px;}
@@ -58,6 +68,10 @@
 	.clear{clear: both}
 	.dispInBlk{display: inline-block;}
 	.cm_brandClr{color: @brand;}
+	
+	.font12{font-size: 12px;}
+	.font14{font-size: 14px;}
+	.font18{font-size: 18px;}
 	a{
 	    -moz-transition: all 0.2s linear;
 	    -o-transition: all 0.2s linear;
@@ -114,7 +128,13 @@
 	.cm_primaryBtn{display: inline-block; background: @brand; color: #fff; font-size: 14px; border-bottom: 2px solid @primary-btnBorder; padding: 10px 20px;}
 	.cm_primaryBtn:active{background: @brandPrimHover; position: relative; top: 1px;}
 	.cm_primaryBtn:hover{background: @brandPrimHover;}
-	
+	/*end*/
+
+	/*Secondary Btn*/
+	.cm_secondaryBtn{display: inline-block; background: @secondBtn; color: #fff; font-size: 14px; border-bottom: 2px solid @second-btnBorder; padding: 10px 20px;}
+	.cm_secondaryBtn:active{background: @brandSecondHover; position: relative; top: 1px;}
+	.cm_secondaryBtn:hover{background: @brandSecondHover;}
+	/*end*/
 	.cm_knowMoreLink{font-size: 14px; display: inline-block;}
 	.cm_rightArrow-line{margin-left: 2px;}
 	
@@ -301,12 +321,12 @@
 		display: inline-block;
 	}
 	.cm_searchFilterBtn{
-		background-position: -8px -169px;
+		background-position: -8px -173px;
 		border: medium none;
 		border-radius: 0 2px 2px 0;
 		cursor: pointer;
 		display: inline-block;
-		height: 51px;
+		height: 42px;
 		width: 50px;
 		background-color: @brand;
 }
@@ -383,23 +403,23 @@
 	}
 	.cm_wishListIcon{
 		background-color: #fff;
-		background-position: 8px -1123px;
+		background-position: 3px -1128px;
 		border: 1px solid @brand;
 		border-radius: 50px;
-		padding: 25px;
+		padding: 20px;
 		
 	}
 	
-	.cm_wishListIcon:hover{background-color: @brand; background-position: -30px -1123px;}
+	.cm_wishListIcon:hover{background-color: @brand; background-position: -35px -1128px;}
 	.cm_cartIcon{
 		background-color: #fff;	
-		background-position: 7px -1165px;
+		background-position: 2px -1169px;
 		border: 1px solid @brand;
 		border-radius: 50px;
-		padding: 25px;
+		padding: 20px;
 		
 	}
-	.itHasItem, .cm_cartIcon:hover{background-color: @brand; background-position: -31px -1165px}
+	.itHasItem, .cm_cartIcon:hover{background-color: @brand; background-position: -35px -1169px}
 	
 	.cm_rightArrow-line{background-position: -54px -1453px; width: 15px; height: 11px;}
 	.primBtnWhiteArr{background-position: -78px -1455px; width: 9px; height: 9px;}
@@ -448,7 +468,7 @@
 
 /*SearchBAr */
 
-.cm_searchBar{ background: #fff; height: 50px;}
+.cm_searchBar{ background: #fff; height: 42px;}
 
 .cm_shopByCatDv:hover{box-shadow: 0 0 3px #c0c0c0}
 .cm_shopByCatDv:hover .cm_shopMainArrUp{
@@ -486,7 +506,7 @@
 	color: #a0a0a0;
 	float: left;
 	font-size: 16px;
-	height: 49px;
+	height: 40px;
 	margin-left: 1px; 
 	padding: 14px 18px;
 	width: 262px;
@@ -497,20 +517,20 @@
 	min-width: 140px;
 	color: #333;
 	display: inline-block;
-	padding: 10px 10px 15px;
+	padding: 5px 10px 10px;
 	
 }
 .cm_filterByMenu{
 	position: relative;
 	float: right;
-	height: 49px;
+	height: 40px;
 	padding: 0 14px 0 0;
 }
 .cm_pipeFilter{
 	 background: #999 none repeat scroll 0 0;
     display: inline-block;
     float: right;
-    height: 37px;
+    height: 28px;
     left: -196px;
     position: relative;
     top: 6px;
@@ -522,7 +542,7 @@
     width: 175px;
 }
 .cm_setMeFirst .popup_pullout{left: -7px;}
-.cm_userDetOnBar{float: left; margin-top: 15px;}
+.cm_userDetOnBar{float: left; margin-top: 10px;}
 .cm_userDetOnBar a{color: #333; font-weight: bold; margin-right: 0!important; margin-left: 0!important;}
 .cm_userDetOnBar .cm_loginAndReg a:last-child{color: @brand;}
 .cm_userPref{
@@ -534,7 +554,7 @@
 	height: 57px;
 	float: left;
 }
-.cm_userPreIcons{display: inline-block; height: 50px;}
+.cm_userPreIcons{display: inline-block;}
 
 .cm_wishCount{
 	background: #222 none repeat scroll 0 0;
@@ -636,7 +656,7 @@
 	border-radius: 0 2px 2px 2px;
 	z-index: 9999;
 	width: 970px;
-	top: 50px;
+	top: 40px;
 	left: 0;
 	background: #fff;
 	border: 1px solid #d0d0d0;
@@ -676,7 +696,7 @@
 }
 .cm_shopCatSubCatg img{width: 131px; height: 133px; float:left;}
 .cm_shopCatSubCatg li:hover p{color: #fff; background: @brandPrimHover;}
-.cm_shopByCatHandle{border: 1px solid transparent; background: @brand;cursor: pointer; padding: 15px 20px 15px 20px; display: inline-block; min-width: 100px; border-radius: 2px; }
+.cm_shopByCatHandle{border: 1px solid transparent; background: @brand;cursor: pointer; padding: 10px 20px; display: inline-block; min-width: 100px; border-radius: 2px; }
 
 .setShadow{box-shadow: 0 0 3px #c0c0c0;}
 .cm_shopbyCatMainDv{display: none;}
@@ -906,7 +926,7 @@ text-overflow: ellipsis;
 
 
 /*****TRANSFORM CHECKBOX***/
-.trans-element-checkbox{
+.trans-element-checkbox, .trans-element-radio{
 	cursor: pointer;
     display: inline-block;
     height: 14px;
@@ -928,7 +948,18 @@ text-overflow: ellipsis;
 	top: 2px;
 	
 }
-
+.trans-element-radio.checked{
+	background: url('../images/header/header.png') no-repeat;
+	background-position: -4px -2252px;
+	position: relative;
+	top: 2px;
+}
+.trans-element-radio.unchecked{
+	background: url('../images/header/header.png') no-repeat;
+	background-position: -4px -2272px;
+	position: relative;
+	top: 2px;
+}
 /***********ends    ***/
 
 .cm_filterBarTags ul li{
@@ -960,3 +991,4 @@ text-overflow: ellipsis;
 	width: 15px;
 
 }
+.primToned{padding: 6px 12px;}
