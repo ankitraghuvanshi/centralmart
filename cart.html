@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Central Mart - Cart</title>
+<link href="css/main.less" rel="stylesheet/less" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/less-min.js"></script>
+<script src="js/bxslider.js"></script>
+<script src="js/common.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function (){
+		/* var ordrLeft = $('.cm_cartlistTable').offset().left + $('.cm_cartlistTable').width() + 10;
+		var ordrTop = $('.cm_cartOrderTotal').offset().top;
+		$(window).scroll(function(){
+			var winScrollPos = $(this).scrollTop();
+			if(winScrollPos>=ordrTop){
+				$('.cm_cartOrderTotal').addClass('fixOrder').css('left', ordrLeft);
+			}else{
+				$('.cm_cartOrderTotal').removeClass('fixOrder');
+			}
+		}); */
+		
+		
+	});/*doc ends*/
+	function removeFromList(ele){
+		$(ele).closest('tr').remove();
+	}
+</script>
+</head>
+<body>
+<div class="cm_wrapper">
+	<section class="cm_fullBoundary cm_trackOder pad20LR">
+		<section class="cm_grid970">
+			<span class="cm_latestOffers dispInBlk floatLeft">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet asgdf.</span>
+			<span class="cm_userSupport dispInBlk floatRight">
+				<a href="javascript:void(0)" class="cm_headerIcons cm_www">We Work <span class="cm_brandClr">Worldwide</span></a>
+				<label class="pipe">|</label>
+				<a href="javascript:void(0)" class="cm_headerIcons cm_trackOrdrIco">Track Order</a>
+				<label class="pipe mr10">|</label>
+				<a href="javascript:void(0)" class="cm_headerIcons cm_supportIco">+91 8080 740 740</a>
+			</span>
+			<div class="clear"></div>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_trackOder -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_header">
+		<section class="cm_grid970">
+			<img src="images/header/logo.png" title="Centralmart.in" alt="Centralmart.in Home Improvement Simplified"/>
+			<ul>
+				<li>
+					<label class="cm_headerIcons cm_design"></label>
+					<a href="javascript: void(0)" title="Shop Online">
+						<p class="cm_txtLbl">Shop Online</p>
+						<p class="cm_subTxtLbl">Building &amp; Home<br>Products</p>
+					</a>
+				</li>
+				<li>
+					<label class="cm_headerIcons cm_build"></label>
+					<a href="javascript: void(0)" title="Design+Build">
+						<p class="cm_txtLbl">Design+Build</p>
+						<p class="cm_subTxtLbl">Turnkey Solutions</p>
+					</a>
+				</li>
+				<li>
+					<label class="cm_headerIcons cm_blog"></label>
+					<a href="javascript: void(0)" title="Ideate">
+						<p class="cm_txtLbl">Ideate</p>
+						<p class="cm_subTxtLbl">Inspirations<br>&amp; New Trends</p>
+					</a>
+				</li>
+			</ul>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_header -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_searchBar">
+		<section class="cm_grid970">
+			<div class="cm_shopByCatDv posRel">
+					<span class="cm_fff cm_shopByCatHandle">EXPLORE<label class="cm_headerIcons cm_shopMainArrUp"></label></span>
+					<div class="cm_shopbyCatMainDv posAbs">
+						<div class="posRel ">
+							<!-- <span class="posAbs cm_diffAllCatArr cm_headerIcons"></span> -->
+							<ul class="cm_diffCatTopLevel">
+								<span class="cm_shopCatArrow" style="left: 68px;"></span>
+								<li class='active' data-cat-key="cm_shopByCatLi"><a href="javascript: void(0)">Shop by Categories</a></li>  
+								<li data-cat-key="cm_createBoqLi"><a href="javascript: void(0)">Create BOQ</a></li>  
+								<li data-cat-key="cm_bulkOrderLi"><a href="javascript: void(0)">Bulk Orders</a></li>  
+								<li data-cat-key="cm_designBuildLi"><a href="javascript: void(0)">Design + Build</a></li>  
+								<li data-cat-key="cm_ideateLi"><a href="javascript: void(0)">Ideate</a></li>  
+								<li data-cat-key="cm_proRewardLi"><a href="javascript: void(0)" class="cm_brandClr">Pro-Rewards</a></li> 
+							</ul>
+							<!-- <div class="arrow"></div> -->
+						</div>
+						<div class="cm_shopByCatAllDv cm_shopByCatLi">
+							<ul class="cm_shopByCatAllMenu">
+								<li><a href="javascript: void(0)">Bathroom Fittings</a>
+									<div class="cm_shopCatSubview">
+										Bathroom fittings
+									</div><!--.cm_shopCatSubview-->
+								</li>
+								<li><a href="javascript: void(0)">Building Materials</a></li>
+								<li><a href="javascript: void(0)">Doors &amp; Windows</a></li>
+								<li><a href="javascript: void(0)">Electrical</a></li>
+								<li><a href="javascript: void(0)">Flooring</a></li>
+								<li><a href="javascript: void(0)">Hardware</a>
+									<div class="cm_shopCatSubview showAlways">
+										<ul class="cm_shopCatSubCatg mb20 dispInBlk">
+											<li>
+												<a href="javascript: void(0)">
+												<img src="images/category/img1.jpg"  alt=""/>
+												<p>Accessories</p>
+												</a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img2.jpg"  alt=""/>
+												<p>Handles</p></a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img3.jpg"  alt=""/>
+												<p>Computer Fittings</p></a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img4.jpg"  alt=""/>
+												<p>Brackets &amp; Clamps</p></a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img5.jpg"  alt=""/>
+												<p>Hinges</p></a>
+											</li>
+										</ul>
+										<div class="clear"></div>
+										<div class="cm_subMoreCatDv cm_moreCatDv">
+											<section>
+												<header class="cm_subHead">
+													<h4>MORE CATEGORIES</h4>
+												</header>
+												<ul class="mr30">
+													<li><a href="javascript: void(0)">- Kitchen Drawer Systems</a></li>
+													<li><a href="javascript: void(0)">- Knobs</a></li>
+													<li><a href="javascript: void(0)">- Ladder Systems</a></li>
+												</ul>
+												<ul>
+													<li><a href="javascript: void(0)">- Locks & Latches</a></li>
+													<li><a href="javascript: void(0)">- Nuts & Bolts</a></li>
+													<li><a href="javascript: void(0)">- Sign Plates</a></li>
+												</ul>
+											</section>
+											<span class="cm_moreCatShowAll">
+												<a href="javascript: void(0)" class="cm_brandClr">Show All Hardware <label class="cm_rightArrow-line cm_headerIcons"></label></a>
+											</span>
+										</div>
+										
+										<div class="cm_subMoreCatDv cm_guide">
+											<header class="cm_subHead">
+												<h4>Related Guides/ Help</h4>
+											</header>
+											<ul>
+												<li><a href="javascript: void(0)">- Hardware buying guide</a></li>
+												<li><a href="javascript: void(0)">- Hardware assembling Guide</a></li>
+											</ul>
+										</div>
+									</div><!--.cm_shopCatSubview-->
+							
+								</li>
+								<li><a href="javascript: void(0)">Home Decor</a>
+									<div class="cm_shopCatSubview">
+										Home decor
+									</div><!--.cm_shopCatSubview-->
+								</li>
+								<li><a href="javascript: void(0)">Kitchen</a></li>
+								<li><a href="javascript: void(0)">Lightings</a></li>
+								<li><a href="javascript: void(0)">Plumbing</a></li>
+								<li><a href="javascript: void(0)">Safety &amp; Security</a></li>
+								<li><a href="javascript: void(0)">Wall Coverings</a></li>
+								<li><a href="javascript: void(0)">Wood &amp; Laminates</a></li>
+								<li class='last'><a href="javascript: void(0)">Lux Products</a></li>
+							</ul>
+						</div>
+						<div class="cm_shopByCatAllDv cm_createBoqLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_bulkOrderLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_designBuildLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_ideateLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_proRewardLi">
+						
+						</div>
+					</div><!--.cm_shopbyCatMainDv-->
+			
+			</div><!--.cm_shopByCatDv-->
+			<div class="cm_filterByCat">
+				<input type="text" placeholder="What are you looking for?" class='cm_filterInp'/>
+				<label class="cm_pipeFilter"></label>
+				<ul class="cm_filterByMenu">
+					<li class="cm_setMeFirst itHasPopup">
+						
+						<a href="javascript: void(0)">Wood &amp; Laminates</a><label class="cm_headerIcons cm_filterDropArr"></label>
+						<span class='popup_pullout'>
+							<ul class="cm_filterByCatSubMenu">
+								<li><a href="javascript: void(0)">All</a></li>
+								<li><a href="javascript: void(0)">Bathroom Fittings</a></li>
+								<li><a href="javascript: void(0)">Building Materials</a></li>
+								<li><a href="javascript: void(0)">Doors &amp; Windows</a></li>
+								<li><a href="javascript: void(0)">Electrical</a></li>
+								<li><a href="javascript: void(0)">Flooring</a></li>
+								<li><a href="javascript: void(0)">Hardware</a></li>
+								<li><a href="javascript: void(0)">Home Decor</a></li>
+								<li><a href="javascript: void(0)">Kitchen</a></li>
+								<li><a href="javascript: void(0)">Lightings</a></li>
+								<li><a href="javascript: void(0)">Plumbing</a></li>
+								<li><a href="javascript: void(0)">Safety &amp; Security</a></li>
+								<li><a href="javascript: void(0)">Wall Coverings</a></li>
+								<li><a href="javascript: void(0)">Wood &amp; Laminates</a></li>
+								<li><a href="javascript: void(0)">Premium Products</a></li>
+								<li><a href="javascript: void(0)">Shop By Brands</a></li>
+							</ul>
+						</span>
+					</li>
+				</ul>
+				
+			</div><!--.cm_filterByCat-->
+			<input type="button" class="cm_headerIcons cm_searchFilterBtn" />
+			
+		<!-- </section> -->
+		<div class="cm_userPref">
+			<span class="cm_userDetOnBar">
+				<span class="cm_loginAndReg disNone">
+					<a href="javascript: void(0)" >Login</a> or
+					<a href="javascript: void(0)" class="cm_brandClr">Register</a>
+				</span>
+				
+				<span class="cm_myAcc posRel itHasPopup mr10 dispInBlk">
+					<a href="javascript: void(0)" >My Account <label class="cm_headerIcons cm_filterDropArr"></label></a>
+					<span class="popup_pullout">
+						<ul class="">
+							<li><a href="javascript: void(0)">Account Information</a></li>
+							<li><a href="javascript: void(0)">Orders</a></li>
+							<li><a href="javascript: void(0)">Wishlist</a></li>
+							<li><a href="javascript: void(0)">Address Book</a></li>
+							<li><a href="javascript: void(0)">Projects</a></li>
+							<li><a href="javascript: void(0)">Product Reviews</a></li>
+						</ul>
+					</span>
+				</span>
+			</span>
+			
+			<span class="cm_userPreIcons">
+				<a href="javascript: void(0)" class=" ml10 cm_headerIcons cm_wishListIcon"></a>
+				<span class="posRel dispInBlk  ml10">
+					<a href="javascript: void(0)" class="cm_headerIcons cm_cartIcon"></a>
+					<label class="cm_wishCount">10</label>
+				</span>
+			</span>
+		</div>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_searchBar -->
+	<div class="clear"></div>
+	
+	<section class="cm_fullBoundary cm_pdpContent brdrTopGrey mt15">
+		<section class="cm_grid970 ">
+			<ul class="cm_prodItembreadCrumb mb20 mt10">
+				<li><a href="javascript: void(0)">Home &gt;</a></li>
+				<li class='active'><a href="javascript: void(0)">Cart</a></li>
+			</ul>
+			<div class="mt20">
+				<section class="cm_cartlistTable">
+					<table class="cm_cenralTable cm_cartTablePriceList" cellspacing="0" cellpadding="0">
+						<thead>
+							<tr>
+								<th align="left" width ="55%">Your Items</th>
+								<th align="right" width ="15%" >Price</th>
+								<th align="right" width ="15%">Qty</th>
+								<th align="right" width ="15%">SubTotal</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td align="left" valign="top">
+									<img src="images/pdp/big.jpg" width="60" height="60">
+									<p>
+										Cera Cindrella Premium Wash Basin For 
+										Children Of 565 X 455 MM In Snow White 
+										Finish (7700, 7800)
+									</p>
+								</td>
+								<td align="right" valign="middle">Rs. 4,045</td>
+								<td align="right" valign="middle">
+									<div class="commonSpinner">
+										<div class="input-group spinner" data-trigger="spinner">
+										  <input type="text" class="form-control" value="1" data-rule="quantity">
+										  <div class="input-group-addon">
+											<a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
+											<a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
+										  </div>
+										</div>
+									</div>
+									<a href="javascript: void(0)" class="removeFromCart" onclick="removeFromList(this)">Remove</a>
+								</td>
+								<td align="right" valign="middle">Rs. 4,045</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">
+									<img src="images/pdp/bigTile.jpg" width="60" height="60">
+									<p>
+										Cera Cindrella Premium Wash Basin For 
+										Children Of 565 X 455
+									</p>
+								</td>
+								<td align="right" valign="middle">Rs. 4,045</td>
+								<td align="right" valign="middle">
+									<div class="commonSpinner">
+										<div class="input-group spinner" data-trigger="spinner">
+										  <input type="text" class="form-control" value="1" data-rule="quantity">
+										  <div class="input-group-addon">
+											<a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
+											<a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
+										  </div>
+										</div>
+									</div>
+									<a href="javascript: void(0)" class="removeFromCart" onclick="removeFromList(this)">Remove</a>
+								</td>
+								<td align="right" valign="middle">Rs. 4,045</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">
+									<img src="images/pdp/bigFevicol.jpg" width="60" height="60">
+									<p>
+										Cera Cindrella Premium Wash Basin For
+									</p>
+								</td>
+								<td align="right" valign="middle">Rs. 4,045</td>
+								<td align="right" valign="middle">
+									<div class="commonSpinner">
+										<div class="input-group spinner" data-trigger="spinner">
+										  <input type="text" class="form-control" value="1" data-rule="quantity">
+										  <div class="input-group-addon">
+											<a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
+											<a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
+										  </div>
+										</div>
+									</div>
+									<a href="javascript: void(0)" class="removeFromCart" onclick="removeFromList(this)">Remove</a>
+								</td>
+								<td align="right" valign="middle">Rs. 4,045</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section class="cm_cartOrderTotal">
+					<table class="cm_cenralTable" cellspacing="0" cellpadding="0">
+						<thead>
+							<tr>
+								<th colspan="2" align="left">Order Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Subtotal</td>
+								<td align="right"><strong>Rs. 22,708</strong></td>
+							</tr>
+							<tr>
+								<td>Shipping</td>
+								<td align="right"><strong>- -</strong></td>
+							</tr>
+							<tr>
+								<td>Tax</td>
+								<td align="right"><strong>Rs. 250</strong></td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td>Total</td>
+								<td align="right"><strong>Rs. 23,157</strong></td>
+							</tr>
+						</tfoot>
+					</table>
+					<p class="cm_yousave"><span class="floatLeft cm_upperCase">You Saved</span><strong class="floatRight">Rs. 3,235</strong></p>
+				</section>
+			</div>
+			<div class="clear"></div>
+			
+			<section class="floatLeft mt30" style="margin-right: 70px;">
+				<header>
+					<h3 class="font16 cm_333 mb5">Have a Coupon?</h3>
+				</header>
+				
+				<div class="cm_showPincode">
+					<input type="text" placeholder="Enter Your Coupon Code"><button class="cm_headerIcons cm_discCoup"></button>
+				</div>
+			</section>
+			
+			<section class="floatLeft mt30">
+				<header>
+					<h3 class="font16 cm_333 mb5">Know Your Shipping Charges!<span class="cm_red"> *</span></h3>
+				</header>
+				
+				<div class="cm_showPincode">
+					<input type="text" placeholder="Enter Your Pincode"><button class="cm_headerIcons cm_pinCode"></button>
+				</div>
+			</section>
+			
+			<div class="cm_sngProdBottomActionBar mt50"> 
+				
+				<div class="floatRight">
+					<a href="javascript: void(0)" class="floatLeft cm_ternaryBtn"><span class="mr5 font10">&lt;&lt;</span>Continue Shopping</a>
+					<a href="javascript: void(0)" class="floatLeft cm_toUpperCase cm_disabledBtn">Procees to Checkout</a>
+				</div>
+			</div>
+		</section>
+	</section>
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_subscribe mt30 posRel">
+		<section class="cm_grid970 ">
+			<div class="cm_scrollToTop posAbs scrollToTop fixScroll">
+				<a href="javascript: void(0)" title="Scroll To Top" class="cm_headerIcons"></a>
+			</div>
+			<div class="dispInBlk">
+				<h4 class="cm_toUpperCase">Subscribe:</h4>
+				<input placeholder="Your E-mail" class="toUpperCase" type='text'/>
+				<a href="javascript: void(0)" class="cm_toUpperCase cm_primaryBtn cm_brandClr">Sign Up <label class="cm_headerIcons primBtnWhiteArr"></label></a>
+			</div>
+			<div class="dispInBlk cm_weAccept">
+				<h4 class="cm_toUpperCase">We Accept:</h4>
+				<ul>
+					<li><label class="cm_headerIcons cm_visaIco" title="Visa"></label></li>	
+					<li><label class="cm_headerIcons cm_mcIco" title="MasterCard"></label></li>
+					<li><label class="cm_headerIcons cm_aeIco" title="American Express"></label></li>
+					<li><label class="cm_headerIcons cm_maestroIco" title="Maestro"></label></li>
+					<li><label class="cm_headerIcons cm_emiIco" title="EMI"></label></li>
+					<li><label class="cm_headerIcons cm_cashIco" title="Cash"></label></li>
+					<li><label class="cm_headerIcons cm_netBankIco" title="Net Banking"></label></li>
+					<li><label class="cm_headerIcons cm_chequeIco" title="Cheque"></label></li>
+				</ul>
+			</div>
+		</section>
+	</section><!-- .cm_fullBoundary.cm_subscribe -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_footer">
+		<section class="cm_grid970">
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Central Mart</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Know Us</a></li>
+					<li><a href="javascript: void(0)">Careers</a></li>
+					<li><a href="javascript: void(0)">Reach Us</a></li>
+					<li><a href="javascript: void(0)">News</a></li>
+					<li><a href="javascript: void(0)">Blog</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Customer Service</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Contact</a></li>
+					<li><a href="javascript: void(0)">FAQ</a></li>
+					<li><a href="javascript: void(0)">Terms of payment</a></li>
+					<li><a href="javascript: void(0)">Terms of sale</a></li>
+					<li><a href="javascript: void(0)">Delivery terms &amp; conditions</a></li>
+					<li><a href="javascript: void(0)">Returns and Refunds</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Categories</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Bathroom Fittings</a></li>
+					<li><a href="javascript: void(0)">Building Materials</a></li>
+					<li><a href="javascript: void(0)">Doors & Windows</a></li>
+					<li><a href="javascript: void(0)">Electrical</a></li>
+					<li><a href="javascript: void(0)">Flooring</a></li>
+					<li class="cm_hiddenCat"><a href="javascript: void(0)">Building Materials</a></li>
+					<li class="cm_hiddenCat"><a href="javascript: void(0)">Doors & Windows</a></li>
+					<li class="cm_hiddenCat"><a href="javascript: void(0)">Electrical</a></li>
+					<li class="cm_hiddenCat"><a href="javascript: void(0)">Flooring</a></li>
+					<li class="cm_moreCateg"><a href="javascript: void(0)" class="cm_toUpperCase cm_brandClr" onclick="showMoreFooterCat(this)">More</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Partner</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Make money With us</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Social</h3>
+				</header>
+				<ul>
+					<li class="mt10"><a href="javascript: void(0)"><label class="cm_headerIcons cm_ghar360Ico"></label></a></li>
+					<li class="mt10"><a href="javascript: void(0)"><label class="cm_headerIcons cm_spaceFixIco"></label></a></li>
+				</ul>
+			</article>
+			
+		</section>
+		<section class="cm_grid970 cm_footAboutUs" style="padding: 20px 0 30px;">
+			<h4>About CentralMart</h4>
+			<p>
+				This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+			</p>
+		</section>
+	</section><!-- .cm_fullBoundary.cm_footer -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_footerLinks">
+		<section class="cm_grid970">
+			<ul>
+				<li><a href="javascript: void(0)">Privacy &amp; Cookies</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">Terms &amp; Conditions</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">Accessibility</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">Store Directory</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">About Us</a></li>
+			</ul>
+			<span class="fltRt cm_copyright">
+				&copy; centralmart.in <br>All Rights Reserved
+			</span>
+		</section>
+	</section><!-- .cm_fullBoundary.cm_footerLinks -->
+</div><!-- .cm_wrapper -->
+
+</body>
+</html>

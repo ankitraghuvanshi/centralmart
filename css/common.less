@@ -71,6 +71,7 @@
 	
 	.font12{font-size: 12px;}
 	.font14{font-size: 14px;}
+	.font16{font-size: 16px;}
 	.font18{font-size: 18px;}
 	a{
 	    -moz-transition: all 0.2s linear;
@@ -135,6 +136,17 @@
 	.cm_secondaryBtn:active{background: @brandSecondHover; position: relative; top: 1px;}
 	.cm_secondaryBtn:hover{background: @brandSecondHover;}
 	/*end*/
+	
+	/*Ternary*/
+	.cm_ternaryBtn{display: inline-block; color: #808080; font-size: 14px; padding: 10px 20px;}
+	.cm_ternaryBtn:hover{color: @brand}
+	/*end*/
+	
+	/*Disabled Btn*/
+	.cm_disabledBtn{display: inline-block; color: #fff; font-size: 14px; padding: 10px 20px;  background: #d0d0d0; border-bottom: 2px solid #a0a0a0; cursor: default}
+	
+	/*end*/
+	
 	.cm_knowMoreLink{font-size: 14px; display: inline-block;}
 	.cm_rightArrow-line{margin-left: 2px;}
 	
@@ -992,3 +1004,81 @@ text-overflow: ellipsis;
 
 }
 .primToned{padding: 6px 12px;}
+
+/****Spinner***/
+.commonSpinner .spinner{
+	float: left;
+	border: 1px solid #d0d0d0;
+    border-radius: 2px;
+    height: 39px;
+    width: 70px;
+}
+.commonSpinner .spinner input{
+	border: none;
+    float: left;
+    height: 15px;
+    padding: 12px 15px;
+    text-align: center;
+    width: 19px;
+	color: #808080;
+	font-size: 18px;
+}
+.commonSpinner .input-group-addon{
+	border-left: 1px solid #d0d0d0;
+	float: left;
+	width: 20px;
+}
+.commonSpinner .input-group-addon a {
+    border-bottom: 1px solid #d0d0d0;
+	display: inline-block;
+	height: 19px;
+	width: 20px;
+	background: url('../images/header/header.png') no-repeat; 
+	transition: none;
+}
+.commonSpinner .input-group-addon a.spin-up{background-position: -260px -2211px}
+.commonSpinner .input-group-addon a.spin-down{background-position: -260px -2223px}
+
+.commonSpinner .input-group-addon a.spin-up:hover{background-position: -244px -2211px}
+.commonSpinner .input-group-addon a.spin-down:hover{background-position: -244px -2223px}
+
+.commonSpinner .input-group-addon a i{display: inline-block;}
+
+/***end***/
+
+/***Common Table*****/
+.cm_cenralTable{border: 1px solid #d0d0d0; width: 100%; background: #fff;}
+.cm_cenralTable thead tr th{
+	font-weight: normal; color: #333; background: #f5f5f5; 
+	text-transform: uppercase; 
+	font-size: 14px; 
+	padding: 12px 20px;
+	border-bottom: 2px solid #d0d0d0;
+}
+.cm_cenralTable tbody tr td{
+	font-size: 14px; 
+	color: #333;
+	padding: 20px;
+	border-bottom: 1px solid #d0d0d0;
+}
+.cm_cenralTable tbody tr:last-child td{border-bottom: none;}
+
+/***ends Table*****/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

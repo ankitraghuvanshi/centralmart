@@ -11,7 +11,12 @@
 .cm_sngProdInfoDesc header p{font-size: 14px; margin-top: 12px;}
 .cm_sngProdInfoDesc header p span{ color: #999;}
 .cm_sngProdInfoDesc header div h2{font-size: 18px; font-weight: normal; float: left; width: 460px;}
-.cm_sngProdInfoDesc header div img{float: left}
+.cm_sngProdInfoDesc header div img{
+	float: left;
+	margin-top: 10px;
+    max-width: 100%;
+    width: 97px;
+}
 .cm_sngProdTopActionBar{ font-size: 14px; margin-top: 5px; margin-bottom: 15px;}
 .cm_sngProdTopActionBar a{color: #808080;}
 .cm_sngProdIcons{
@@ -33,64 +38,33 @@
 .cm_editDeatils{background-position: -240px -2039px;}
 .cm_likeProdBtnGrey{background-position: -240px -2080px;}
 .cm_emailFrnd{background-position: -240px -2111px}
-.cm_sngProdDescSpecsheet table tr td{vertical-align: top; font-size: 14px;}
-.cm_sngProdDescSpecsheet table tr td p{color: #000;}
+.cm_sngProdDescSpecsheet{height: 165px;}
+.cm_sngProdDescSpecsheet ul li{
+	display: inline-block;
+    font-size: 14px;
+    margin-bottom: 42px;
+    margin-right: 40px;
+    vertical-align: top;
+}
+.cm_sngProdDescSpecsheet ul li:last-child{margin-right:0}
+.cm_sngProdDescSpecsheet ul li p{color: #000;}
 .cm_sngProdDescSpecsheet{
     background: #f5f5f5 none repeat scroll 0 0;
     width: 560px;
 	padding: 30px 20px 5px 20px;
 	margin-bottom: 20px;
 }
-.cm_sngProdDescSpecsheet table tr td:first-child{
-	padding-bottom: 30px;
-    padding-right: 40px
-}
-.cm_sngProdDescSpecsheet table tr td select{width: 100%; }
+
+.cm_sngProdDescSpecsheet ul li select{width: 100%; }
 .cm_moreSngSpecLnk{
 	background: #fff;
 	border-radius: 5px 0 0;
-	bottom: 22px;
+	bottom: 1px;
 	font-size: 12px;
 	padding: 3px 20px;
-	right: -19px;
+	right: 1px;
 }
-.cm_sngProdPriceBar .spinner{
-	float: left;
-	border: 1px solid #d0d0d0;
-    border-radius: 2px;
-    height: 39px;
-    width: 70px;
-}
-.cm_sngProdPriceBar .spinner input{
-	border: none;
-    float: left;
-    height: 15px;
-    padding: 12px 15px;
-    text-align: center;
-    width: 19px;
-	color: #808080;
-	font-size: 18px;
-}
-.cm_sngProdPriceBar .input-group-addon{
-	border-left: 1px solid #d0d0d0;
-	float: left;
-	width: 20px;
-}
-.cm_sngProdPriceBar .input-group-addon a {
-    border-bottom: 1px solid #d0d0d0;
-	display: inline-block;
-	height: 19px;
-	width: 20px;
-	background: url('../images/header/header.png') no-repeat; 
-	transition: none;
-}
-.cm_sngProdPriceBar .input-group-addon a.spin-up{background-position: -260px -2211px}
-.cm_sngProdPriceBar .input-group-addon a.spin-down{background-position: -260px -2223px}
 
-.cm_sngProdPriceBar .input-group-addon a.spin-up:hover{background-position: -244px -2211px}
-.cm_sngProdPriceBar .input-group-addon a.spin-down:hover{background-position: -244px -2223px}
-
-.cm_sngProdPriceBar .input-group-addon a i{display: inline-block;}
 .cm_sngProdPriceBar .cm_listPriceBar{
 	float: left;
 	font-size: 18px;
@@ -256,5 +230,26 @@
 
 /**ends*/
 
+/* these styles are for the demo, but are not required for the plugin */
+		.zoom {
+			display:inline-block;
+			position: relative;
+		}
+		
+		/* magnifying glass icon */
+		.zoom:after {
+			content:'';
+			display:block; 
+			width:33px; 
+			height:33px; 
+			position:absolute; 
+			top:0;
+			right:0;
+			background:url(icon.png);
+		}
 
+		.zoom img {
+			display: block;
+		}
 
+		.zoom img::selection { background-color: transparent; }

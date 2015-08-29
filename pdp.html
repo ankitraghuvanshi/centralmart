@@ -2,12 +2,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Central Mart - Listing</title>
+<title>Central Mart - PDP</title>
 <link href="css/main.less" rel="stylesheet/less" />
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/less-min.js"></script>
 <script src="js/bxslider.js"></script>
-<script src="js/nouislider.js"></script>
 <script src="js/common.js"></script>
 
 <script type="text/javascript">
@@ -85,7 +84,12 @@
 			$('.cm_sngProdBigImg img').attr('src', src);
 		});
 		
+		$('.cm_moreSngSpecLnk').on('click', function (){
+			var top = $('li[data-currentTab = cm_sngProdTab]').offset().top - 60;
+			$('html, body').animate({scrollTop : top}, 500, 'swing');
+		});
 		
+		$('#sgnProdBigImg').zoom();
 	});/*doc ends*/
 	
 </script>
@@ -333,9 +337,8 @@
 				<li class='active'><a href="javascript: void(0)">Wash Basin</a></li>
 			</ul>
 			<div class="cm_sngProdGallery">
-				
-				<div class="cm_sngProdBigImg">
-					<img src="images/pdp/big.jpg" width="338" height="350" />	
+				<div class="cm_sngProdBigImg zoom"  id='sgnProdBigImg'>
+					<img src="images/pdp/5.jpg"width="338" height="350" />
 				</div>
 				
 				<section class="mt15">
@@ -344,12 +347,12 @@
 					</div>
 					
 					<ul class="cm_sngProdImgSlider bxslider-pager floatLeft" id="bx-pager">
-						<li><a href="javascript: void(0)"><img src="images/pdp/big.jpg" width="58" height="66"/></a></li>
-						<li><a href="javascript: void(0)"><img src="images/pdp/small.jpg" width="58" height="66"/></a></li>
-						<li><a href="javascript: void(0)"><img src="images/pdp/big.jpg" width="58" height="66"/></a></li>
-						<li><a href="javascript: void(0)"><img src="images/pdp/big.jpg" width="58" height="66"/></a></li>
-						<li><a href="javascript: void(0)"><img src="images/pdp/big.jpg" width="58" height="66"/></a></li>
-						<li><a href="javascript: void(0)"><img src="images/pdp/big.jpg" width="58" height="66"/></a></li>
+						<li><a href="javascript: void(0)"><img src="images/pdp/5.jpg" width="58" height="66"/></a></li>
+						<li><a href="javascript: void(0)"><img src="images/pdp/2.jpg" width="58" height="66"/></a></li>
+						<li><a href="javascript: void(0)"><img src="images/pdp/3.jpg" width="58" height="66"/></a></li>
+						<li><a href="javascript: void(0)"><img src="images/pdp/4.jpg" width="58" height="66"/></a></li>
+						<li><a href="javascript: void(0)"><img src="images/pdp/5.jpg" width="58" height="66"/></a></li>
+						<li><a href="javascript: void(0)"><img src="images/pdp/1.jpg" width="58" height="66"/></a></li>
 					</ul>
 					<div class="md_next floatRight mt10">
 						<span class="cm_nextBtn cm_nextPrevImgs cm_next" title="Next"></span>
@@ -370,45 +373,43 @@
 				
 				<div class="cm_sngProdDetails">
 					<div class="cm_sngProdTopActionBar">
-						<a href="javascript: void(0)" class="cm_headerIcons cm_editDeatils cm_sngProdIcons">Write Review</a>
 						<a href="javascript: void(0)" class="cm_headerIcons cm_likeProdBtnGrey cm_sngProdIcons">Add to Wishlist</a>
-						<a href="javascript: void(0)" class="cm_headerIcons cm_emailFrnd cm_sngProdIcons">E-mail a Friend</a>
-						<div class="dispInBlk">
-							<input type="checkbox" style="display: none;">
+						<div class="dispInBlk mr30">
+							<input type="checkbox">
 							Compare
 						</div>
+						<a href="javascript: void(0)" class="cm_headerIcons cm_emailFrnd cm_sngProdIcons">E-mail a Friend</a>
+						<a href="javascript: void(0)" class="cm_headerIcons cm_editDeatils cm_sngProdIcons">Write Review</a>
 					</div>
-					<div class="cm_sngProdDescSpecsheet">
-						<table cellpadding="0" cellspacing="0">
-							<tr>
-								<td><p><strong>Size</strong></p>565 X 455 MM</td>
-								<td><p><strong>Series</strong></p>Cindrella Premium</td>
-								<td style="padding-right: 50px;"><p><strong>Shape</strong></p>Semi-Circle</td>
-								<td><p><strong>Color / Finish</strong></p>
-									<select>
-										<option>White</option>
-										<option>White</option>
-										<option>White</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td><p><strong>Type</strong></p>Wall Mounted</td>
-								<td><p><strong>Buying Guide</strong></p><a href="javascript: void(0)" class="cm_brandClr">A Guide to Best Wash Basin</a></td>
-								<td colspan="2"><p><label class="cm_headerIcons cm_truck mr10 cm_sngProdIcons">5-6 business days</label></p></td>
-								
-							</tr>
-						</table>
-						<a href="javascript: void(0)" class="cm_moreSngSpecLnk cm_brandClr posRel floatRight" >More</a>
+					<div class="cm_sngProdDescSpecsheet floatLeft posRel">
+						<ul class="floatLeft">
+							<li><p><strong>Size</strong></p>565 X 455 MM</li>
+							<li><p><strong>Series</strong></p>Cindrella Premium</li>
+							<li><p><strong>Shape</strong></p>Semi-Circle</li>
+							<li><p><strong>Color / Finish</strong></p>
+								<select>
+									<option>White</option>
+									<option>White</option>
+									<option>White</option>
+								</select>
+							
+							</li>
+							<li><p><strong>Type</strong></p>Wall Mounted</li>
+							<li><p><strong>Buying Guide</strong></p><a href="javascript: void(0)" class="cm_brandClr">A Guide to Best Wash Basin</a></li>
+						</ul>
+						<p class="posAbs" style="bottom: 45px; right: 30px;"><label class="cm_headerIcons cm_truck mr10 cm_sngProdIcons">5-6 business days</label></p>
+						<a href="javascript: void(0)" class="cm_moreSngSpecLnk cm_brandClr posAbs floatRight" >More</a>
 					</div>
 					
 					<div class="cm_sngProdPriceBar">
-						<div class="input-group spinner" data-trigger="spinner">
-						  <input type="text" class="form-control" value="1" data-rule="quantity">
-						  <div class="input-group-addon">
-							<a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
-							<a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
-						  </div>
+						<div class="commonSpinner">
+							<div class="input-group spinner" data-trigger="spinner">
+							  <input type="text" class="form-control" value="1" data-rule="quantity">
+							  <div class="input-group-addon">
+								<a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
+								<a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
+							  </div>
+							</div>
 						</div>
 						<p class="cm_listPriceBar">
 							<span class="cm_oldPrice floatLeft"><span class="mr5">x </span>Rs. 5,499</span>
@@ -454,10 +455,9 @@
 					<li><label class="cm_headerIcons cm_warrantSupp"></label><label class="mt10 ml10">Warranty &amp; Support</label></li>
 				</ul>
 				<ul class="cm_sngProdSpecTabs mt40">
+					<li class="" data-currentTab="cm_sngProdDescTab"><a href="javascript: void(0)">Description</a></li>
 					<li class="active" data-currentTab="cm_sngProdTab"><a href="javascript: void(0)">Product Specifications</a></li>
 					<li class="" data-currentTab="cm_sngProdReviewTab" ><a href="javascript: void(0)">Reviews</a></li>
-					<li class="" data-currentTab="cm_sngProdDescTab"><a href="javascript: void(0)">Description</a></li>
-					
 				</ul>
 				<div class="clear"></div>
 				<div id="cm_sngProdTab" class="cm_sngProdSpecRes" style="padding: 20px 55px;">
@@ -832,12 +832,18 @@
 			</div><!--.cm_sngProdSpecDv-->
 			
 			<div class="clear"></div>
-			<section class="cm_allListingItems cm_gridViewActive cm_relatedProductsDv">
+			<section class="cm_allListingItems cm_gridViewActive cm_relatedProductsDv cm_commonAllSliders">
 				<header class="cm_sectionHead mt20">
 					<h2 class="cm_toUpperCase">Related Products</h2>
+					<div class="cm_galleryBtns">
+						<span class="cm_previousBtn cm_nextPrevImgs cm_previous" title="Previous"></span>
+						<span class="cm_nextBtn  cm_nextPrevImgs cm_next" title="Next"></span>
+					</div>
 				</header>
-				<section class="cm_allRelProd">
-					<article>
+				<section class="cm_commonGallerySection">
+					
+				<section class="cm_allRelProd cm_commonGallerySectionIndiv">
+					<article class="">
 						<header>
 							<div class="cm_listItemProdImg">
 								<img src="images/relatedProds/1.jpg" />
@@ -856,7 +862,7 @@
 						</div>
 						
 					</article>
-					<article>
+					<article class="">
 						<header>
 							<div class="cm_listItemProdImg">
 								<img src="images/relatedProds/2.jpg" />
@@ -875,7 +881,7 @@
 						</div>
 						
 					</article>
-					<article>
+					<article class="">
 						<header>
 							<div class="cm_listItemProdImg">
 								<img src="images/relatedProds/3.jpg" />
@@ -894,7 +900,7 @@
 						</div>
 						
 					</article>
-					<article>
+					<article class="">
 						<header>
 							<div class="cm_listItemProdImg">
 								<img src="images/relatedProds/4.jpg" />
@@ -913,6 +919,85 @@
 						</div>
 						
 					</article>
+				</section>
+				<section class="cm_allRelProd cm_commonGallerySectionIndiv">
+					<article class="">
+						<header>
+							<div class="cm_listItemProdImg">
+								<img src="images/relatedProds/1.jpg" />
+							</div>
+						</header>
+						<p class="cm_listItemTitle">
+							Cera Cindrella Premium Wash 
+							Basin For Children Of 565 X 45...
+						</p>
+						<div class="cm_listingDataDesc">
+							<p class="cm_listPriceBar">
+								<span class="cm_oldPrice">Rs.2,499</span>
+								<span class="cm_discRate">[43%]</span>
+								<span class="cm_finalPrice">Rs.1,045</span>
+							</p>
+						</div>
+						
+					</article>
+					<article class="">
+						<header>
+							<div class="cm_listItemProdImg">
+								<img src="images/relatedProds/2.jpg" />
+							</div>
+						</header>
+						<p class="cm_listItemTitle">
+							Cera Cindrella Premium Wash 
+							Basin For Children Of 565 X 45...
+						</p>
+						<div class="cm_listingDataDesc">
+							<p class="cm_listPriceBar">
+								<span class="cm_oldPrice">Rs.2,499</span>
+								<span class="cm_discRate">[43%]</span>
+								<span class="cm_finalPrice">Rs.1,045</span>
+							</p>
+						</div>
+						
+					</article>
+					<article class="">
+						<header>
+							<div class="cm_listItemProdImg">
+								<img src="images/relatedProds/3.jpg" />
+							</div>
+						</header>
+						<p class="cm_listItemTitle">
+							Cera Cindrella Premium Wash 
+							Basin For Children Of 565 X 45...
+						</p>
+						<div class="cm_listingDataDesc">
+							<p class="cm_listPriceBar">
+								<span class="cm_oldPrice">Rs.2,499</span>
+								<span class="cm_discRate">[43%]</span>
+								<span class="cm_finalPrice">Rs.1,045</span>
+							</p>
+						</div>
+						
+					</article>
+					<article class="">
+						<header>
+							<div class="cm_listItemProdImg">
+								<img src="images/relatedProds/4.jpg" />
+							</div>
+						</header>
+						<p class="cm_listItemTitle">
+							Cera Cindrella Premium Wash 
+							Basin For Children Of 565 X 45...
+						</p>
+						<div class="cm_listingDataDesc">
+							<p class="cm_listPriceBar">
+								<span class="cm_oldPrice">Rs.2,499</span>
+								<span class="cm_discRate">[43%]</span>
+								<span class="cm_finalPrice">Rs.1,045</span>
+							</p>
+						</div>
+						
+					</article>
+				</section>
 				</section>
 			</section>
 		</section>
