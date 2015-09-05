@@ -194,9 +194,17 @@ $(document).ready(function(){
 			base: "class"
 		});
 		
-		
+		$('.cm_closePopup').on('click', function (){
+			jQuery('.cm_setNewAddr').removeClass('bounceInUp');
+			$(this).closest('.allPopups').hide();
+			$(this).closest('.allPopups').siblings('.cm_greyLayer').hide();
+			
+		});
 	});
-	
+	function deleteAddr(ele){
+		
+		$(ele).closest('article').remove();
+	}
 	function showMoreFooterCat(ele){
 		if($(ele).hasClass('open')){
 			$(ele).closest('li').siblings('li.cm_hiddenCat').hide();

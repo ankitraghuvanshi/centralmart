@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Central Mart - Checkout</title>
+<link href="css/main.less" rel="stylesheet/less" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/less-min.js"></script>
+<script src="js/bxslider.js"></script>
+<script src="js/common.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function (){
+		$('.cm_checkoutHeadIcon a').on('click', function (){
+			/* $(this).closest('li').addClass('cm_onGoing').removeClass('cm_inBetween');
+			$(this).closest('li').prevAll('li').removeClass('cm_onGoing').addClass('cm_completedChk');
+			
+			if($(this).closest('li').hasClass('cm_completedChk')){
+				$(this).closest('li').removeClass('cm_completedChk').addClass('cm_inBetween').removeClass('cm_onGoing');
+				$(this).closest('li').nextUntil('#paymentLastTab').addClass('cm_completedChk').removeClass('cm_inBetween').removeClass('cm_onGoing');
+				$(this).closest('li').prevUntil('#paymentLastTab').addClass('cm_completedChk').removeClass('cm_inBetween').removeClass('cm_onGoing');
+			}
+			if($(this).closest('#paymentLastTab').hasClass('cm_onGoing')){
+				$(this).closest('li').prev('li').addClass('cm_completedChk').removeClass('cm_inBetween');
+			}
+			 */
+			
+			var statBarId = $(this).closest('li').attr('data-status-bar');
+			if(statBarId == "accountLoginTab"){
+				$('#'+statBarId).css('display', 'block');
+				$('#'+statBarId).siblings('.cm_checkoutMainDv').hide();
+			}else if(statBarId == "shippAddrTab"){
+				$('#'+statBarId).css('display', 'block');
+				$('#'+statBarId).siblings('.cm_checkoutMainDv').hide();
+			}
+			else if(statBarId == "orderSummaryTab"){
+				$('#'+statBarId).css('display', 'block');
+				$('#'+statBarId).siblings('.cm_checkoutMainDv').hide();
+			}
+			else if(statBarId == "payMethodTab"){
+				$('#'+statBarId).css('display', 'block');
+				$('#'+statBarId).siblings('.cm_checkoutMainDv').hide();
+			}
+		});
+		
+		
+		$('.cm_payMUl li input').on('change', function (){
+			if($(this).hasClass('cm_onPayRd')){
+				$('.cm_payMData.onPayDataDv').css('display','block');
+				$('.cm_payMData.onPayDataDv').siblings('.cm_payMData').css('display','none');
+			}else if($(this).hasClass('cm_cashBfDlRd')){
+				$('.cm_payMData.cm_cashBfDlDv').css('display','block');
+				$('.cm_payMData.cm_cashBfDlDv').siblings('.cm_payMData').css('display','none');
+			}
+			else if($(this).hasClass('cm_cheqAdvRd')){
+				$('.cm_payMData.cm_cheqAdvDv').css('display','block');
+				$('.cm_payMData.cm_cheqAdvDv').siblings('.cm_payMData').css('display','none');
+			}
+			else{
+				$('.cm_payMData.cm_emiDv').css('display','block');
+				$('.cm_payMData.cm_emiDv').siblings('.cm_payMData').css('display','none');
+			}
+		});
+		
+		$('.cm_shippingAddrDv article').not(":eq(0)").on('click', function (){
+			$(this).addClass('selected').siblings('article').removeClass('selected');
+			$('.cm_shippingAddrDv article.selected').find('.delvHere').addClass('cm_green').removeClass('cm_brandClr').html('<label class="cm_headerIcons cm_greenTickSmall">Selected</label>');
+			$('.cm_shippingAddrDv article.selected').siblings('article').find('.delvHere').removeClass('cm_green').addClass('cm_brandClr').html('Deliver Here');
+		});
+		
+		
+		
+	});/*doc ends*/
+	function openNewAddr(){
+		jQuery('.cm_setNewAddr').addClass('bounceInUp');
+		jQuery('.cm_setNewAddr, .cm_greyLayer').css('display', 'block');
+	}
+	function openAccLogin(){
+		jQuery('.cm_AccLogin').addClass('bounceInUp');
+		jQuery('.cm_AccLogin, .cm_greyLayer').css('display', 'block');
+	}
+</script>
+</head>
+<body>
+<div class="cm_wrapper">
+	<section class="cm_fullBoundary cm_trackOder pad20LR">
+		<section class="cm_grid970">
+			<span class="cm_latestOffers dispInBlk floatLeft">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet asgdf.</span>
+			<span class="cm_userSupport dispInBlk floatRight">
+				<a href="javascript:void(0)" class="cm_headerIcons cm_www">We Work <span class="cm_brandClr">Worldwide</span></a>
+				<label class="pipe">|</label>
+				<a href="javascript:void(0)" class="cm_headerIcons cm_trackOrdrIco">Track Order</a>
+				<label class="pipe mr10">|</label>
+				<a href="javascript:void(0)" class="cm_headerIcons cm_supportIco">+91 8080 740 740</a>
+			</span>
+			<div class="clear"></div>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_trackOder -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_header">
+		<section class="cm_grid970">
+			<img src="images/header/logo.png" title="Centralmart.in" alt="Centralmart.in Home Improvement Simplified"/>
+			<ul>
+				<li>
+					<label class="cm_headerIcons cm_design"></label>
+					<a href="javascript: void(0)" title="Shop Online">
+						<p class="cm_txtLbl">Shop Online</p>
+						<p class="cm_subTxtLbl">Building &amp; Home<br>Products</p>
+					</a>
+				</li>
+				<li>
+					<label class="cm_headerIcons cm_build"></label>
+					<a href="javascript: void(0)" title="Design+Build">
+						<p class="cm_txtLbl">Design+Build</p>
+						<p class="cm_subTxtLbl">Turnkey Solutions</p>
+					</a>
+				</li>
+				<li>
+					<label class="cm_headerIcons cm_blog"></label>
+					<a href="javascript: void(0)" title="Ideate">
+						<p class="cm_txtLbl">Ideate</p>
+						<p class="cm_subTxtLbl">Inspirations<br>&amp; New Trends</p>
+					</a>
+				</li>
+			</ul>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_header -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_searchBar">
+		<section class="cm_grid970">
+			<div class="cm_shopByCatDv posRel">
+					<span class="cm_fff cm_shopByCatHandle">EXPLORE<label class="cm_headerIcons cm_shopMainArrUp"></label></span>
+					<div class="cm_shopbyCatMainDv posAbs">
+						<div class="posRel ">
+							<!-- <span class="posAbs cm_diffAllCatArr cm_headerIcons"></span> -->
+							<ul class="cm_diffCatTopLevel">
+								<span class="cm_shopCatArrow" style="left: 68px;"></span>
+								<li class='active' data-cat-key="cm_shopByCatLi"><a href="javascript: void(0)">Shop by Categories</a></li>  
+								<li data-cat-key="cm_createBoqLi"><a href="javascript: void(0)">Create BOQ</a></li>  
+								<li data-cat-key="cm_bulkOrderLi"><a href="javascript: void(0)">Bulk Orders</a></li>  
+								<li data-cat-key="cm_designBuildLi"><a href="javascript: void(0)">Design + Build</a></li>  
+								<li data-cat-key="cm_ideateLi"><a href="javascript: void(0)">Ideate</a></li>  
+								<li data-cat-key="cm_proRewardLi"><a href="javascript: void(0)" class="cm_brandClr">Pro-Rewards</a></li> 
+							</ul>
+							<!-- <div class="arrow"></div> -->
+						</div>
+						<div class="cm_shopByCatAllDv cm_shopByCatLi">
+							<ul class="cm_shopByCatAllMenu">
+								<li><a href="javascript: void(0)">Bathroom Fittings</a>
+									<div class="cm_shopCatSubview">
+										Bathroom fittings
+									</div><!--.cm_shopCatSubview-->
+								</li>
+								<li><a href="javascript: void(0)">Building Materials</a></li>
+								<li><a href="javascript: void(0)">Doors &amp; Windows</a></li>
+								<li><a href="javascript: void(0)">Electrical</a></li>
+								<li><a href="javascript: void(0)">Flooring</a></li>
+								<li><a href="javascript: void(0)">Hardware</a>
+									<div class="cm_shopCatSubview showAlways">
+										<ul class="cm_shopCatSubCatg mb20 dispInBlk">
+											<li>
+												<a href="javascript: void(0)">
+												<img src="images/category/img1.jpg"  alt=""/>
+												<p>Accessories</p>
+												</a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img2.jpg"  alt=""/>
+												<p>Handles</p></a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img3.jpg"  alt=""/>
+												<p>Computer Fittings</p></a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img4.jpg"  alt=""/>
+												<p>Brackets &amp; Clamps</p></a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img5.jpg"  alt=""/>
+												<p>Hinges</p></a>
+											</li>
+										</ul>
+										<div class="clear"></div>
+										<div class="cm_subMoreCatDv cm_moreCatDv">
+											<section>
+												<header class="cm_subHead">
+													<h4>MORE CATEGORIES</h4>
+												</header>
+												<ul class="mr30">
+													<li><a href="javascript: void(0)">- Kitchen Drawer Systems</a></li>
+													<li><a href="javascript: void(0)">- Knobs</a></li>
+													<li><a href="javascript: void(0)">- Ladder Systems</a></li>
+												</ul>
+												<ul>
+													<li><a href="javascript: void(0)">- Locks & Latches</a></li>
+													<li><a href="javascript: void(0)">- Nuts & Bolts</a></li>
+													<li><a href="javascript: void(0)">- Sign Plates</a></li>
+												</ul>
+											</section>
+											<span class="cm_moreCatShowAll">
+												<a href="javascript: void(0)" class="cm_brandClr">Show All Hardware <label class="cm_rightArrow-line cm_headerIcons"></label></a>
+											</span>
+										</div>
+										
+										<div class="cm_subMoreCatDv cm_guide">
+											<header class="cm_subHead">
+												<h4>Related Guides/ Help</h4>
+											</header>
+											<ul>
+												<li><a href="javascript: void(0)">- Hardware buying guide</a></li>
+												<li><a href="javascript: void(0)">- Hardware assembling Guide</a></li>
+											</ul>
+										</div>
+									</div><!--.cm_shopCatSubview-->
+							
+								</li>
+								<li><a href="javascript: void(0)">Home Decor</a>
+									<div class="cm_shopCatSubview">
+										Home decor
+									</div><!--.cm_shopCatSubview-->
+								</li>
+								<li><a href="javascript: void(0)">Kitchen</a></li>
+								<li><a href="javascript: void(0)">Lightings</a></li>
+								<li><a href="javascript: void(0)">Plumbing</a></li>
+								<li><a href="javascript: void(0)">Safety &amp; Security</a></li>
+								<li><a href="javascript: void(0)">Wall Coverings</a></li>
+								<li><a href="javascript: void(0)">Wood &amp; Laminates</a></li>
+								<li class='last'><a href="javascript: void(0)">Lux Products</a></li>
+							</ul>
+						</div>
+						<div class="cm_shopByCatAllDv cm_createBoqLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_bulkOrderLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_designBuildLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_ideateLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_proRewardLi">
+						
+						</div>
+					</div><!--.cm_shopbyCatMainDv-->
+			
+			</div><!--.cm_shopByCatDv-->
+			<div class="cm_filterByCat">
+				<input type="text" placeholder="What are you looking for?" class='cm_filterInp'/>
+				<label class="cm_pipeFilter"></label>
+				<ul class="cm_filterByMenu">
+					<li class="cm_setMeFirst itHasPopup">
+						
+						<a href="javascript: void(0)">Wood &amp; Laminates</a><label class="cm_headerIcons cm_filterDropArr"></label>
+						<span class='popup_pullout'>
+							<ul class="cm_filterByCatSubMenu">
+								<li><a href="javascript: void(0)">All</a></li>
+								<li><a href="javascript: void(0)">Bathroom Fittings</a></li>
+								<li><a href="javascript: void(0)">Building Materials</a></li>
+								<li><a href="javascript: void(0)">Doors &amp; Windows</a></li>
+								<li><a href="javascript: void(0)">Electrical</a></li>
+								<li><a href="javascript: void(0)">Flooring</a></li>
+								<li><a href="javascript: void(0)">Hardware</a></li>
+								<li><a href="javascript: void(0)">Home Decor</a></li>
+								<li><a href="javascript: void(0)">Kitchen</a></li>
+								<li><a href="javascript: void(0)">Lightings</a></li>
+								<li><a href="javascript: void(0)">Plumbing</a></li>
+								<li><a href="javascript: void(0)">Safety &amp; Security</a></li>
+								<li><a href="javascript: void(0)">Wall Coverings</a></li>
+								<li><a href="javascript: void(0)">Wood &amp; Laminates</a></li>
+								<li><a href="javascript: void(0)">Premium Products</a></li>
+								<li><a href="javascript: void(0)">Shop By Brands</a></li>
+							</ul>
+						</span>
+					</li>
+				</ul>
+				
+			</div><!--.cm_filterByCat-->
+			<input type="button" class="cm_headerIcons cm_searchFilterBtn" />
+			
+		<!-- </section> -->
+		<div class="cm_userPref">
+			<span class="cm_userDetOnBar">
+				<span class="cm_loginAndReg disNone">
+					<a href="javascript: void(0)" >Login</a> or
+					<a href="javascript: void(0)" class="cm_brandClr">Register</a>
+				</span>
+				
+				<span class="cm_myAcc posRel itHasPopup mr10 dispInBlk">
+					<a href="javascript: void(0)" >My Account <label class="cm_headerIcons cm_filterDropArr"></label></a>
+					<span class="popup_pullout">
+						<ul class="">
+							<li><a href="javascript: void(0)">Account Information</a></li>
+							<li><a href="javascript: void(0)">Orders</a></li>
+							<li><a href="javascript: void(0)">Wishlist</a></li>
+							<li><a href="javascript: void(0)">Address Book</a></li>
+							<li><a href="javascript: void(0)">Projects</a></li>
+							<li><a href="javascript: void(0)">Product Reviews</a></li>
+						</ul>
+					</span>
+				</span>
+			</span>
+			
+			<span class="cm_userPreIcons">
+				<a href="javascript: void(0)" class=" ml10 cm_headerIcons cm_wishListIcon"></a>
+				<span class="posRel dispInBlk  ml10">
+					<a href="javascript: void(0)" class="cm_headerIcons cm_cartIcon"></a>
+					<label class="cm_wishCount">10</label>
+				</span>
+			</span>
+		</div>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_searchBar -->
+	<div class="clear"></div>
+	
+	<section class="cm_fullBoundary cm_pdpContent brdrTopGrey mt15">
+		<section class="cm_grid970 " style="overflow: hidden;">
+			<ul class="cm_prodItembreadCrumb mb20 mt10">
+				<li><a href="javascript: void(0)">Home &gt;</a></li>
+				<li class='active'><a href="javascript: void(0)">Checkout</a></li>
+			</ul>
+			<div class="mt20">
+				<section class="cm_checkoutDv">
+					
+				</section>
+				
+			</div>
+			<div class="clear"></div>
+			<section class="cm_chckOutProcess mt20 mb40">
+				<ul>
+					<li class="cm_onGoing" data-status-bar="accountLoginTab">
+						<div class="cm_checkoutHeadIcon">
+							<a href="javascript: void(0)" class="cm_headerIcons cm_lock"></a>
+						</div>
+						<div class="cm_checkoutHeadTag">
+							<h3>Account Login</h3>
+							<p>Login into to your<br>account</p>
+						</div>
+						<div class="cm_checkoutStatusBar">&nbsp;</div>
+					</li>
+					<li class="" data-status-bar="shippAddrTab">
+						<div class="cm_checkoutHeadIcon">
+							<a href="javascript: void(0)" class="cm_headerIcons cm_shipAddr"></a>
+						</div>
+						<div class="cm_checkoutHeadTag">
+							<h3>Shipping Address</h3>
+							<p>Provide your shipping address for product delivery</p>
+						</div>
+						<div class="cm_checkoutStatusBar ">&nbsp;</div>
+					</li>
+					<li class="" data-status-bar="orderSummaryTab">
+						<div class="cm_checkoutHeadIcon">
+							<a href="javascript: void(0)" class="cm_headerIcons cm_filePad"></a>
+						</div>
+						<div class="cm_checkoutHeadTag">
+							<h3>Order Summary</h3>
+							<p>Confirm your order before you make the payment </p>
+						</div>
+						<div class="cm_checkoutStatusBar ">&nbsp;</div>
+					</li>
+					<li class="" data-status-bar="payMethodTab" id="paymentLastTab">
+						<div class="cm_checkoutHeadIcon">
+							<a href="javascript: void(0)" class="cm_headerIcons cm_cardPay"></a>
+						</div>
+						<div class="cm_checkoutHeadTag">
+							<h3>Payment Method </h3>
+							<p>Choose your convenient mode of payment</p>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<div class="clear"></div>
+			
+			<section class="cm_checkoutMainDv cm_accountLogin animated slideInRight" id="accountLoginTab">
+				<header class="cm_sectionHead">
+					<h2 class="cm_toUpperCase">Account LOgin</h2>
+				</header>
+				<article>
+					<header><h3 class="cm_toUpperCase">Login</h3></header>
+					<div class="cm_chekoutBody">
+						<fieldset>
+							<label class="inputLbl">E-mail Address<span class="cm_red">*</span></label>
+							<input type="text" />
+						</fieldset>
+						<fieldset>
+							<label class="inputLbl">Password<span class="cm_red">*</span></label>
+							<input type="text" />
+						</fieldset>
+						<footer>
+							<a class="floatLeft cm_toUpperCase cm_primaryBtn" href="javascript: void(0)">Login</a>
+							<a class="floatLeft cm_ternaryBtn" href="javascript: void(0)">Forgot Password</a>
+						</footer>
+						<div class="extraFooter">
+							<p class="font14">New to CentralMart? <a href="javascript: void(0)" onclick="openAccLogin()" class="cm_brandClr">Register Here</a></p>
+						</div>
+					</div>
+					
+				</article>
+				<div class=" orSection"><label>OR</label></div>
+				<article style="float: right">
+					<header><h3 class="cm_toUpperCase">SOCIAL MEDIA LOGIN</h3></header>
+					<div class="cm_chekoutBody">
+						<p class="font14" style="border-bottom: 1px solid #d0d0d0; padding-bottom: 10px;">No registration required if you login with your social media account </p>
+						<div class="socialSignin">
+							<a href="#" class="mb30 cm_headerIcons facebookSign"></a>
+							<a href="#"  class="cm_headerIcons gPlusSign"></a>
+						</div>
+					</div>
+				</article>
+				
+				<div class="cm_continueCheckout">
+					<a class="floatRight cm_toUpperCase cm_primaryBtn" href="javascript: void(0)">Continue Checkout</a>
+				</div>
+			</section><!-- .cm_accountLogin -->
+			
+			<section class="cm_checkoutMainDv cm_shippingAddrDv animated slideInRight" id="shippAddrTab" style="display: none">
+				<header class="cm_sectionHead">
+					<h2 class="cm_toUpperCase">Shipping Address</h2>
+				</header>
+				<section class="cm_allAddress">
+					<article class="first">
+						<div class="addrBody">
+							<a class="floatLeft cm_toUpperCase cm_primaryBtn" href="javascript: void(0)" onclick="openNewAddr()">Add New Address</a>
+						</div>
+					</article>
+					<article class="selected">
+						<div class="addrBody">
+							<h3>Karthic Muthuraman</h3>
+							<p class="cm_address1Lbl">102, Shanti Blessings, Plot no. 104,</p>
+							<p class="cm_address2Lbl">Sector 22, Rabale</p>
+							<p class="cm_cityLbl">Navi Mumbai</p>
+							<p class="cm_countryLbl">India</p>
+							<p class="cm_stateLbl">Maharashtra</p>
+							<p class="cm_postalCodeLbl">400602</p>
+							<p class="cm_phoneAddrLbl"><strong>+91-9874618799</strong></p>
+						</div>
+						<footer>
+							<span class="cm_green delvHere"><label class="cm_headerIcons cm_greenTickSmall">Selected</label></span> 
+							<div class="floatRight actnBtn">
+								<a href="javascript: void(0)"  class="cm_headerIcons cm_deleteAddr" title="Delete Address" onclick="deleteAddr(this)"></a>
+								<a href="javascript: void(0)" class="cm_headerIcons cm_addPencil" title="Edit Address" onclick="openNewAddr()"></a>
+							</div>
+						</footer>
+					</article>
+					<article>
+						<div class="addrBody">
+							<h3>Ankit Raghuvanshi</h3>
+							<p class="cm_address1Lbl">102, Shanti Blessings, Plot no. 104,</p>
+							<p class="cm_address2Lbl">Sector 22, Rabale</p>
+							<p class="cm_cityLbl">Navi Mumbai</p>
+							<p class="cm_countryLbl">India</p>
+							<p class="cm_stateLbl">Maharashtra</p>
+							<p class="cm_postalCodeLbl">400602</p>
+							<p class="cm_phoneAddrLbl"><strong>+91-9874618799</strong></p>
+						</div>
+						<footer>
+							<span class="cm_brandClr delvHere">Deliver Here</span> 
+							<div class="floatRight actnBtn">
+								<a href="javascript: void(0)"  class="cm_headerIcons cm_deleteAddr" title="Delete Address" onclick="deleteAddr(this)"></a>
+								<a href="javascript: void(0)" class="cm_headerIcons cm_addPencil" title="Edit Address"  onclick="openNewAddr()"></a>
+							</div>
+						</footer>
+					</article>
+					<article>
+						<div class="addrBody">
+							<h3>Ankit Raghuvanshi</h3>
+							<p class="cm_address1Lbl">102, Shanti Blessings, Plot no. 104,</p>
+							<p class="cm_address2Lbl">Sector 22, Rabale</p>
+							<p class="cm_cityLbl">Navi Mumbai</p>
+							<p class="cm_countryLbl">India</p>
+							<p class="cm_stateLbl">Maharashtra</p>
+							<p class="cm_postalCodeLbl">400602</p>
+							<p class="cm_phoneAddrLbl"><strong>+91-9874618799</strong></p>
+						</div>
+						<footer>
+							<span class="cm_brandClr delvHere">Deliver Here</span> 
+							<div class="floatRight actnBtn">
+								<a href="javascript: void(0)"  class="cm_headerIcons cm_deleteAddr" title="Delete Address" onclick="deleteAddr(this)"></a>
+								<a href="javascript: void(0)" class="cm_headerIcons cm_addPencil" title="Edit Address"  onclick="openNewAddr()"></a>
+							</div>
+						</footer>
+					</article>
+				</section>
+				<div class="cm_continueCheckout">
+					<a class="floatRight cm_toUpperCase cm_primaryBtn" href="javascript: void(0)">Continue Checkout</a>
+				</div>
+			</section><!-- .cm_shippingAddrDv -->
+			<div class="clear"></div>
+			<section class="cm_checkoutMainDv orderSummary animated slideInRight" id="orderSummaryTab" style="display: none">
+				<header class="cm_sectionHead">
+					<h2 class="cm_toUpperCase">Order Summary</h2>
+				</header>
+				<div class="mt20">
+					<section class="cm_cartlistTable">
+						<table class="cm_cenralTable cm_cartTablePriceList" cellspacing="0" cellpadding="0">
+							<thead>
+								<tr>
+									<th align="left" width ="55%">Your Items</th>
+									<th align="right" width ="15%" >Price</th>
+									<th align="right" width ="15%">Qty</th>
+									<th align="right" width ="15%">SubTotal</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td align="left" valign="top">
+										<img src="images/pdp/big.jpg" width="60" height="60">
+										<p>
+											Cera Cindrella Premium Wash Basin For 
+											Children Of 565 X 455 MM In Snow White 
+											Finish (7700, 7800)
+										</p>
+									</td>
+									<td align="right" valign="middle">Rs. 4,045</td>
+									<td align="right" valign="middle">
+										1
+									</td>
+									<td align="right" valign="middle">Rs. 4,045</td>
+								</tr>
+								<tr>
+									<td align="left" valign="top">
+										<img src="images/pdp/bigTile.jpg" width="60" height="60">
+										<p>
+											Cera Cindrella Premium Wash Basin For 
+											Children Of 565 X 455
+										</p>
+									</td>
+									<td align="right" valign="middle">Rs. 4,045</td>
+									<td align="right" valign="middle">
+										12
+									</td>
+									<td align="right" valign="middle">Rs. 4,045</td>
+								</tr>
+								<tr>
+									<td align="left" valign="top">
+										<img src="images/pdp/bigFevicol.jpg" width="60" height="60">
+										<p>
+											Cera Cindrella Premium Wash Basin For
+										</p>
+									</td>
+									<td align="right" valign="middle">Rs. 4,045</td>
+									<td align="right" valign="middle">
+										4
+									</td>
+									<td align="right" valign="middle">Rs. 4,045</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section class="cm_cartOrderTotal">
+						<table class="cm_cenralTable" cellspacing="0" cellpadding="0">
+							<thead>
+								<tr>
+									<th colspan="2" align="left">Order Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Subtotal</td>
+									<td align="right"><strong>Rs. 22,708</strong></td>
+								</tr>
+								<tr>
+									<td>Shipping</td>
+									<td align="right"><strong>Rs. 199</strong></td>
+								</tr>
+								<tr>
+									<td>Tax</td>
+									<td align="right"><strong>Rs. 250</strong></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td>Total</td>
+									<td align="right"><strong>Rs. 23,157</strong></td>
+								</tr>
+							</tfoot>
+						</table>
+						
+						<table class="cm_cenralTable mt10 cm_orderSummAddress" cellspacing="0" cellpadding="0">
+							<thead>
+								<tr>
+									<th colspan="2" align="left">Shipping Address</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<article>
+											<div class="addrBody">
+												<h3>Ankit Raghuvanshi</h3>
+												<p class="cm_address1Lbl">102, Shanti Blessings, Plot no. 104,</p>
+												<p class="cm_address2Lbl">Sector 22, Rabale</p>
+												<p class="cm_cityLbl">Navi Mumbai</p>
+												<p class="cm_countryLbl">India</p>
+												<p class="cm_stateLbl">Maharashtra</p>
+												<p class="cm_postalCodeLbl">400602</p>
+												<p class="cm_phoneAddrLbl mt10"><strong>+91-9874618799</strong></p>
+											</div>
+										</article>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					
+				</div>
+				<section class="floatLeft mt30" style="margin-right: 70px;">
+					<header>
+						<h3 class="font16 cm_333 mb5">Have a Coupon?</h3>
+					</header>
+					
+					<div class="cm_showPincode">
+						<input type="text" placeholder="Enter Your Coupon Code"><button class="cm_headerIcons cm_discCoup"></button>
+					</div>
+				</section>
+				<div class="cm_continueCheckout">
+					<a class="floatRight cm_toUpperCase cm_primaryBtn" href="javascript: void(0)">Continue Checkout</a>
+				</div>
+			</section><!-- .orderSummary -->
+			<div class="clear"></div>
+			
+			
+			<section class="cm_checkoutMainDv paymentMethod  animated slideInRight" id="payMethodTab" style="display: none">
+				<header class="cm_sectionHead">
+					<h2 class="cm_toUpperCase">Payment Method</h2>
+				</header>
+				<ul class="cm_payMUl ml20">
+					<li><input type="radio" checked="checked" name="makePayment" class="cm_onPayRd"/> Online Payment</li>
+					<li><input type="radio" name="makePayment" class="cm_cashBfDlRd"/> Cash before delivery</li>
+					<li><input type="radio" name="makePayment" class="cm_cheqAdvRd"/> Cheque in advance</li>
+					<li><input type="radio" name="makePayment" class="cm_emiRd"/> 0% EMI</li>
+				</ul>
+				<div class="clear"></div>
+				<div class="cm_payMData mt20 onPayDataDv">
+					<p>You will be redirected to the Payment Gateway on clicking "Place Order" under Order Review. 
+						<br>
+						<label class="cm_headerIcons cm_citrusLogo"></label>
+					</p>
+				</div>
+				<div class="cm_payMData mt20 cm_cashBfDlDv" style="display: none">
+					<p>We will call you soon to confirm your order! 
+					</p>
+				</div>
+				<div class="cm_payMData mt20 cm_cheqAdvDv" style="display: none">
+					<p>Prepare a cheque in the name of "Central Mart Private Limited" and call our helpline or e-mail us at <br>
+<a href="mailto:someone@example.com" target="_top" class="cm_brandClr">support@centralmart.in</a> to arrange for a pick-up! 
+						
+					</p>
+				</div>
+				<div class="cm_payMData mt20 cm_emiDv" style="display: none">
+					<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, 
+nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. 
+						<br>
+						<label class="cm_headerIcons cm_cashCareLogo "></label>
+					</p>
+				</div>
+				<div class="cm_continueCheckout">
+					<a class="floatRight cm_toUpperCase cm_primaryBtn" href="javascript: void(0)">Continue Checkout</a>
+				</div>
+			</section><!-- .paymentMethod -->
+		</section><!-- .cm_grid970 -->
+		
+		<!-- .Popups -->
+		<div class="cm_greyLayer"></div>
+		<section class="cm_checkoutMainDv allPopups cm_AccLogin animated">
+			<article>
+				<header><h3 class="cm_toUpperCase">New User Registration <a href="javascript: void(0)" class="floatRight cm_closePopup cm_headerIcons">Close</a></h3></header>
+				<div class="cm_chekoutBody">
+					<table width="100%" cellspacing="0" cellpadding="0" class="formTable">
+						<tr>
+							<td>
+								<fieldset>
+									<label class="inputLbl">E-mail address<span class="cm_red">*</span></label>
+									<input type="text" />
+								</fieldset>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<fieldset>
+									<label class="inputLbl">Password<span class="cm_red">*</span></label>
+									<input type="password" />
+								</fieldset>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<fieldset>
+									<label class="inputLbl">Re-enter password<span class="cm_red">*</span></label>
+									<input type="password" />
+								</fieldset>
+							</td>
+						</tr>
+						
+					</table>
+					
+					<footer>
+						<a class="floatLeft cm_toUpperCase cm_primaryBtn mt20" href="javascript: void(0)">Add Address</a>
+					</footer>
+					
+				</div>
+				
+			</article>
+		</section><!-- .cm_accountLogin -->
+		<!-- .popups -->
+			
+			<!-- .Popups -->
+		<div class="cm_greyLayer"></div>
+		<section class="cm_checkoutMainDv allPopups cm_setNewAddr animated">
+			<article>
+				<header><h3 class="cm_toUpperCase">New Address <a href="javascript: void(0)" class="floatRight cm_closePopup cm_headerIcons">Close</a></h3></header>
+				<div class="cm_chekoutBody">
+					<table width="100%" cellspacing="0" cellpadding="0" class="formTable">
+						<tr>
+							<td>
+								<fieldset>
+									<label class="inputLbl">Full Name<span class="cm_red">*</span></label>
+									<input type="text" />
+								</fieldset>
+							</td>
+							<td>
+								<fieldset>
+									<label class="inputLbl">Country<span class="cm_red">*</span></label>
+									<select class="cm_selectBox">
+										<option>Select Country</option>
+										<option>India</option>
+										<option>Pakistan</option>
+										<option>US</option>
+									</select>
+								</fieldset>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<fieldset>
+									<label class="inputLbl">Address 1<span class="cm_red">*</span></label>
+									<input type="text" />
+								</fieldset>
+							</td>
+							<td>
+								<fieldset>
+									<label class="inputLbl">State/ Region<span class="cm_red">*</span></label>
+									<select class="cm_selectBox">
+										<option>Select Country</option>
+										<option>India</option>
+										<option>Pakistan</option>
+										<option>US</option>
+									</select>
+								</fieldset>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<fieldset>
+									<label class="inputLbl">Address 2</label>
+									<input type="text" />
+								</fieldset>
+							</td>
+							<td>
+								<fieldset>
+									<label class="inputLbl">Zip Code<span class="cm_red">*</span></label>
+									<input type="text" />
+								</fieldset>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<fieldset>
+									<label class="inputLbl">City<span class="cm_red">*</span></label>
+									<input type="text" />
+								</fieldset>
+							</td>
+							<td>
+								<fieldset>
+									<label class="inputLbl">Phone<span class="cm_red">*</span></label>
+									<input type="text" />
+								</fieldset>
+							</td>
+						</tr>
+					</table>
+					
+					<footer>
+						<a class="floatLeft cm_toUpperCase cm_primaryBtn mt20" href="javascript: void(0)">Add Address</a>
+					</footer>
+					
+				</div>
+				
+			</article>
+		</section><!-- .cm_AccLoginPop -->
+		<!-- .popups -->
+	</section>
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_subscribe mt30 posRel">
+		<section class="cm_grid970 ">
+			<div class="cm_scrollToTop posAbs scrollToTop fixScroll">
+				<a href="javascript: void(0)" title="Scroll To Top" class="cm_headerIcons"></a>
+			</div>
+			<div class="dispInBlk">
+				<h4 class="cm_toUpperCase">Subscribe:</h4>
+				<input placeholder="Your E-mail" class="toUpperCase" type='text'/>
+				<a href="javascript: void(0)" class="cm_toUpperCase cm_primaryBtn cm_brandClr">Sign Up <label class="cm_headerIcons primBtnWhiteArr"></label></a>
+			</div>
+			<div class="dispInBlk cm_weAccept">
+				<h4 class="cm_toUpperCase">We Accept:</h4>
+				<ul>
+					<li><label class="cm_headerIcons cm_visaIco" title="Visa"></label></li>	
+					<li><label class="cm_headerIcons cm_mcIco" title="MasterCard"></label></li>
+					<li><label class="cm_headerIcons cm_aeIco" title="American Express"></label></li>
+					<li><label class="cm_headerIcons cm_maestroIco" title="Maestro"></label></li>
+					<li><label class="cm_headerIcons cm_emiIco" title="EMI"></label></li>
+					<li><label class="cm_headerIcons cm_cashIco" title="Cash"></label></li>
+					<li><label class="cm_headerIcons cm_netBankIco" title="Net Banking"></label></li>
+					<li><label class="cm_headerIcons cm_chequeIco" title="Cheque"></label></li>
+				</ul>
+			</div>
+		</section>
+	</section><!-- .cm_fullBoundary.cm_subscribe -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_footer">
+		<section class="cm_grid970">
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Central Mart</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Know Us</a></li>
+					<li><a href="javascript: void(0)">Careers</a></li>
+					<li><a href="javascript: void(0)">Reach Us</a></li>
+					<li><a href="javascript: void(0)">News</a></li>
+					<li><a href="javascript: void(0)">Blog</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Customer Service</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Contact</a></li>
+					<li><a href="javascript: void(0)">FAQ</a></li>
+					<li><a href="javascript: void(0)">Terms of payment</a></li>
+					<li><a href="javascript: void(0)">Terms of sale</a></li>
+					<li><a href="javascript: void(0)">Delivery terms &amp; conditions</a></li>
+					<li><a href="javascript: void(0)">Returns and Refunds</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Categories</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Bathroom Fittings</a></li>
+					<li><a href="javascript: void(0)">Building Materials</a></li>
+					<li><a href="javascript: void(0)">Doors & Windows</a></li>
+					<li><a href="javascript: void(0)">Electrical</a></li>
+					<li><a href="javascript: void(0)">Flooring</a></li>
+					<li class="cm_hiddenCat"><a href="javascript: void(0)">Building Materials</a></li>
+					<li class="cm_hiddenCat"><a href="javascript: void(0)">Doors & Windows</a></li>
+					<li class="cm_hiddenCat"><a href="javascript: void(0)">Electrical</a></li>
+					<li class="cm_hiddenCat"><a href="javascript: void(0)">Flooring</a></li>
+					<li class="cm_moreCateg"><a href="javascript: void(0)" class="cm_toUpperCase cm_brandClr" onclick="showMoreFooterCat(this)">More</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Partner</h3>
+				</header>
+				<ul>
+					<li><a href="javascript: void(0)">Make money With us</a></li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3 class="cm_toUpperCase">Social</h3>
+				</header>
+				<ul>
+					<li class="mt10"><a href="javascript: void(0)"><label class="cm_headerIcons cm_ghar360Ico"></label></a></li>
+					<li class="mt10"><a href="javascript: void(0)"><label class="cm_headerIcons cm_spaceFixIco"></label></a></li>
+				</ul>
+			</article>
+			
+		</section>
+		<section class="cm_grid970 cm_footAboutUs" style="padding: 20px 0 30px;">
+			<h4>About CentralMart</h4>
+			<p>
+				This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+			</p>
+		</section>
+	</section><!-- .cm_fullBoundary.cm_footer -->
+	<div class="clear"></div>
+	<section class="cm_fullBoundary cm_footerLinks">
+		<section class="cm_grid970">
+			<ul>
+				<li><a href="javascript: void(0)">Privacy &amp; Cookies</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">Terms &amp; Conditions</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">Accessibility</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">Store Directory</a><label class="pipe"> |</label></li>
+				<li><a href="javascript: void(0)">About Us</a></li>
+			</ul>
+			<span class="fltRt cm_copyright">
+				&copy; centralmart.in <br>All Rights Reserved
+			</span>
+		</section>
+	</section><!-- .cm_fullBoundary.cm_footerLinks -->
+</div><!-- .cm_wrapper -->
+
+</body>
+</html>

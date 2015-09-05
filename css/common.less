@@ -15,10 +15,12 @@
 	@secondBtn: #6db823;
 	@second-btnBorder: #529014;
 	@brandSecondHover: #68b020;
+	@green: #99cc33;
 /*LESS ends*/
 
 
 /*Global CSS*/
+	.cm_green{color: @green;}
 	.brdrTopGrey{border-top: 1px solid #d0d0d0;}
 	.floatLeft{float: left;}
 	.floatRight{float: right;}
@@ -28,7 +30,7 @@
 	.cm_fff{color: #fff;}
 	.cm_333{color: #333;}
 	.cm_808080{color: #808080;}
-	.strike{text-decoration: line-through};
+	.strike{text-decoration: line-through}
 	.cm_red{color: #ff0000;}
 	.disNone{display: none;}
 	.mt5{margin-top: 5px;}
@@ -947,7 +949,7 @@ text-overflow: ellipsis;
 
 .trans-element-checkbox.unchecked{
 	background: url('../images/header/header.png') no-repeat;
-	background-position: -7px -1453px;
+	background-position: -4px -2200px;
 	position: relative;
 	top: 2px;
 	
@@ -955,7 +957,7 @@ text-overflow: ellipsis;
 
 .trans-element-checkbox.checked{
 	background: url('../images/header/header.png') no-repeat;
-	background-position: -29px -1453px;
+	background-position: -4px -2221px;
 	position: relative;
 	top: 2px;
 	
@@ -1065,7 +1067,133 @@ text-overflow: ellipsis;
 
 /***ends Table*****/
 
+/***ALL POPUP****/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
 
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+
+/**.Popups**/
+.cm_checkoutMainDv .formTable tr td{padding-right: 40px;}
+.cm_checkoutMainDv .formTable tr td:last-child{padding-right: 0}
+.allPopups .cm_chekoutBody{margin-top: 0!important; border: none!important}
+.cm_closePopup{
+	background-position: -156px -2451px;
+    height: 18px;
+    text-indent: -9999px;
+    width: 18px;
+}
+
+.allPopups{position: fixed; z-index: 999999; display: none;}
+.cm_setNewAddr{margin-left: -416px; margin-top: -260px; left: 50%;top: 50%;}
+.cm_AccLogin{margin-left: -208px; margin-top: -214px; left: 50%;top: 50%;}
+.cm_greyLayer{background: #000; opacity: 0.5; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index:99999; display: none;}
+/***/
 
 
 
