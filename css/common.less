@@ -1189,13 +1189,36 @@ text-overflow: ellipsis;
     width: 18px;
 }
 
-.allPopups{position: fixed; z-index: 999999; display: none;}
+.allPopups{position: fixed; z-index: 999999; display: none; top:50%; left: 50%;}
 .cm_setNewAddr{margin-left: -416px; margin-top: -260px; left: 50%;top: 50%;}
 .cm_AccLogin{margin-left: -208px; margin-top: -214px; left: 50%;top: 50%;}
 .cm_greyLayer{background: #000; opacity: 0.5; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index:99999; display: none;}
+.myLoginPopup{background: #fff; width: 830px!important; margin-left: -415px; left: 50%;}
+.myLoginPopup > article{width: 100%;}
+.myLoginPopup .myLoginSecBdy{padding: 20px;}
+.myLoginPopup .myLoginSecBdy article h3{color: #333; font-weight: normal;}
+.myLoginPopup .myLoginSecBdy article .cm_chekoutBody{width: 330px; height: 290px; padding: 20px 0!important}
+.myLoginPopup .myLoginSecBdy article .cm_chekoutBody input[type='text'], .myLoginPopup article .cm_chekoutBody input[type='password']{width: 304px!important}
+
+.myLoginPopup .myLoginSecBdy .orsecSep {
+    background: #d0d0d0 none repeat scroll 0 0;
+    height: 300px;
+    left: 63px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.myLoginPopup .myLoginSecBdy .orSection{top: 15px!important; height: 300px;}
+.myLoginPopup .myLoginSecBdy .orSection .orLblPop{
+	border: 4px solid #fff;
+	left: 34px;
+	position: absolute;
+	top: 120px !important;
+}
 /***/
 
-
+.cm_inlineSmallMsg{display: none; clear: both; float: left; width: 100%}
+.cm_inlineSmallMsg label{font-size: 12px; width: auto;}
 
 
 
