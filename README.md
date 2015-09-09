@@ -1,2 +1,2 @@
 # centralmart
-central mart repsitory form front-end
+central mart repository for new UI design
