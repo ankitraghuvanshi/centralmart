@@ -20,6 +20,7 @@
 
 
 /*Global CSS*/
+	.fontNormal{font-weight:normal;}
 	.cm_green{color: @green;}
 	.brdrTopGrey{border-top: 1px solid #d0d0d0;}
 	.floatLeft{float: left;}
@@ -75,6 +76,7 @@
 	.font14{font-size: 14px;}
 	.font16{font-size: 16px;}
 	.font18{font-size: 18px;}
+	.font24{font-size: 24px;}
 	a{
 	    -moz-transition: all 0.2s linear;
 	    -o-transition: all 0.2s linear;
@@ -149,6 +151,10 @@
 	
 	/*end*/
 	
+	/*cm_fourthBtn */
+	.cm_fourthBtn{margin-left: 10px;display: inline-block;  color: @brand; font-size: 14px; border: 1px solid @brand; padding: 10px 20px; top: 1px; position: relative;}
+	.cm_fourthBtn:hover{background: @brand; color: #fff;}
+	/**/
 	.cm_knowMoreLink{font-size: 14px; display: inline-block;}
 	.cm_rightArrow-line{margin-left: 2px;}
 	
@@ -1220,12 +1226,21 @@ text-overflow: ellipsis;
 .cm_inlineSmallMsg{display: none; clear: both; float: left; width: 100%}
 .cm_inlineSmallMsg label{font-size: 12px; width: auto;}
 
-
 .cm_supportIcoCircle {
     background-position: -233px -33px;
     height: 40px;
     padding-left: 43px;
     width: auto;
+}
+
+.cm_showAllItems{
+	height: 200px;
+    left: 50%;
+    margin-left: -350px;
+    margin-top: -100px;
+    position: fixed;
+    top: 50%;
+    width: 700px !important;
 }
 
 
@@ -1236,7 +1251,3 @@ text-overflow: ellipsis;
 
 
 
-
-
-
-//

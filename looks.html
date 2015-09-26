@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Central Mart - Looks</title>
+<link href="css/main.less" rel="stylesheet/less" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/less-min.js"></script>
+<script src="js/bxslider.js"></script>
+<script src="js/common.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function (){
+		completeDesignFn();
+		$(window).resize(function(){
+			completeDesignFn();
+		}).trigger('resize');
+		
+		var scrollHt = $('.cm_lookProdIndv').outerHeight(true);
+		$(window).scroll(function(){
+			var yAxis = $(this).scrollTop();
+			if(yAxis > 0){
+				//$('html, body').scrollTop(scrollHt);
+			}
+			
+			
+		});
+		
+	});/*doc ends*/
+	
+	function completeDesignFn(){
+		var winWd = $(window).width();
+		var winHt = $(window).height();
+		
+		$('.cm_looksLeft, .cm_looksGallery').width(winWd*0.7);
+		$('.cm_looksRight').width(winWd*0.3 - 1);
+		$('.cm_lookAllGal').parent().width(winWd*0.7 - $('.cm_looksGallery >ul> li').first().outerWidth(true));
+	}
+	
+
+</script>
+</head>
+<body>
+<div class="cm_wrapper">
+	<section class="cm_fullBoundary cm_searchBar fixBar">
+		<section class="cm_grid970">
+			<div class="cm_shopByCatDv posRel">
+					<span class="cm_fff cm_shopByCatHandle">EXPLORE<label class="cm_headerIcons cm_shopMainArrUp"></label></span>
+					<div class="cm_shopbyCatMainDv posAbs">
+						<div class="posRel ">
+							<!-- <span class="posAbs cm_diffAllCatArr cm_headerIcons"></span> -->
+							<ul class="cm_diffCatTopLevel">
+								<span class="cm_shopCatArrow" style="left: 68px;"></span>
+								<li class='active' data-cat-key="cm_shopByCatLi"><a href="javascript: void(0)">Shop by Categories</a></li>  
+								<li data-cat-key="cm_createBoqLi"><a href="javascript: void(0)">Create BOQ</a></li>  
+								<li data-cat-key="cm_bulkOrderLi"><a href="javascript: void(0)">Bulk Orders</a></li>  
+								<li data-cat-key="cm_designBuildLi"><a href="javascript: void(0)">Design + Build</a></li>  
+								<li data-cat-key="cm_ideateLi"><a href="javascript: void(0)">Ideate</a></li>  
+								<li data-cat-key="cm_proRewardLi"><a href="javascript: void(0)" class="cm_brandClr">Pro-Rewards</a></li> 
+							</ul>
+							<!-- <div class="arrow"></div> -->
+						</div>
+						<div class="cm_shopByCatAllDv cm_shopByCatLi">
+							<ul class="cm_shopByCatAllMenu">
+								<li><a href="javascript: void(0)">Bathroom Fittings</a>
+									<div class="cm_shopCatSubview">
+										Bathroom fittings
+									</div><!--.cm_shopCatSubview-->
+								</li>
+								<li><a href="javascript: void(0)">Building Materials</a></li>
+								<li><a href="javascript: void(0)">Doors &amp; Windows</a></li>
+								<li><a href="javascript: void(0)">Electrical</a></li>
+								<li><a href="javascript: void(0)">Flooring</a></li>
+								<li><a href="javascript: void(0)">Hardware</a>
+									<div class="cm_shopCatSubview showAlways">
+										<ul class="cm_shopCatSubCatg mb20 dispInBlk">
+											<li>
+												<a href="javascript: void(0)">
+												<img src="images/category/img1.jpg"  alt=""/>
+												<p>Accessories</p>
+												</a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img2.jpg"  alt=""/>
+												<p>Handles</p></a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img3.jpg"  alt=""/>
+												<p>Computer Fittings</p></a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img4.jpg"  alt=""/>
+												<p>Brackets &amp; Clamps</p></a>
+											</li>
+											<li><a href="javascript: void(0)">
+												<img src="images/category/img5.jpg"  alt=""/>
+												<p>Hinges</p></a>
+											</li>
+										</ul>
+										<div class="clear"></div>
+										<div class="cm_subMoreCatDv cm_moreCatDv">
+											<section>
+												<header class="cm_subHead">
+													<h4>MORE CATEGORIES</h4>
+												</header>
+												<ul class="mr30">
+													<li><a href="javascript: void(0)">- Kitchen Drawer Systems</a></li>
+													<li><a href="javascript: void(0)">- Knobs</a></li>
+													<li><a href="javascript: void(0)">- Ladder Systems</a></li>
+												</ul>
+												<ul>
+													<li><a href="javascript: void(0)">- Locks & Latches</a></li>
+													<li><a href="javascript: void(0)">- Nuts & Bolts</a></li>
+													<li><a href="javascript: void(0)">- Sign Plates</a></li>
+												</ul>
+											</section>
+											<span class="cm_moreCatShowAll">
+												<a href="javascript: void(0)" class="cm_brandClr">Show All Hardware <label class="cm_rightArrow-line cm_headerIcons"></label></a>
+											</span>
+										</div>
+										
+										<div class="cm_subMoreCatDv cm_guide">
+											<header class="cm_subHead">
+												<h4>Related Guides/ Help</h4>
+											</header>
+											<ul>
+												<li><a href="javascript: void(0)">- Hardware buying guide</a></li>
+												<li><a href="javascript: void(0)">- Hardware assembling Guide</a></li>
+											</ul>
+										</div>
+									</div><!--.cm_shopCatSubview-->
+							
+								</li>
+								<li><a href="javascript: void(0)">Home Decor</a>
+									<div class="cm_shopCatSubview">
+										Home decor
+									</div><!--.cm_shopCatSubview-->
+								</li>
+								<li><a href="javascript: void(0)">Kitchen</a></li>
+								<li><a href="javascript: void(0)">Lightings</a></li>
+								<li><a href="javascript: void(0)">Plumbing</a></li>
+								<li><a href="javascript: void(0)">Safety &amp; Security</a></li>
+								<li><a href="javascript: void(0)">Wall Coverings</a></li>
+								<li><a href="javascript: void(0)">Wood &amp; Laminates</a></li>
+								<li class='last'><a href="javascript: void(0)">Lux Products</a></li>
+							</ul>
+						</div>
+						<div class="cm_shopByCatAllDv cm_createBoqLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_bulkOrderLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_designBuildLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_ideateLi">
+						
+						</div>
+						<div class="cm_shopByCatAllDv cm_proRewardLi">
+						
+						</div>
+					</div><!--.cm_shopbyCatMainDv-->
+			
+			</div><!--.cm_shopByCatDv-->
+			<div class="cm_filterByCat">
+				<input type="text" placeholder="What are you looking for?" class='cm_filterInp'/>
+				<label class="cm_pipeFilter"></label>
+				<ul class="cm_filterByMenu">
+					<li class="cm_setMeFirst itHasPopup">
+						
+						<a href="javascript: void(0)">Wood &amp; Laminates</a><label class="cm_headerIcons cm_filterDropArr"></label>
+						<span class='popup_pullout'>
+							<ul class="cm_filterByCatSubMenu">
+								<li><a href="javascript: void(0)">All</a></li>
+								<li><a href="javascript: void(0)">Bathroom Fittings</a></li>
+								<li><a href="javascript: void(0)">Building Materials</a></li>
+								<li><a href="javascript: void(0)">Doors &amp; Windows</a></li>
+								<li><a href="javascript: void(0)">Electrical</a></li>
+								<li><a href="javascript: void(0)">Flooring</a></li>
+								<li><a href="javascript: void(0)">Hardware</a></li>
+								<li><a href="javascript: void(0)">Home Decor</a></li>
+								<li><a href="javascript: void(0)">Kitchen</a></li>
+								<li><a href="javascript: void(0)">Lightings</a></li>
+								<li><a href="javascript: void(0)">Plumbing</a></li>
+								<li><a href="javascript: void(0)">Safety &amp; Security</a></li>
+								<li><a href="javascript: void(0)">Wall Coverings</a></li>
+								<li><a href="javascript: void(0)">Wood &amp; Laminates</a></li>
+								<li><a href="javascript: void(0)">Premium Products</a></li>
+								<li><a href="javascript: void(0)">Shop By Brands</a></li>
+							</ul>
+						</span>
+					</li>
+				</ul>
+				
+			</div><!--.cm_filterByCat-->
+			<input type="button" class="cm_headerIcons cm_searchFilterBtn" />
+			
+		<!-- </section> -->
+		<div class="cm_userPref">
+			<span class="cm_userDetOnBar">
+				<span class="cm_loginAndReg disNone">
+					<a href="javascript: void(0)" >Login</a> or
+					<a href="javascript: void(0)" class="cm_brandClr">Register</a>
+				</span>
+				
+				<span class="cm_myAcc posRel itHasPopup mr10 dispInBlk">
+					<a href="javascript: void(0)" >My Account <label class="cm_headerIcons cm_filterDropArr"></label></a>
+					<span class="popup_pullout">
+						<ul class="">
+							<li><a href="javascript: void(0)">Account Information</a></li>
+							<li><a href="javascript: void(0)">Orders</a></li>
+							<li><a href="javascript: void(0)">Wishlist</a></li>
+							<li><a href="javascript: void(0)">Address Book</a></li>
+							<li><a href="javascript: void(0)">Projects</a></li>
+							<li><a href="javascript: void(0)">Product Reviews</a></li>
+						</ul>
+					</span>
+				</span>
+			</span>
+			
+			<span class="cm_userPreIcons">
+				<a href="javascript: void(0)" class=" ml10 cm_headerIcons cm_wishListIcon"></a>
+				<span class="posRel dispInBlk  ml10">
+					<a href="javascript: void(0)" class="cm_headerIcons cm_cartIcon"></a>
+					<label class="cm_wishCount">10</label>
+				</span>
+			</span>
+		</div>
+		</section>
+	</section> <!-- .cm_fullBoundary.cm_searchBar -->
+	<div class="clear"></div>
+	<section class="cm_looksMain">
+		<section class="cm_fullBoundary cm_breadCrumbLooks">
+			<section class="cm_grid970 ">
+					<ul class="cm_prodItembreadCrumb mb20 mt10">
+						<li><a href="javascript: void(0)">Home &gt;</a></li>
+						<li><a href="javascript: void(0)">Design Inspirations &gt;</a></li>
+						<li class='active'><a href="javascript: void(0)">Delightfully Dewy - Contemporary Bedroom by Hidden Gallery</a></li>
+					</ul>
+			</section>
+		</section>
+		<section class="cm_fullBoundary cm_looksMainContent">
+			<section class="cm_looksLeft">
+				<div class="cm_compDesignDv">
+					<img src="images/looks/completeDesign.jpg">
+				</div>
+				<div class="cm_looksAllProd">
+					<div class="cm_looksPriceBar font14 cm_333">
+						<span class="mt10 floatLeft">
+							<span class="mr20"><a href="javascript: void(0)" onclick="showAllItems(this)">Manage Items</a><strong>5</strong> of 6 Items Selected </span> 
+							<span class="mr20">Sub-Total: <strong>Rs. 2,15, 000</strong></span>
+							<span>EMI: <strong>Rs. 12, 500</strong></span>
+						</span>
+						
+						<a class="cm_toUpperCase cm_secondaryBtn cm_brandClr floatRight" href="javascript: void(0)">Buy Now</a>
+					</div>
+					<!-- <div class="cm_looksGallery">
+						<ul>
+							<li>
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+							</li>
+							<li>
+								<div class="cm_lookAllGal">
+									<div class="md_prev floatLeft mt10">
+										<span class="bx-prev cm_previousBtn cm_nextPrevImgs cm_previous" title="Previous"></span>
+									</div>
+									<ul class="cm_looksGlImgs">
+										<li>
+											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+											<input type="checkbox" checked="checked" />Selected
+										</li>
+										<li>
+											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+											<input type="checkbox" checked="checked" />Selected
+										</li>
+										<li>
+											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+											<input type="checkbox" checked="" />Selected
+										</li>
+										<li>
+											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+											<input type="checkbox" checked="" />Selected
+										</li>
+										
+										<li>
+											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+											<input type="checkbox" checked="" />Selected
+										</li>
+										<li>
+											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+											<input type="checkbox" checked="" />Selected
+										</li>
+										
+									</ul>
+									<div class="md_next floatRight mt10">
+										<span class="cm_nextBtn cm_nextPrevImgs cm_next" title="Next"></span>
+									</div>
+								</div>
+								
+							</li>
+							
+						</ul>
+					</div> -->
+				</div>
+			</section><!-- .cm_looksLeft -->
+			<section class="cm_looksRight">
+				<div class="cm_lookProdIndv">
+					<header>
+						<h2 class="font18 cm_333">Delightfully Dewy - Contemporary Bedroom by Hidden Gallery</h2>
+					</header>
+					<div class="cm_indivSectionLooks">
+						<section class="cm_compDesignIndv">
+							<p class="font14">
+								Set against the focal green wall, the striking fabric 
+								upholstered headboard of the Sagrada queen size 
+								bed is perfect for reclining. The placement of the 
+								Solander upholstered bench at the foot of the bed 
+								results in an extended surface to comfortably watch 
+								TV or take an afternoon nap. The Rafael foyer unit 
+								and Surry large sideboard are placed on the opposite 
+								end leaving ample circulation area in between to 
+								enhance the sense of spaciousness in the room.
+							</p>
+							<div class="cm_looksDesigner mt40">
+								<h2 class="font18"><span class="fontNormal cm_808080">Designer - </span><span class="cm_333">Mary Wilson</span></h2>
+								<img src="images/looks/designer.jpg"/>
+								<p class="font14">
+									Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+								</p>
+								<div class="clear"></div>
+								<a class="cm_toUpperCase cm_fourthBtn cm_brandClr mt30" href="javascript: void(0)">Contact Designer</a>
+							</div>
+						</section>
+					</div>	
+				</div><!-- .cm_lookProdIndv -->
+				
+				<div class="cm_lookProdIndv">
+					<header>
+						<h2 class="font18 cm_333">Surry Large Sideboard</h2>
+					</header>
+					<div class="cm_indivSectionLooks">	
+						<div class="cm_sngProdDescSpecsheet floatLeft posRel">
+							<ul class="floatLeft">
+								<li><p><strong>Dimensions</strong></p>24 x 12 x 30 inch</li>
+								<li><p><strong>Series</strong></p>Cindrella Premium</li>
+								<li><p><strong>Color / Finish</strong></p>
+									<select>
+										<option>White</option>
+										<option>White</option>
+										<option>White</option>
+									</select>
+								</li>
+							</ul>
+							<p style="bottom: 45px; right: 30px;" class="posAbs"><label class="cm_headerIcons cm_truck mr10 cm_sngProdIcons">5-6 business days</label></p>
+							<a class="cm_moreSngSpecLnk cm_brandClr posAbs floatRight" href="javascript: void(0)">More</a>
+						</div>
+						<div class="clear"></div>
+						<div class="commonSpinner">
+							<div class="input-group spinner" data-trigger="spinner">
+							  <input type="text" class="form-control" value="1" data-rule="quantity">
+							  <div class="input-group-addon">
+								<a href="javascript:void(0);" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
+								<a href="javascript:void(0);" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
+							  </div>
+							</div>
+						</div>
+						
+						<p class="cm_listPriceBar">
+							<span class="cm_finalPrice floatLeft ml10 mt5"><span class="mr5">x </span><strong class="font24 cm_333">Rs. 4,495</strong></span>
+						</p>
+						<div class="clear"></div>
+						<p class="shipDsclr">*Shipping and taxes charges as applied</p>
+						
+						<div class="cm_looksButtonBar">
+							<a class="cm_toUpperCase cm_primaryBtn cm_brandClr " href="javascript: void(0)">Add to cart</a>
+							<a class="cm_toUpperCase cm_fourthBtn cm_brandClr " href="javascript: void(0)">check options</a>	
+						</div>
+					</div>
+				</div><!-- .cm_lookProdIndv -->
+					
+				<div class="cm_lookProdIndv">
+					<header>
+						<h2 class="font18 cm_333">Surry1 Large Sideboard</h2>
+					</header>
+					<div class="cm_indivSectionLooks">	
+						<div class="cm_sngProdDescSpecsheet floatLeft posRel">
+							<ul class="floatLeft">
+								<li><p><strong>Dimensions</strong></p>24 x 12 x 30 inch</li>
+								<li><p><strong>Series</strong></p>Cindrella Premium</li>
+								<li><p><strong>Color / Finish</strong></p>
+									<select>
+										<option>White</option>
+										<option>White</option>
+										<option>White</option>
+									</select>
+								</li>
+							</ul>
+							<p style="bottom: 45px; right: 30px;" class="posAbs"><label class="cm_headerIcons cm_truck mr10 cm_sngProdIcons">5-6 business days</label></p>
+							<a class="cm_moreSngSpecLnk cm_brandClr posAbs floatRight" href="javascript: void(0)">More</a>
+						</div>
+						<div class="clear"></div>
+						<div class="commonSpinner">
+							<div class="input-group spinner" data-trigger="spinner">
+							  <input type="text" class="form-control" value="1" data-rule="quantity">
+							  <div class="input-group-addon">
+								<a href="javascript:void(0);" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
+								<a href="javascript:void(0);" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
+							  </div>
+							</div>
+						</div>
+						
+						<p class="cm_listPriceBar">
+							<span class="cm_finalPrice floatLeft ml10 mt5"><span class="mr5">x </span><strong class="font24 cm_333">Rs. 4,495</strong></span>
+						</p>
+						<div class="clear"></div>
+						<p class="shipDsclr">*Shipping and taxes charges as applied</p>
+						<div class="cm_looksButtonBar">
+							<a class="cm_toUpperCase cm_primaryBtn cm_brandClr " href="javascript: void(0)">Add to cart</a>
+							<a class="cm_toUpperCase cm_fourthBtn cm_brandClr " href="javascript: void(0)">check options</a>	
+						</div>
+					</div>
+				</div><!-- .cm_lookProdIndv -->
+			</section><!-- cm_looksRight -->
+		</section>
+		
+	</section>
+	<!-- .Popups -->
+		<div class="cm_greyLayer"></div>
+		<section class="cm_checkoutMainDv allPopups cm_showAllItems  animated">
+			<article>
+				<header><h3 class="cm_toUpperCase">All Items <a href="javascript: void(0)" class="floatRight cm_closePopup cm_headerIcons">Close</a></h3></header>
+				<div class="cm_looksPriceBar font18 cm_333">
+					<span class="mt10 floatLeft">
+						<span class="mr50"><strong>5</strong> of 6 Items Selected </span> 
+						<span class="mr50">Sub-Total: <strong>Rs. 2,15, 000</strong></span>
+						<span>EMI: <strong>Rs. 12, 500</strong></span>
+					</span>
+				</div>
+				<div class="cm_chekoutBody">
+				 <div class="cm_looksGallery">
+						<ul class="cm_looksGlImgs">
+							<li>
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+								<input type="checkbox" checked="checked" />Selected
+							</li>
+							<li>
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+								<input type="checkbox" checked="checked" />Selected
+							</li>
+							<li>
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+								<input type="checkbox" checked="" />Selected
+							</li>
+							<li>
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+								<input type="checkbox" checked="" />Selected
+							</li>
+							
+							<li>
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+								<input type="checkbox" checked="" />Selected
+							</li>
+							<li>
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+								<input type="checkbox" checked="" />Selected
+							</li>
+							
+						</ul>
+					</div>
+					<footer>
+						<a class="floatLeft cm_toUpperCase cm_primaryBtn mt20" href="javascript: void(0)">Add Address</a>
+					</footer>
+				</div>
+			</article>
+		</section><!-- .cm_AccLoginPop -->
+		
+</div><!-- .cm_wrapper -->
+
+</body>
+</html>
