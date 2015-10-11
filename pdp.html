@@ -4,10 +4,12 @@
 <meta charset="ISO-8859-1">
 <title>Central Mart - PDP</title>
 <link href="css/main.less" rel="stylesheet/less" />
+<link href="css/perfectScrollbar.css" rel="stylesheet/css" />
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/less-min.js"></script>
 <script src="js/bxslider.js"></script>
 <script src="js/common.js"></script>
+<script src="js/nicescroll.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function (){
@@ -90,6 +92,10 @@
 		});
 		
 		$('#sgnProdBigImg').zoom();
+		$('.cm_shippingFaq .cm_chekoutBody .cm_shipFaqParent').niceScroll();
+		$('.cm_emiOption .cm_chekoutBody .cm_emiOptionParent').niceScroll();
+		
+		
 	});/*doc ends*/
 	
 </script>
@@ -361,7 +367,7 @@
 				
 			</div><!--.cm_sngProdGallery-->
 			<div class="cm_sngProdInfoDesc">
-				<header>
+				<header>	
 					<div>
 						<h2>Cera Cindrella Premium Wash Basin For Children Of 565 X 455 MM In Snow)</h2>
 						<img src="images/pdp/brand.jpg" />
@@ -397,7 +403,7 @@
 							<li><p><strong>Type</strong></p>Wall Mounted</li>
 							<li><p><strong>Buying Guide</strong></p><a href="javascript: void(0)" class="cm_brandClr">A Guide to Best Wash Basin</a></li>
 						</ul>
-						<p class="posAbs" style="bottom: 45px; right: 30px;"><label class="cm_headerIcons cm_truck mr10 cm_sngProdIcons">5-6 business days</label></p>
+						<p class="posAbs font14" style="bottom: 45px; right: 30px;"><label class="cm_headerIcons cm_truck mr10 cm_sngProdIcons">5-6 business days <a href="javascript: void(0)" class="cm_deliveryCont" onclick="openShippFaq()">[?]</a></label></p>
 						<a href="javascript: void(0)" class="cm_moreSngSpecLnk cm_brandClr posAbs floatRight" >More</a>
 					</div>
 					
@@ -419,7 +425,7 @@
 							<span class="cm_finalPrice floatLeft ml10"><strong>Rs. 4,495</strong></span>
 						</p>
 						<div class="clear"></div>
-						<p class="shipDsclr">*Shipping and taxes charges as applied     <label class="ml10 mr10">|</label>     <span class="cm_brandClr">EMI options available - <strong>0% finanace</strong></span></p>
+						<p class="shipDsclr">*Shipping and taxes charges as applied     <label class="ml10 mr10">|</label>     <a href="javascript: void(0)" class="cm_brandClr" onclick="openEmiOption()">EMI options available - <strong>0% finanace</strong></a></p>
 						
 						<div class="cm_prodServBy cm_customPriceSelect">
 							<h3 class="mt20 mb10">Product installation services by:</h3>
@@ -1115,6 +1121,306 @@
 		</section>
 	</section><!-- .cm_fullBoundary.cm_footerLinks -->
 </div><!-- .cm_wrapper -->
-
+		<!-- .Popups -->
+		<div class="cm_greyLayer"></div>
+		<section class="cm_checkoutMainDv allPopups cm_shippingFaq animated">
+			<article>
+				<header><h3 class="cm_toUpperCase">Shipping FAQs <a href="javascript: void(0)" class="floatRight cm_closePopup cm_headerIcons">Close</a></h3></header>
+				<div class="cm_chekoutBody">
+					<div class="cm_shipFaqParent">
+								<div class="cm_shipFaqDv">
+									<p><strong>What do you mean by business days?</strong></p>
+									
+									<p>Business days are all days except Sundays and public holidays. Public holidays differ from State to State, hence a 1-2 day delay may happen if there is a public holiday in a particular state.</p>
+								</div>
+								<div class="cm_shipFaqDv">
+								<p><strong>What do you mean by product cannot be shipped to my location?</strong></p>
+								
+								<p>Please enter your pin code on the product page to check if the product can be delivered to your location. Whether we can ship products to your location depends on multiple factors such as volume of the product, legal restrictions (if any), in shipping particular products to your location, availability of dependable courier partners in your location. Shipping products to particular locations is entirely our discretion.</p>
+								</div>
+								<div class="cm_shipFaqDv">
+								<p><strong>How long will it take for me to receive the order?</strong></p>
+								
+								<p>The amount of time it takes for you to receive your order depends on your location. An estimate of the transit time (surface transport) is as follows:</p>
+								
+								<p>North Zone – 4-5 days</p>
+								
+								<p>East Zone – 7-8 days</p>
+								
+								<p>West Zone – 2-4 days</p>
+								
+								<p>South Zone – 5-6 days</p>
+								
+								<p>Special Zone – 12-14 days</p>
+								
+								<p>The following is an indicative list of cities falling under each zone:</p>
+								
+								<p>North Zone: Punjab, Chandigarh, Haryana, Delhi, Rajasthan, Uttar Pradesh, Jammu & Kashmir, Himachal Pradesh</p>
+								
+								<p>East Zone: Bihar, Jharkhand, Chattisgarh, West Bengal, Orissa</p>
+								
+								<p>West Zone: Gujarat, Maharashtra, Madhya Pradesh, Goa, Daman & Diu, Dadra & Nagar Haveli</p>
+								
+								<p>South Zone: Andhra Pradesh, Karnataka, Tamil Nadu, Pondicherry, Kerala</p>
+								
+								<p>Special Zone: Arunachal Pradesh, Assam, Nagaland, Mizoram, Meghalaya, Sikkim, Tripura, Manipur, Andaman & Nicobar</p>
+								</div>
+								<div class="cm_shipFaqDv">
+								<p><strong>What is Outside Delivery Area (ODA)?</strong></p>
+								
+								<p>In case your location falls outside the standard delivery area of our courier partners, then there may be an outside delivery area charge (ODA) which will be applicable. In such a case, our customer service representatives will get in touch with you and additional charges, if any, would be borne by the customer.</p>
+								</div>
+								<div class="cm_shipFaqDv">
+								<p><strong>Can I get my order faster if I am willing to pay more?</strong></p>
+								
+								<p>Yes, we can arrange for express shipment by air. However, there would be additional charges. After you place your order, please call our customer helpline on +91 8080 740 740.</p>
+								</div>
+								<div class="cm_shipFaqDv">
+								<p><strong>On which days do you not deliver?</strong></p>
+								
+								<p>Orders are only delivered on business days. Apart from Sundays, there are certain holidays throughout the year that are not considered as business days. Deliveries will not happen on these days.</p>
+								</div>
+						
+					</div>
+				</div>
+				
+			</article>
+		</section><!-- .cm_shippingFaq -->
+		<!-- .popups -->
+		
+		
+		
+		<!-- .Popups -->
+		<div class="cm_greyLayer"></div>
+		<section class="cm_checkoutMainDv allPopups cm_emiOption animated">
+			<article>
+				<header><h3 class="cm_toUpperCase">EMI Options <a href="javascript: void(0)" class="floatRight cm_closePopup cm_headerIcons">Close</a></h3></header>
+				<div class="cm_chekoutBody">
+					<div class="cm_emiOptionParent">
+						<table class="formTable" width="100%" cellspacing="0" cellpadding="0">
+							<tr>
+								<th></th>
+								<th>3 Months</th>
+								<th>6 Months</th>
+								<th>9 Months</th>
+								<th>12 Months</th>
+							</tr>
+							<tr>
+								<td><img title="axis" alt="axis" src="images/emi/axis.jpg"></td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><img title="axis" alt="axis" src="images/emi/axis.jpg"></td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><img title="axis" alt="axis" src="images/emi/axis.jpg"></td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><img title="axis" alt="axis" src="images/emi/axis.jpg"></td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><img title="axis" alt="axis" src="images/emi/axis.jpg"></td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><img title="axis" alt="axis" src="images/emi/axis.jpg"></td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				
+			</article>
+		</section><!-- .cm_shippingFaq -->
+		<!-- .popups -->
 </body>
 </html>

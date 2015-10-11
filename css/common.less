@@ -306,10 +306,11 @@
 		width: auto;
 	}
 	.cm_latestOffers {
+		font-size: 12px;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		width: 48%;
+		width: 40%;
 	}
 	.cm_shopMainArrUp{
 		background-position: -18px -409px;
@@ -351,9 +352,9 @@
 		background-color: @brand;
 }
 	.cm_header ul li .cm_headerIcons{
-		height: 56px;
+		height: 36px;
 	    padding: 2px;
-	    width: 56px; 
+	    width: 36px; 
 	}
 	.cm_likeProdBtn{
 		background-position: 4px -926px;
@@ -369,38 +370,38 @@
 		background-color: @brand;
 	}
 	.cm_design{
-		background-position: -4px -698px;
+		background-position: -14px -709px;
 	   -moz-transition: all 0.2s linear;
 	    -o-transition: all 0.2s linear;
 	    -webkit-transition: all 0.2s linear;
 	    transition: all 0.2s linear;
    	}
 	.cm_header ul li:hover .cm_design{
-		background-position: -84px -698px;
+		background-position: -94px -708px;
 		background-color: @brand;
 		border: 2px solid @brand!important;
 	}
    	.cm_build{
-		background-position: -5px -836px;
+		background-position: -15px -846px;
 	   -moz-transition: all 0.2s linear;
 	    -o-transition: all 0.2s linear;
 	    -webkit-transition: all 0.2s linear;
 	    transition: all 0.2s linear;
    	}
 	.cm_header ul li:hover .cm_build{
-		background-position: -85px -836px;
+		background-position: -94px -846px;
 		background-color: @brand;
 		border: 2px solid @brand!important;
    	}
    	.cm_blog{
-		background-position: -5px -768px;
+		background-position: -15px -779px;
 	   -moz-transition: all 0.2s linear;
 	    -o-transition: all 0.2s linear;
 	    -webkit-transition: all 0.2s linear;
 	    transition: all 0.2s linear;
    	}
 	.cm_header ul li:hover .cm_blog{
-		background-position: -85px -768px;
+		background-position: -95px -779px;
 		background-color: @brand;
 		border: 2px solid @brand!important;
    	}
@@ -439,7 +440,8 @@
 		padding: 20px;
 		
 	}
-	.itHasItem, .cm_cartIcon:hover{background-color: @brand; background-position: -35px -1169px}
+	.cm_cartIcon.itHasItem, .cm_cartIcon:hover{background-color: @brand; background-position: -38px -1169px}
+	.cm_wishListIcon.itHasItem, .cm_wishListIcon:hover{background-color: @brand; background-position: -23px -1293px!important;}
 	
 	.cm_rightArrow-line{background-position: -54px -1453px; width: 15px; height: 11px;}
 	.primBtnWhiteArr{background-position: -78px -1455px; width: 9px; height: 9px;}
@@ -452,7 +454,7 @@
 .cm_header ul {
 	display: inline-block;
     float: right;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 .cm_header ul li:first-child{margin-left: 0}
 .cm_header ul li{ display: inline-block;margin-left: 30px; vertical-align: top}
@@ -463,8 +465,7 @@
 	font-family: 'Open Sans';
 	line-height: 15px;
     margin-left: 15px;
-    margin-top: 5px;
-	text-transform: capitalize;
+  	text-transform: capitalize;
 	font-size: 12px;
 	text-decoration: none;
 	color: #808080;
@@ -472,15 +473,15 @@
 .cm_header ul li a .cm_txtLbl{
 	font-family: Bebas Neue;
 	color: @brand;
-    font-size: 24px;
+    font-size: 20px;
     margin-left: 15px;
     margin-top: 2px;
 }
 .cm_header ul li .cm_headerIcons{border: 2px solid #5d5d5d; border-radius: 60px; float: left;}
 .cm_header{margin: 5px 0;}
 
-.cm_trackOder{font-size: 14px; color: #333; background: #ededed;padding-top: 3px; padding-bottom: 3px;}
-.cm_userSupport a{color: #333; font-size: 14px; margin: 0 10px;}
+.cm_trackOder{font-size: 12px; color: #333; background: #ededed;padding-top: 3px; padding-bottom: 1px;}
+.cm_userSupport a{color: #333; font-size: 12px; margin: 0 10px;}
 .cm_userSupport a:last-child{margin: 0;}
 
 
@@ -576,7 +577,8 @@
 }
 .cm_userPreIcons{display: inline-block;}
 
-.cm_wishCount{
+.cm_whCount{background: none!important; border: none!important; text-indent: -99999px;}
+.cm_wishCount, .cm_whCount{
 	background: #222 none repeat scroll 0 0;
 	border: 2px solid #fff;
 	border-radius: 50px;
@@ -701,21 +703,21 @@
 .cm_shopCatSubview.showAlways{display: block;}
 .cm_shopCatSubCatg li{
 	float: left;
-	width: 131px;
+	width: 133px;
 	height: 153px;
-	border: 1px solid #d0d0d0;
 	margin-right: 14px;
 }
 .cm_shopCatSubCatg li:last-child{margin-right: 0}
-.cm_shopCatSubCatg li p{background: @brand;  float: left; width: 100%;}
+.cm_shopCatSubCatg li p{  float: left; width: 100%; font-size: 12px;}
+.cm_shopCatSubCatg li:hover a{color: @brand}
 .cm_shopCatSubCatg li a{
-	color: #fff;
+	color: #333;
 	display: block;
 	font-size: 11px;
 	text-align: center;
 }
 .cm_shopCatSubCatg img{width: 131px; height: 133px; float:left;}
-.cm_shopCatSubCatg li:hover p{color: #fff; background: @brandPrimHover;}
+
 .cm_shopByCatHandle{border: 1px solid transparent; background: @brand;cursor: pointer; padding: 10px 20px; display: inline-block; min-width: 100px; border-radius: 2px; }
 
 .setShadow{box-shadow: 0 0 3px #c0c0c0;}
@@ -866,41 +868,42 @@ text-overflow: ellipsis;
 .popup_pullout ul li.active a, .popup_pullout ul li:hover a{color: @brand}
 
 /**Fix bar search bar CSS**/
-.fixBar{
+.fixBar, .smallSearchBar{
 	 /*-webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;*/
 	position: fixed; top: 0px; z-index: 99999; background: #fff; padding:10px 0 12px; box-shadow: 0 0 3px #ccc; width: 100%; height: 30px;
 }
+.smallSearchBar{position: relative!important; box-shadow: none!important; padding:0px 0 12px!important;}
 
-.fixBar .cm_shopByCatHandle{font-size: 14px; padding: 5px 20px;}
-.fixBar .cm_filterInp{height: 30px; font-size: 14px;}
-.fixBar .cm_pipeFilter{ height: 18px; top: 6px;}
-.fixBar .cm_filterByMenu{height: 30px;}
+.fixBar .cm_shopByCatHandle, .smallSearchBar .cm_shopByCatHandle{font-size: 14px; padding: 5px 20px;}
+.fixBar .cm_filterInp, .smallSearchBar .cm_filterInp{height: 30px; font-size: 14px;}
+.fixBar .cm_pipeFilter, .smallSearchBar .cm_pipeFilter{ height: 18px; top: 6px;}
+.fixBar .cm_filterByMenu, .smallSearchBar .cm_filterByMenu{height: 30px;}
 .cm_filterByMenu li.cm_setMeFirst > a{ transition: all 0s ease;}
-.fixBar .cm_filterByMenu li.cm_setMeFirst > a{font-size: 14px; padding: 0 10px 4px; transition: all 0s ease;}
+.fixBar .cm_filterByMenu li.cm_setMeFirst > a, .smallSearchBar .cm_filterByMenu li.cm_setMeFirst > a{font-size: 14px; padding: 0 10px 4px; transition: all 0s ease;}
 .cm_loginAndReg a, .cm_myAcc a{ transition: all 0s ease;}
-.fixBar .cm_searchFilterBtn{width: 30px; height: 32px; background-position: -24px -1258px}
-.fixBar .cm_userDetOnBar{margin-top: 5px;}
-.fixBar .cm_userDetOnBar a, .fixBar .cm_userDetOnBar span{font-size: 14px;}
-.fixBar .cm_myAcc > a{padding-bottom: 5px;}
+.fixBar .cm_searchFilterBtn, .smallSearchBar .cm_searchFilterBtn{width: 30px; height: 32px; background-position: -24px -1258px}
+.fixBar .cm_userDetOnBar, .smallSearchBar .cm_userDetOnBar{margin-top: 5px;}
+.fixBar .cm_userDetOnBar a, .fixBar .cm_userDetOnBar span, .smallSearchBar .cm_userDetOnBar a, .smallSearchBar .cm_userDetOnBar span{font-size: 14px;}
+.fixBar .cm_myAcc > a, .smallSearchBar .cm_myAcc > a{padding-bottom: 5px;}
 
-.fixBar .cm_wishListIcon, .fixBar .cm_cartIcon{padding: 15px;}
-.fixBar .cm_wishListIcon{background-position: 3px -1293px;  transition: background 0.5s ease;}
-.fixBar .cm_wishListIcon:hover{background-position: -23px -1293px;}
+.fixBar .cm_wishListIcon, .fixBar .cm_cartIcon, .smallSearchBar .cm_wishListIcon, .smallSearchBar .cm_cartIcon{padding: 15px;}
+.fixBar .cm_wishListIcon, .smallSearchBar .cm_wishListIcon{background-position: 3px -1293px;  transition: background 0.5s ease;}
+.fixBar .cm_wishListIcon:hover, .smallSearchBar .cm_wishListIcon:hover{background-position: -23px -1293px;}
 
-.fixBar .cm_cartIcon{background-position: 3px -1323px}
-.fixBar .itHasItem, .fixBar .cm_cartIcon:hover{background-position: -23px -1323px}
-.fixBar .cm_wishCount{top: -5px; right: -11px;}
-.fixBar .cm_shopbyCatMainDv{top: 30px;}
-.fixBar .cm_filterByCat{width: 560px;}
-.fixBar .cm_filterInp{width: 338px;}
+.fixBar .cm_cartIcon, .smallSearchBar .cm_cartIcon{background-position: 3px -1323px}
+.fixBar .cm_cartIcon.itHasItem, .fixBar .cm_cartIcon:hover, .smallSearchBar .cm_cartIcon.itHasItem, .smallSearchBar .cm_cartIcon:hover{background-position: -23px -1323px}
+.fixBar .cm_wishCount, .smallSearchBar .cm_wishCount{top: -5px; right: -11px;}
+.fixBar .cm_shopbyCatMainDv, .smallSearchBar .cm_shopbyCatMainDv{top: 30px;}
+.fixBar .cm_filterByCat, .smallSearchBar .cm_filterByCat{width: 560px;}
+.fixBar .cm_filterInp, .smallSearchBar .cm_filterInp{width: 338px;}
 
-.fixBar .cm_shopMainArrUp{background-position: -3px -1264px}
-.fixBar .cm_shopMainArrDown{background-position: -53px -1262px}
+.fixBar .cm_shopMainArrUp, .smallSearchBar .cm_shopMainArrUp{background-position: -3px -1264px}
+.fixBar .cm_shopMainArrDown, .smallSearchBar .cm_shopMainArrDown{background-position: -53px -1262px}
 
-.fixBar .cm_shopByCatDv:hover .cm_shopMainArrUp{background-position: -53px -1262px}
+.fixBar .cm_shopByCatDv:hover .cm_shopMainArrUp, .smallSearchBar .cm_shopByCatDv:hover .cm_shopMainArrUp{background-position: -53px -1262px}
 
 /*Fix searchbar ends**/
 
@@ -1221,6 +1224,9 @@ text-overflow: ellipsis;
 	position: absolute;
 	top: 120px !important;
 }
+
+.cm_shippingFaq{width: 740px!important; margin-left: -370px; height: 400px; margin-top: -200px; }
+.cm_shippingFaq .cm_chekoutBody .cm_shipFaqParent{height: 350px; width: 740px; overflow: hidden; position: relative;}
 /***/
 
 .cm_inlineSmallMsg{display: none; clear: both; float: left; width: 100%}
@@ -1242,12 +1248,57 @@ text-overflow: ellipsis;
     top: 50%;
     width: 700px !important;
 }
+.cm_currencyChng{
+	float: right;
+    width: 40px;
+    position: relative;
+}
+.cm_currencyChng .cm_currDrop{
+	background: #fff;
+    border: 1px solid #d0d0d0;
+    right: 0px;
+    padding: 10px;
+    position: absolute;
+    width: 170px;
+    display: none;
+}
+.cm_currencyChng .cm_currDrop h3, .cm_currencyChng .cm_currDrop select{
+	font-size: 12px;
+	font-weight: normal;
+	width:100%;
+}
 
+.cm_header img.logo{width: 116px; height: 90}
+.cm_aboutDiv{width: 100%;}
+.cm_aboutDiv img{width: 50%; margin-bottom: 20px;}
+.cm_aboutDiv .cm_aboutTxt{
+	float: right;
+    width: 47%;
+ }
+.cm_aboutDiv p{margin-bottom: 20px;}
+.cm_teamIndi{
+	float: left;
+    margin: 30px 1.5%;
+    width: 30%;
+    text-align: center;
+}
+.cm_teamIndi > img {
+    border-radius: 120px;
+    max-width: 100%;
+    border: 2px solid #d0d0d0;
+    margin-bottom: 20px;
+}
+.cm_teamIndi h2{font-size: 16px; color: #333;}
+.cm_teamIndi .cm_teamDesigntn{font-size: 14px; margin-bottom: 15px;}
+.cm_teamIndi .cm_aboutTeamIndiTxt{
+	 font-size: 14px;
+    margin-left: 30px;
+    text-align: justify;
+    width: 238px;
+}
 
-
-
-
-
-
-
-
+.cm_emiOption{width: 740px!important; margin-left: -370px; height: 400px; margin-top: -200px;}
+.cm_emiOption table tr th, .cm_emiOption table tr td{font-size: 14px; color: #333;} 
+.cm_emiOption table tr th{text-align: left; padding-bottom: 20px}
+.cm_emiOption table tr td{padding-bottom: 20px;}
+.cm_emiOptionParent{height: 350px; width: 740px; overflow: hidden; position: relative;}

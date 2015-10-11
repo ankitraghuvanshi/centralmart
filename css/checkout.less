@@ -96,7 +96,7 @@
 }
 
 /**.cm_shippingAddrDv**/
-.cm_shippingAddrDv article{width: 298px; height: 292px; border: 1px solid #d0d0d0; background: #f5f5f5; margin-right: 32px; margin-bottom: 32px; cursor: pointer;}
+.cm_shippingAddrDv article{position: relative; width: 298px; height: 292px; border: 1px solid #d0d0d0; background: #f5f5f5; margin-right: 32px; margin-bottom: 32px; cursor: pointer;}
 .cm_shippingAddrDv article:hover{box-shadow: 0 0 3px #ccc;}
 .cm_shippingAddrDv article.selected{background: #fff; border-color: @brand;}
 .cm_shippingAddrDv article.selected:hover, .cm_shippingAddrDv article.first:hover{box-shadow: none; cursor: default;}
@@ -105,7 +105,7 @@
 .cm_shippingAddrDv article .addrBody h3{font-size: 18px; color: #333; margin-bottom: 20px;}
 .cm_shippingAddrDv article .addrBody p{font-size: 14px; color: #808080; }
 .cm_shippingAddrDv article .addrBody p.cm_phoneAddrLbl{margin-top: 20px;}
-.cm_shippingAddrDv article footer{padding: 8px 20px; border-top: 1px solid #d0d0d0; width: 258px; font-size: 12px;}
+.cm_shippingAddrDv article footer{padding: 8px 20px; border-top: 1px solid #d0d0d0; width: 258px; font-size: 12px;bottom: 0; position: absolute; height: 22px;}
 .cm_shippingAddrDv article footer .actnBtn a label{text-indent: -99999px}
 .cm_deleteAddr{background-position: -52px -2447px; width: 28px; height: 28px;}
 .cm_addPencil{background-position: -104px -2447px; width: 28px; height: 28px;}
@@ -153,7 +153,7 @@
 }
 .cm_successCheckout{width: 410px; background: #f5f5f5; border: 1px solid #d0d0d0; padding: 35px 25px 20px;   margin: 0 254px 50px; clear: both}
 .cm_successCheckout h3{font-size: 24px; font-weight: normal; color: #333;}
-.cm_successCheckout p{font-size: 14px; margin-top: 10px;}
+.cm_successCheckout p{text-align: center; font-size: 14px; margin-top: 10px;}
 .cm_whitePlus{
     background-position: -84px -1357px;
     background-color: @brand;
