@@ -35,8 +35,14 @@
 	        }, 600);
 		});
 		
+		
+		
 	});/*doc ends*/
-
+	$(window).load(function (){
+		var actHt = $(this).outerHeight(true) - ($('.cm_searchBar.fixBar').outerHeight(true) + 
+				$('.cm_breadCrumbLooks').outerHeight(true) )
+		$('.cm_looksLeft').height(actHt)
+	});
 	function completeDesignFn(){
 		var winWd = $(window).width();
 		var winHt = $(window).height();
@@ -250,49 +256,55 @@
 			<input type="button" class="cm_headerIcons cm_searchFilterBtn" />
 			
 		<!-- </section> -->
-		<div class="cm_userPref">
-			<span class="cm_userDetOnBar">
-				<span class="cm_loginAndReg disNone">
-					<a href="javascript: void(0)" >Login</a> or
-					<a href="javascript: void(0)" class="cm_brandClr">Register</a>
-				</span>
-				
-				<span class="cm_myAcc posRel itHasPopup mr10 dispInBlk">
-					<a href="javascript: void(0)" >My Account <label class="cm_headerIcons cm_filterDropArr"></label></a>
-					<span class="popup_pullout">
-						<ul class="">
-							<li><a href="javascript: void(0)">Account Information</a></li>
-							<li><a href="javascript: void(0)">Orders</a></li>
-							<li><a href="javascript: void(0)">Wishlist</a></li>
-							<li><a href="javascript: void(0)">Address Book</a></li>
-							<li><a href="javascript: void(0)">Projects</a></li>
-							<li><a href="javascript: void(0)">Product Reviews</a></li>
-						</ul>
+			<div class="cm_userPref">
+				<span class="cm_userDetOnBar">
+					<span class="cm_loginAndReg disNone">
+						<a href="javascript: void(0)" >Login</a> or
+						<a href="javascript: void(0)" class="cm_brandClr">Register</a>
+					</span>
+					
+					<span class="cm_myAcc posRel itHasPopup mr10 dispInBlk">
+						<a href="javascript: void(0)" >My Account <label class="cm_headerIcons cm_filterDropArr"></label></a>
+						<span class="popup_pullout">
+							<ul class="">
+								<li><a href="javascript: void(0)">Account Information</a></li>
+								<li><a href="javascript: void(0)">Orders</a></li>
+								<li><a href="javascript: void(0)">Wishlist</a></li>
+								<li><a href="javascript: void(0)">Address Book</a></li>
+								<li><a href="javascript: void(0)">Projects</a></li>
+								<li><a href="javascript: void(0)">Product Reviews</a></li>
+							</ul>
+						</span>
 					</span>
 				</span>
-			</span>
-			
-			<span class="cm_userPreIcons">
-				<a href="javascript: void(0)" class=" ml10 cm_headerIcons cm_wishListIcon"></a>
-				<span class="posRel dispInBlk  ml10">
-					<a href="javascript: void(0)" class="cm_headerIcons cm_cartIcon"></a>
-					<label class="cm_wishCount">10</label>
+				
+				<span class="cm_userPreIcons">
+					<a href="javascript: void(0)" class=" ml10 cm_headerIcons cm_wishListIcon"></a>
+					<span class="posRel dispInBlk  ml10">
+						<a href="javascript: void(0)" class="cm_headerIcons cm_cartIcon"></a>
+						<label class="cm_wishCount">10</label>
+					</span>
 				</span>
-			</span>
-		</div>
+			</div>
+		</section>
+		<section class="cm_grid970 cm_breadCrumbLooks">
+			<ul class="cm_prodItembreadCrumb">
+				<li><a href="javascript: void(0)">Home &gt;</a></li>
+				<li><a href="javascript: void(0)">Design Inspirations &gt;</a></li>
+				<li class='active'><a href="javascript: void(0)">Delightfully Dewy - Contemporary Bedroom by Hidden Gallery</a></li>
+			</ul>
 		</section>
 	</section> <!-- .cm_fullBoundary.cm_searchBar -->
-	<div class="clear"></div>
 	<section class="cm_looksMain">
-		<section class="cm_fullBoundary cm_breadCrumbLooks">
-			<section class="cm_grid970 ">
-					<ul class="cm_prodItembreadCrumb mb20 mt10">
+		<!-- <section class="cm_fullBoundary cm_breadCrumbLooks">
+			<section class="cm_grid970 cm_breadCrumbLooks">
+					<ul class="cm_prodItembreadCrumb">
 						<li><a href="javascript: void(0)">Home &gt;</a></li>
 						<li><a href="javascript: void(0)">Design Inspirations &gt;</a></li>
 						<li class='active'><a href="javascript: void(0)">Delightfully Dewy - Contemporary Bedroom by Hidden Gallery</a></li>
 					</ul>
 			</section>
-		</section>
+		</section> -->
 		<section class="cm_fullBoundary cm_looksMainContent">
 			<section class="cm_looksLeft">
 				<div class="cm_compDesignDv">
