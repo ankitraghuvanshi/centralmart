@@ -312,7 +312,4 @@ $(document).ready(function(){
 		$(ele).closest('.allPopups').hide();
 		jQuery('.cm_greyLayer').hide();
 	}
-	function showAllItems(ele){
-		jQuery('.cm_showAllItems').addClass('bounceInUp');
-		jQuery('.cm_showAllItems, .cm_greyLayer').css('display', 'block');
-	}
+	
