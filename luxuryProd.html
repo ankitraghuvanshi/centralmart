@@ -2,32 +2,30 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Central Mart - Projects</title>
+<title>Central Mart - Luxury Products</title>
 <link href="css/main.less" rel="stylesheet/less" />
+<link rel="stylesheet" type="text/css" href="css/justifiedGallery.css">
+<link rel="stylesheet" type="text/css" href="css/fancybox.css">
+
 <script src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/justifiedGallery.js"></script>
+<script type="text/javascript" src="js/fancybox.js"></script>
 <script src="js/less-min.js"></script>
 <script src="js/bxslider.js"></script>
 <script src="js/common.js"></script>
 
+
 <script type="text/javascript">
 	$(document).ready(function (){
-		$('.cm_allIndvProjects').each(function (){
-			$(this).find('.projectCollp').on('click', function (){
-				if($(this).hasClass('closed')){
-					$(this).closest('header').siblings('.cm_indProjDivBody').slideDown();
-					$(this).removeClass('closed');
-					$(this).closest('.cm_allIndvProjects').siblings('.cm_allIndvProjects').find('.cm_indProjDivBody').slideUp();
-					$(this).closest('.cm_allIndvProjects').siblings('.cm_allIndvProjects').find('.projectCollp').addClass('closed');
-				}else{
-					$(this).closest('header').siblings('.cm_indProjDivBody').slideUp();
-					$(this).addClass('closed');
-				}
-			});
+		$("#luxImgGallery").justifiedGallery({
+			margins: 10
 		});
-			
-		
+		$(".fancybox").fancybox({
+			openEffect	: 'none',
+			closeEffect	: 'none'
+		});
 	});/*doc ends*/
-	
+
 </script>
 </head>
 <body>
@@ -263,121 +261,158 @@
 		</section>
 	</section> <!-- .cm_fullBoundary.cm_searchBar -->
 	<div class="clear"></div>
+	<section class="cm_luxuryMainCont">
 	
-	<section class="cm_fullBoundary cm_pdpContent brdrTopGrey mt15">
-		<section class="cm_grid970 ">
-			<ul class="cm_prodItembreadCrumb mb20 mt10">
-				<li><a href="javascript: void(0)">Home &gt;</a></li>
-				<li class='active'><a href="javascript: void(0)">Projects</a></li>
-			</ul>
-			<div class="mt20">
-				<section class="cm_allIndvProjects">
-					<header>
-						<h2 class="cm_toUpperCase">
-							Projects
-							<!-- <span class="floatRight orderIdLblHead font14">Order ID: <a class="cm_brandClr " onclick="trackOrderPopup()" href="javascript: void(0)">245511</a></span> -->
-							<select class="floatRight" style="height: 30px; position: relative; top: -4px; padding: 5px;">
-								<option>Select Project</option>
-								<option>All</option>
-								<option>Project Andheri</option>
-								<option>Project Virar</option>
-								<option>Project_Dadar</option>
-							</select>
-						</h2>
-					</header>
-					<div class="cm_indProjDivBody" style="padding: 20px 0; display: block;">
-						<section class="">
-							<table class="cm_cenralTable cm_cartTablePriceList" cellspacing="0" cellpadding="0">
-								<thead>
-									<tr>
-										<th align="left" width ="15%">Order ID</th>
-										<th align="left" width ="15%" >Name</th>
-										<th align="left" width ="15%">Date</th>
-										<th align="left" width ="15%">Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
-									</tr>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Completed</td>
-									</tr>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
-									</tr>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
-									</tr>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
-									</tr>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
-									</tr>
-								</tbody>
-							</table>
-						</section>
-						<!-- <section class="cm_cartOrderTotal">
-							<table class="cm_cenralTable" cellspacing="0" cellpadding="0">
-								<thead>
-									<tr>
-										<th colspan="2" align="left">Order Total</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Subtotal</td>
-										<td align="right"><strong>Rs. 22,708</strong></td>
-									</tr>
-									<tr>
-										<td>Shipping</td>
-										<td align="right"><strong>- -</strong></td>
-									</tr>
-									<tr>
-										<td>Tax</td>
-										<td align="right"><strong>Rs. 250</strong></td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td>Total</td>
-										<td align="right"><strong>Rs. 23,157</strong></td>
-									</tr>
-								</tfoot>
-							</table>
-							<p class="cm_yousave"><span class="floatLeft cm_upperCase">You Saved</span><strong class="floatRight">Rs. 3,235</strong></p>
-						</section> -->
-					</div>
-					
-				</section><!-- .cm_allIndvProjects -->
-				<div class="clear"></div>
-			</div>
-			<div class="clear"></div>
-			
-			
+		<section class="cm_fullBoundary cm_pdpContent brdrTopGrey mt15">
+			<section class="cm_grid970 ">
+				<ul class="cm_prodItembreadCrumb mb20 mt10">
+					<li><a href="javascript: void(0)">Home &gt;</a></li>
+					<li><a href="javascript: void(0)">Lux Products &gt;</a></li>
+					<li class='active'><a href="javascript: void(0)">Bestlite BL7 Wall-lamp</a></li>
+				</ul>
+				
+				<div class="mt20">
+					<img src="images/luxuryProd/banner.jpg" />
+					<section class="cm_luxProdMain">
+						<header class="cm_sectionHead">
+							<div class="cmDottedLuxLine"></div>
+							<h2 class="cm_toUpperCase">Bestlite BL7 Wall-lamp</h2>
+						</header>
+						<div class="cm_luxprodInfo">
+							<div class="cm_luxInfoLeft">
+								<img src="images/luxuryProd/prodDisplay.png" />
+							</div>
+							<div class="cm_luxInfoRight">
+								<label class="whiteLblLux">&nbsp;</label>
+								<header class="cm_luxRightHeader"><h3 class="">Description</h3></header>
+								
+								<p>
+									Bestlite has been in continuous production since 1930. Winston Churchill is numbered amongst its many famous users. The Bestlite design was conceived by Robert Dudley Best who was highly influenced by the Bauhaus.
+								</p>
+								<p>
+									Bauhaus was a school in Germany that merged practical crafts with the fine arts and became famous for the design concept that it publicized and taught. Bauhaus had a profound influence upon subsequent developments in art, architecture, graphic design, interior design and industrial design and Bauhaus style became one of the most influential forces behind Modernist architecture and modern design.
+								</p>
+								<p>	
+									Eighty years on, the Bestlite design stays close to its industrial roots and true to its original design. Bestlite is held in permanent collections at both the Victoria & Albert Museum and the Design Museum in London. Loved by architects, designers and design aficionados throught its 80-year history, today, Bestlite enjoys global iconic status.
+								</p>
+								
+								<div class="cm_luxProdPrice">
+									<strong class="cm_luxDetailPrice">Rs. 4,045</strong>
+									<a class="floatRight cm_toUpperCase cm_primaryBtn cm_brandClr" href="javascript: void(0)">Shop now <label class="cm_headerIcons primBtnWhiteArr"></label></a>
+								</div>
+							</div>
+						</div>
+					</section><!-- .cm_luxProdMain -->
+					<div class="clear"></div>
+					<section class="cm_luxMainGall mt30 mb30">
+						<header class="cm_sectionHead">
+							<h2>Gallery</h2>
+						</header>
+						<div id="luxImgGallery" >
+						
+							<a class="fancybox" rel="gallery1" href="images/luxuryProd/item1.jpg" >
+								<img src="images/luxuryProd/item1.jpg" alt="" />
+							</a>
+							<a class="fancybox" rel="gallery1" href="images/luxuryProd/item2.jpg" >
+								<img src="images/luxuryProd/item2.jpg" alt="" />
+							</a>
+							<a class="fancybox" rel="gallery1" href="images/luxuryProd/item3.jpg" >
+								<img src="images/luxuryProd/item3.jpg" alt="" />
+							</a>
+							<a class="fancybox" rel="gallery1" href="images/luxuryProd/item4.jpg" >
+								<img src="images/luxuryProd/item4.jpg" alt="" />
+							</a>
+							<a class="fancybox" rel="gallery1" href="images/luxuryProd/item5.jpg" >
+								<img src="images/luxuryProd/item5.jpg" alt="" />
+							</a>
+							<a class="fancybox" rel="gallery1" href="images/luxuryProd/item6.jpg" >
+								<img src="images/luxuryProd/item6.jpg" alt="" />
+							</a>
+							<a class="fancybox" rel="gallery1" href="images/luxuryProd/item7.jpg" >
+								<img src="images/luxuryProd/item7.jpg" alt="" />
+							</a>
+							<a class="fancybox" rel="gallery1" href="images/luxuryProd/item8.jpg" >
+								<img src="images/luxuryProd/item8.jpg" alt="" />
+							</a>
+
+						</div>
+						<!-- <ul class="gamma-gallery">
+							<li><a href="javascript: void(0)"><img src="images/luxuryProd/item1.jpg"></a></li>
+							<li><a href="javascript: void(0)"><img src="images/luxuryProd/item2.jpg"></a></li>
+							<li><a href="javascript: void(0)"><img src="images/luxuryProd/item3.jpg"></a></li>
+							<li><a href="javascript: void(0)"><img src="images/luxuryProd/item4.jpg"></a></li>
+							<li><a href="javascript: void(0)"><img src="images/luxuryProd/item5.jpg"></a></li>
+							<li><a href="javascript: void(0)"><img src="images/luxuryProd/item6.jpg"></a></li>
+							<li><a href="javascript: void(0)"><img src="images/luxuryProd/item7.jpg"></a></li>
+							<li><a href="javascript: void(0)"><img src="images/luxuryProd/item8.jpg"></a></li>
+						</ul> -->
+					</section>
+					<div class="clear"></div>
+					<section class="cm_luxProdSpec">
+						<header class="cm_luxRightHeader"><h3 class="">Product Specifications</h3></header>
+						<table width="100%" cellpadding="0" cellspacing="0" class="cm_specTable">
+							<tr>
+								<td>In the box</td>
+								<td>Faucet, Basin Flange </td>
+							</tr>
+							<tr>
+								<td>Brand</td>
+								<td>MonoTero</td>
+							</tr>
+							<tr>
+								<td>Model Number</td>
+								<td>CUBE1</td>
+							</tr>
+							<tr>
+								<td>Type</td>
+								<td>Table Top Basin</td>
+							</tr>
+							<tr>
+								<td>Color</td>
+								<td>White, Brown</td>
+							</tr>
+							<tr>
+								<td>Weight</td>
+								<td>5 kg</td>
+							</tr>
+							<tr>
+								<td>Height</td>
+								<td>40 cm</td>
+							</tr>
+							<tr>
+								<td>Width</td>
+								<td>40 cm</td>
+							</tr>
+							<tr>
+								<td>Depth</td>
+								<td>13 cm</td>
+							</tr>
+							<tr>
+								<td>Covered in Warranty</td>
+								<td>Only Manufacturing Defects And Internal Metal Parts Are Covered </td>
+							</tr>
+							<tr>
+								<td>Warranty Summary</td>
+								<td>7 Year Manufacturer Warranty</td>
+							</tr>
+							<tr>
+								<td>Warranty Service Type</td>
+								<td>On-Site Service, Customer Needs To Call The Nearby Authorized Service Center, Service Engineer Will Come To The Site To Get The Product Repaired Or Inspected.</td>
+							</tr>
+							<tr>
+								<td>Not Covered in Warranty</td>
+								<td>Chrome Plating & Rubber Parts Are Not Covered In Warranty</td>
+							</tr>
+						</table>
+					</section>
+					 
+				</div>
+				
+			</section>
 		</section>
+		<div class="clear"></div>
 	</section>
-	<div class="clear"></div>
-	<section class="cm_fullBoundary cm_subscribe mt30 posRel">
+	<section class="cm_fullBoundary cm_subscribe posRel">
 		<section class="cm_grid970 ">
 			<div class="cm_scrollToTop posAbs scrollToTop fixScroll">
 				<a href="javascript: void(0)" title="Scroll To Top" class="cm_headerIcons"></a>

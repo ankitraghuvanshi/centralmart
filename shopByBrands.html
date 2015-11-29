@@ -2,29 +2,18 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Central Mart - Projects</title>
+<title>Central Mart - Shop By Brands</title>
 <link href="css/main.less" rel="stylesheet/less" />
+<link href="css/perfectScrollbar.css" rel="stylesheet/css" />
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/less-min.js"></script>
 <script src="js/bxslider.js"></script>
 <script src="js/common.js"></script>
+<script src="js/nicescroll.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function (){
-		$('.cm_allIndvProjects').each(function (){
-			$(this).find('.projectCollp').on('click', function (){
-				if($(this).hasClass('closed')){
-					$(this).closest('header').siblings('.cm_indProjDivBody').slideDown();
-					$(this).removeClass('closed');
-					$(this).closest('.cm_allIndvProjects').siblings('.cm_allIndvProjects').find('.cm_indProjDivBody').slideUp();
-					$(this).closest('.cm_allIndvProjects').siblings('.cm_allIndvProjects').find('.projectCollp').addClass('closed');
-				}else{
-					$(this).closest('header').siblings('.cm_indProjDivBody').slideUp();
-					$(this).addClass('closed');
-				}
-			});
-		});
-			
+		
 		
 	});/*doc ends*/
 	
@@ -264,116 +253,184 @@
 	</section> <!-- .cm_fullBoundary.cm_searchBar -->
 	<div class="clear"></div>
 	
-	<section class="cm_fullBoundary cm_pdpContent brdrTopGrey mt15">
-		<section class="cm_grid970 ">
-			<ul class="cm_prodItembreadCrumb mb20 mt10">
-				<li><a href="javascript: void(0)">Home &gt;</a></li>
-				<li class='active'><a href="javascript: void(0)">Projects</a></li>
-			</ul>
-			<div class="mt20">
-				<section class="cm_allIndvProjects">
+	<section class="cm_fullBoundary brdrTopGrey mt20">
+		<section class="cm_grid970">
+			<ul class="cm_alphabetTab">
+                <li><a title="ABC" href="#cm_abc_shop">abc</a></li>
+                <li><a title="DEF" href="#cm_def_shop">def</a></li>
+                <li><a title="GHI" href="#cm_ghi_shop">ghi</a></li>
+                <li><a title="JKL" href="#cm_jkl_shop">jkl</a></li>
+                <li><a title="MNO" href="#cm_mno_shop">mno</a></li>
+                <li><a title="PQR" href="#cm_pqr_shop">pqr</a></li>
+                <li><a title="STU" href="#cm_stu_shop">stu</a></li>
+                <li><a title="VWXYZ" href="#cm_vwxyz_shop">vwxyz</a></li>
+            </ul>
+		</section>
+	</section>
+	
+	<section class="cm_fullBoundary brdrTopGrey">
+		<section class="cm_shopAllBrand cm_grid970">
+			<section id="cm_abc_shop">
+				<article class="cm_shopByIndi">
 					<header>
-						<h2 class="cm_toUpperCase">
-							Projects
-							<!-- <span class="floatRight orderIdLblHead font14">Order ID: <a class="cm_brandClr " onclick="trackOrderPopup()" href="javascript: void(0)">245511</a></span> -->
-							<select class="floatRight" style="height: 30px; position: relative; top: -4px; padding: 5px;">
-								<option>Select Project</option>
-								<option>All</option>
-								<option>Project Andheri</option>
-								<option>Project Virar</option>
-								<option>Project_Dadar</option>
-							</select>
-						</h2>
+						<h3>A</h3>
 					</header>
-					<div class="cm_indProjDivBody" style="padding: 20px 0; display: block;">
-						<section class="">
-							<table class="cm_cenralTable cm_cartTablePriceList" cellspacing="0" cellpadding="0">
-								<thead>
-									<tr>
-										<th align="left" width ="15%">Order ID</th>
-										<th align="left" width ="15%" >Name</th>
-										<th align="left" width ="15%">Date</th>
-										<th align="left" width ="15%">Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
-									</tr>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Completed</td>
-									</tr>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
-									</tr>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
-									</tr>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
-									</tr>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
-									</tr>
-								</tbody>
-							</table>
-						</section>
-						<!-- <section class="cm_cartOrderTotal">
-							<table class="cm_cenralTable" cellspacing="0" cellpadding="0">
-								<thead>
-									<tr>
-										<th colspan="2" align="left">Order Total</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Subtotal</td>
-										<td align="right"><strong>Rs. 22,708</strong></td>
-									</tr>
-									<tr>
-										<td>Shipping</td>
-										<td align="right"><strong>- -</strong></td>
-									</tr>
-									<tr>
-										<td>Tax</td>
-										<td align="right"><strong>Rs. 250</strong></td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td>Total</td>
-										<td align="right"><strong>Rs. 23,157</strong></td>
-									</tr>
-								</tfoot>
-							</table>
-							<p class="cm_yousave"><span class="floatLeft cm_upperCase">You Saved</span><strong class="floatRight">Rs. 3,235</strong></p>
-						</section> -->
-					</div>
-					
-				</section><!-- .cm_allIndvProjects -->
-				<div class="clear"></div>
-			</div>
-			<div class="clear"></div>
-			
-			
+					<ul>
+						<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">A. Lange &amp; Sohne</a></li>
+						<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">A. Lange &amp; Sohne</a></li>
+						<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">A. Lange &amp; Sohne</a></li>
+					</ul>
+				</article>
+				<article class="cm_shopByIndi">
+					<header>
+						<h3>B</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">Bulgari</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">Bulgari</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">Bulgari</a></li>
+						</ul>
+				</article>
+				<article class="cm_shopByIndi ">
+					<header>
+						<h3>C</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">Chanel</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">Chanel</a></li>
+						</ul>
+				</article>
+			</section>
+			<section id="cm_def_shop">
+				<article class="cm_shopByIndi">
+					<header>
+						<h3>D</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">De Beers</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">De Beers</a></li>
+						</ul>
+				</article>
+				<article class="cm_shopByIndi">
+					<header>
+						<h3>E</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">E_blah_blah</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">E_blah_blah</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">E_blah_blah</a></li>
+						</ul>
+				</article>
+				<article class="cm_shopByIndi">
+					<header>
+						<h3>F</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">F_Blah_Chanel</a>
+						</ul>
+				</article>
+			</section>
+			<section id="cm_def_shop">
+				<article class="cm_shopByIndi">
+					<header>
+						<h3>G</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">De Beers</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">De Beers</a></li>
+						</ul>
+				</article>
+				<article class="cm_shopByIndi">
+					<header>
+						<h3>H</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">E_blah_blah</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">E_blah_blah</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">E_blah_blah</a></li>
+						</ul>
+				</article>
+				<article class="cm_shopByIndi">
+					<header>
+						<h3>I</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">F_Blah_Chanel</a>
+						</ul>
+				</article>
+			</section>
+			<section id="cm_def_shop">
+				<article class="cm_shopByIndi">
+					<header>
+						<h3>J</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">De Beers</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">De Beers</a></li>
+						</ul>
+				</article>
+				<article class="cm_shopByIndi">
+					<header>
+						<h3>K</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">E_blah_blah</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">E_blah_blah</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">E_blah_blah</a></li>
+						</ul>
+				</article>
+				<article class="cm_shopByIndi">
+					<header>
+						<h3>L</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">F_Blah_Chanel</a>
+						</ul>
+				</article>
+			</section>
+			<section id="cm_def_shop">
+				<article class="cm_shopByIndi">
+					<header>
+						<h3>M</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">De Beers</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">De Beers</a></li>
+						</ul>
+				</article>
+				<article class="cm_shopByIndi">
+					<header>
+						<h3>N</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">E_blah_blah</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">E_blah_blah</a></li>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">E_blah_blah</a></li>
+						</ul>
+				</article>
+				<article class="cm_shopByIndi">
+					<header>
+						<h3>O</h3>
+						
+					</header>
+					<ul>
+							<li><a href="javascript: void(0)" title="A. Lange &amp; Sohne">F_Blah_Chanel</a>
+						</ul>
+				</article>
+			</section>
 		</section>
 	</section>
 	<div class="clear"></div>
@@ -489,6 +546,306 @@
 		</section>
 	</section><!-- .cm_fullBoundary.cm_footerLinks -->
 </div><!-- .cm_wrapper -->
-
+		<!-- .Popups -->
+		<div class="cm_greyLayer"></div>
+		<section class="cm_checkoutMainDv allPopups cm_shippingFaq animated">
+			<article>
+				<header><h3 class="cm_toUpperCase">Shipping FAQs <a href="javascript: void(0)" class="floatRight cm_closePopup cm_headerIcons">Close</a></h3></header>
+				<div class="cm_chekoutBody">
+					<div class="cm_shipFaqParent">
+								<div class="cm_shipFaqDv">
+									<p><strong>What do you mean by business days?</strong></p>
+									
+									<p>Business days are all days except Sundays and public holidays. Public holidays differ from State to State, hence a 1-2 day delay may happen if there is a public holiday in a particular state.</p>
+								</div>
+								<div class="cm_shipFaqDv">
+								<p><strong>What do you mean by product cannot be shipped to my location?</strong></p>
+								
+								<p>Please enter your pin code on the product page to check if the product can be delivered to your location. Whether we can ship products to your location depends on multiple factors such as volume of the product, legal restrictions (if any), in shipping particular products to your location, availability of dependable courier partners in your location. Shipping products to particular locations is entirely our discretion.</p>
+								</div>
+								<div class="cm_shipFaqDv">
+								<p><strong>How long will it take for me to receive the order?</strong></p>
+								
+								<p>The amount of time it takes for you to receive your order depends on your location. An estimate of the transit time (surface transport) is as follows:</p>
+								
+								<p>North Zone – 4-5 days</p>
+								
+								<p>East Zone – 7-8 days</p>
+								
+								<p>West Zone – 2-4 days</p>
+								
+								<p>South Zone – 5-6 days</p>
+								
+								<p>Special Zone – 12-14 days</p>
+								
+								<p>The following is an indicative list of cities falling under each zone:</p>
+								
+								<p>North Zone: Punjab, Chandigarh, Haryana, Delhi, Rajasthan, Uttar Pradesh, Jammu & Kashmir, Himachal Pradesh</p>
+								
+								<p>East Zone: Bihar, Jharkhand, Chattisgarh, West Bengal, Orissa</p>
+								
+								<p>West Zone: Gujarat, Maharashtra, Madhya Pradesh, Goa, Daman & Diu, Dadra & Nagar Haveli</p>
+								
+								<p>South Zone: Andhra Pradesh, Karnataka, Tamil Nadu, Pondicherry, Kerala</p>
+								
+								<p>Special Zone: Arunachal Pradesh, Assam, Nagaland, Mizoram, Meghalaya, Sikkim, Tripura, Manipur, Andaman & Nicobar</p>
+								</div>
+								<div class="cm_shipFaqDv">
+								<p><strong>What is Outside Delivery Area (ODA)?</strong></p>
+								
+								<p>In case your location falls outside the standard delivery area of our courier partners, then there may be an outside delivery area charge (ODA) which will be applicable. In such a case, our customer service representatives will get in touch with you and additional charges, if any, would be borne by the customer.</p>
+								</div>
+								<div class="cm_shipFaqDv">
+								<p><strong>Can I get my order faster if I am willing to pay more?</strong></p>
+								
+								<p>Yes, we can arrange for express shipment by air. However, there would be additional charges. After you place your order, please call our customer helpline on +91 8080 740 740.</p>
+								</div>
+								<div class="cm_shipFaqDv">
+								<p><strong>On which days do you not deliver?</strong></p>
+								
+								<p>Orders are only delivered on business days. Apart from Sundays, there are certain holidays throughout the year that are not considered as business days. Deliveries will not happen on these days.</p>
+								</div>
+						
+					</div>
+				</div>
+				
+			</article>
+		</section><!-- .cm_shippingFaq -->
+		<!-- .popups -->
+		
+		
+		
+		<!-- .Popups -->
+		<div class="cm_greyLayer"></div>
+		<section class="cm_checkoutMainDv allPopups cm_emiOption animated">
+			<article>
+				<header><h3 class="cm_toUpperCase">EMI Options <a href="javascript: void(0)" class="floatRight cm_closePopup cm_headerIcons">Close</a></h3></header>
+				<div class="cm_chekoutBody">
+					<div class="cm_emiOptionParent">
+						<table class="formTable" width="100%" cellspacing="0" cellpadding="0">
+							<tr>
+								<th></th>
+								<th>3 Months</th>
+								<th>6 Months</th>
+								<th>9 Months</th>
+								<th>12 Months</th>
+							</tr>
+							<tr>
+								<td><img title="axis" alt="axis" src="images/emi/axis.jpg"></td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><img title="axis" alt="axis" src="images/emi/axis.jpg"></td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><img title="axis" alt="axis" src="images/emi/axis.jpg"></td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><img title="axis" alt="axis" src="images/emi/axis.jpg"></td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><img title="axis" alt="axis" src="images/emi/axis.jpg"></td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><img title="axis" alt="axis" src="images/emi/axis.jpg"></td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<p>Rs. 2,036 p.m.</p>
+										<p>Interest Rate 12%</p>
+										<p>Instant Cashback</p>
+										<p>Rs.61</p>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				
+			</article>
+		</section><!-- .cm_shippingFaq -->
+		<!-- .popups -->
 </body>
 </html>

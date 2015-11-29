@@ -313,3 +313,10 @@ $(document).ready(function(){
 		jQuery('.cm_greyLayer').hide();
 	}
 	
+	function cm_checkOptions(ele){
+		jQuery('.all_checkOptions').addClass('bounceInUp');
+		jQuery('.all_checkOptions, .cm_greyLayer').css('display', 'block');
+		showCheckOptionsGallery();
+	}
+	
+	

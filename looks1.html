@@ -14,7 +14,6 @@
 		completeDesignFn();
 		$(window).resize(function(){
 			completeDesignFn();
-			//showCheckOptionsGallery();
 		}).trigger('resize');
 		
 		var scrollHt = $('.cm_lookProdIndv').outerHeight(true);
@@ -27,95 +26,18 @@
 			
 		});
 		
-		
-		$('.cm_looksGallery > ul > li:first a , .cm_lookAllGal-imgGal li a').on('click', function(e){
-			e.preventDefault();
-
-	        $("body, html").animate({ 
-	            scrollTop: $( $(this).attr('href') ).position().top - $('.cm_looksLeft').position().top
-	        }, 600);
-		});
-		
-		
-		
 	});/*doc ends*/
-	$(window).load(function (){
-		var actHt = $(this).outerHeight(true) - ($('.cm_searchBar.fixBar').outerHeight(true) + 
-				$('.cm_breadCrumbLooks').outerHeight(true) )
-		$('.cm_looksLeft').height(actHt)
-	});
+	
 	function completeDesignFn(){
 		var winWd = $(window).width();
 		var winHt = $(window).height();
 		
-		$('.cm_looksMainContent.cm_looksLeft').width(winWd*0.7);
-		$('.cm_looksMainContent .cm_looksGallery').width(winWd*0.7-30);
-		$('.cm_looksMainContent .cm_looksRight').width(winWd*0.3 - 1);
-		$('.cm_looksMainContent .cm_lookAllGal').width(winWd*0.7 - 15 - $('.cm_looksMainContent .cm_looksGallery >ul> li').first().outerWidth(true));
-		 $('.cm_looksMainContent .cm_lookAllGal-imgGal').bxSlider({
-			slideWidth: 150,
-			maxSlides: 4,
-			moveSlides: 1,
-			slideMargin: 15,
-			nextText: '',
-			prevText: '',
-			nextSelector: $('.cm_lookAllGal').find('.cm_next'),
-			prevSelector: $('.cm_lookAllGal').find('.cm_previous'),
-			pager: false,
-			infiniteLoop: false,
-			hideControlOnEnd: true
-			
-		});
+		$('.cm_looksLeft, .cm_looksGallery').width(winWd*0.7);
+		$('.cm_looksRight').width(winWd*0.3 - 1);
+		$('.cm_lookAllGal').parent().width(winWd*0.7 - $('.cm_looksGallery >ul> li').first().outerWidth(true));
 	}
 	
-	function showAllItems(ele){
-		if(jQuery(ele).hasClass('closed')){
-			jQuery('.cm_looksGallery').slideUp(600);
-			jQuery(ele).removeClass('closed');
-		}else{
-			jQuery('.cm_looksGallery').slideDown(600);
-			jQuery(ele).addClass('closed');
-		}
-		if($('.cm_looksGallery').is(':visible')){
-			$('.cm_looksGallery ul li img').each(function (){
-				var imgWd = $(this).width();
-			    var imgHt = $(this).height();
-			   
-			    var imgWdRt = 150/imgWd;
-			    var imgHtRt = 73/imgHt;
-			    if(imgWdRt > imgHtRt){
-			        $(this).css('width',imgWd* imgHtRt);
-			        $(this).css('height',imgHt * imgHtRt);
-			        $(this).css({'margin':'0 '+(130-(imgWd* imgHtRt))/2+'px'});
-			    }
-			    else{
-			        $(this).css('width',imgWd* imgWdRt);
-			        $(this).css('height',imgHt * imgWdRt);
-			        $(this).css({'margin':'0 '+(130-(imgWd* imgWdRt))/2+'px'});
-			    }
-			});
-		}
-		//jQuery('.cm_lookAllGal-imgGal').each(setAspectRatio(jQuery(this)));
-	}
-	
-	function showCheckOptionsGallery(){
-		var winWd = 860;
-		$('.all_checkOptions .cm_lookAllGal-popup').width(730);
-		$('#checkOptionsGallery').bxSlider({
-			slideWidth: 150,
-			maxSlides: 4,
-			moveSlides: 1,
-			slideMargin: 15,
-			nextText: '',
-			prevText: '',
-			nextSelector: $('.all_checkOptions .cm_lookAllGal-popup').find('#chkOpt-next'),
-			prevSelector: $('.all_checkOptions .cm_lookAllGal-popup').find('#chkOpt-prev'),
-			pager: false,
-			infiniteLoop: false,
-			hideControlOnEnd: true
-			
-		});
-	}
+
 </script>
 </head>
 <body>
@@ -275,55 +197,49 @@
 			<input type="button" class="cm_headerIcons cm_searchFilterBtn" />
 			
 		<!-- </section> -->
-			<div class="cm_userPref">
-				<span class="cm_userDetOnBar">
-					<span class="cm_loginAndReg disNone">
-						<a href="javascript: void(0)" >Login</a> or
-						<a href="javascript: void(0)" class="cm_brandClr">Register</a>
-					</span>
-					
-					<span class="cm_myAcc posRel itHasPopup mr10 dispInBlk">
-						<a href="javascript: void(0)" >My Account <label class="cm_headerIcons cm_filterDropArr"></label></a>
-						<span class="popup_pullout">
-							<ul class="">
-								<li><a href="javascript: void(0)">Account Information</a></li>
-								<li><a href="javascript: void(0)">Orders</a></li>
-								<li><a href="javascript: void(0)">Wishlist</a></li>
-								<li><a href="javascript: void(0)">Address Book</a></li>
-								<li><a href="javascript: void(0)">Projects</a></li>
-								<li><a href="javascript: void(0)">Product Reviews</a></li>
-							</ul>
-						</span>
-					</span>
+		<div class="cm_userPref">
+			<span class="cm_userDetOnBar">
+				<span class="cm_loginAndReg disNone">
+					<a href="javascript: void(0)" >Login</a> or
+					<a href="javascript: void(0)" class="cm_brandClr">Register</a>
 				</span>
 				
-				<span class="cm_userPreIcons">
-					<a href="javascript: void(0)" class=" ml10 cm_headerIcons cm_wishListIcon"></a>
-					<span class="posRel dispInBlk  ml10">
-						<a href="javascript: void(0)" class="cm_headerIcons cm_cartIcon"></a>
-						<label class="cm_wishCount">10</label>
+				<span class="cm_myAcc posRel itHasPopup mr10 dispInBlk">
+					<a href="javascript: void(0)" >My Account <label class="cm_headerIcons cm_filterDropArr"></label></a>
+					<span class="popup_pullout">
+						<ul class="">
+							<li><a href="javascript: void(0)">Account Information</a></li>
+							<li><a href="javascript: void(0)">Orders</a></li>
+							<li><a href="javascript: void(0)">Wishlist</a></li>
+							<li><a href="javascript: void(0)">Address Book</a></li>
+							<li><a href="javascript: void(0)">Projects</a></li>
+							<li><a href="javascript: void(0)">Product Reviews</a></li>
+						</ul>
 					</span>
 				</span>
-			</div>
-		</section>
-		<section class="cm_grid970 cm_breadCrumbLooks">
-			<ul class="cm_prodItembreadCrumb">
-				<li><a href="javascript: void(0)">Home &gt;</a></li>
-				<li><a href="javascript: void(0)">Design Inspirations &gt;</a></li>
-				<li class='active'><a href="javascript: void(0)">Delightfully Dewy - Contemporary Bedroom by Hidden Gallery</a></li>
-			</ul>
+			</span>
+			
+			<span class="cm_userPreIcons">
+				<a href="javascript: void(0)" class=" ml10 cm_headerIcons cm_wishListIcon"></a>
+				<span class="posRel dispInBlk  ml10">
+					<a href="javascript: void(0)" class="cm_headerIcons cm_cartIcon"></a>
+					<label class="cm_wishCount">10</label>
+				</span>
+			</span>
+		</div>
 		</section>
 	</section> <!-- .cm_fullBoundary.cm_searchBar -->
+	<div class="clear"></div>
 	<section class="cm_looksMain">
-		<!-- <section class="cm_fullBoundary cm_breadCrumbLooks">
-			<section class="cm_grid970 cm_breadCrumbLooks">
-					<ul class="cm_prodItembreadCrumb">
+		<section class="cm_fullBoundary cm_breadCrumbLooks">
+			<section class="cm_grid970 ">
+					<ul class="cm_prodItembreadCrumb mb20 mt10">
 						<li><a href="javascript: void(0)">Home &gt;</a></li>
 						<li><a href="javascript: void(0)">Design Inspirations &gt;</a></li>
 						<li class='active'><a href="javascript: void(0)">Delightfully Dewy - Contemporary Bedroom by Hidden Gallery</a></li>
 					</ul>
 			</section>
-		</section> -->
+		</section>
 		<section class="cm_fullBoundary cm_looksMainContent">
 			<section class="cm_looksLeft">
 				<div class="cm_compDesignDv">
@@ -332,92 +248,64 @@
 				<div class="cm_looksAllProd">
 					<div class="cm_looksPriceBar font14 cm_333">
 						<span class="mt10 floatLeft">
-							<span class="mr20"><!-- <a href="javascript: void(0)" onclick="showAllItems(this)">Manage Items</a> -->
-								<a href="javascript: void(0)" onclick="showAllItems(this)" class="cm_brandClr"><strong>5</strong> of 6 Items Selected</a> 
-							</span> 
+							<span class="mr20"><a href="javascript: void(0)" onclick="showAllItems(this)">Manage Items</a><strong>5</strong> of 6 Items Selected </span> 
 							<span class="mr20">Sub-Total: <strong>Rs. 2,15, 000</strong></span>
 							<span>EMI: <strong>Rs. 12, 500</strong></span>
 						</span>
 						
 						<a class="cm_toUpperCase cm_secondaryBtn cm_brandClr floatRight" href="javascript: void(0)">Buy Now</a>
 					</div>
-					
-					
-					
-					<div class="cm_looksGallery cm_sngProdGallery">
-						
+					<!-- <div class="cm_looksGallery">
 						<ul>
 							<li>
-								<a href="#fullPdp"><img src='images/looks/completeDesign.jpg' /></a>
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
 							</li>
 							<li>
 								<div class="cm_lookAllGal">
-								
 									<div class="md_prev floatLeft mt10">
 										<span class="bx-prev cm_previousBtn cm_nextPrevImgs cm_previous" title="Previous"></span>
 									</div>
-								
-									<ul class="cm_lookAllGal-imgGal bxslider-pager floatLeft" id="bx-pager">
+									<ul class="cm_looksGlImgs">
 										<li>
-											<a href="#fullPdp01" data-fullpdp = 'fullPdp01'><img src='http://wallpaper.pickywallpapers.com/1600x900/pink-cubic-love.jpg' /></a>
-											<div class="mt10"><div class="mt10"><input type="checkbox" checked="" />&nbsp;Selected</div></div>
-										</li>
-										<li data-fullPdp = "fullPdp02">
-											<a href="#fullPdp02"><img src='http://www.spacex.com/files/assets/img/20090110_vertical002.jpg' /></a>
-											<div class="mt10"><input type="checkbox" checked="" />&nbsp;Selected</div>
-										</li>
-										<li data-fullPdp = "fullPdp03">
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="checkbox" checked="" />&nbsp;Selected</div>
+											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+											<input type="checkbox" checked="checked" />Selected
 										</li>
 										<li>
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="checkbox" checked="" />&nbsp;Selected</div>
+											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+											<input type="checkbox" checked="checked" />Selected
 										</li>
 										<li>
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="checkbox" checked="" />&nbsp;Selected</div>
+											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+											<input type="checkbox" checked="" />Selected
 										</li>
 										<li>
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="checkbox" checked="" />&nbsp;Selected</div>
+											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+											<input type="checkbox" checked="" />Selected
+										</li>
+										
+										<li>
+											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+											<input type="checkbox" checked="" />Selected
 										</li>
 										<li>
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="checkbox" checked="" />&nbsp;Selected</div>
-										</li>
-										<li>
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="checkbox" checked="" />&nbsp;Selected</div>
-										</li>
-										<li>
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="checkbox" checked="" />&nbsp;Selected</div>
-										</li>
-										<li>
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="checkbox" checked="" />&nbsp;Selected</div>
-										</li>
-										<li>
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="checkbox" checked="" />&nbsp;Selected</div>
+											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+											<input type="checkbox" checked="" />Selected
 										</li>
 										
 									</ul>
 									<div class="md_next floatRight mt10">
 										<span class="cm_nextBtn cm_nextPrevImgs cm_next" title="Next"></span>
 									</div>
-								
 								</div>
 								
 							</li>
 							
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</section><!-- .cm_looksLeft -->
 			<section class="cm_looksRight">
-				<div class="cm_lookProdIndv" id="fullPdp">
+				<div class="cm_lookProdIndv">
 					<header>
 						<h2 class="font18 cm_333">Delightfully Dewy - Contemporary Bedroom by Hidden Gallery</h2>
 					</header>
@@ -447,7 +335,7 @@
 					</div>	
 				</div><!-- .cm_lookProdIndv -->
 				
-				<div class="cm_lookProdIndv" id="fullPdp01">
+				<div class="cm_lookProdIndv">
 					<header>
 						<h2 class="font18 cm_333">Surry Large Sideboard</h2>
 					</header>
@@ -486,12 +374,12 @@
 						
 						<div class="cm_looksButtonBar">
 							<a class="cm_toUpperCase cm_primaryBtn cm_brandClr " href="javascript: void(0)">Add to cart</a>
-							<a class="cm_toUpperCase cm_fourthBtn cm_brandClr " href="javascript: void(0)" onclick="cm_checkOptions(this)">check options</a>	
+							<a class="cm_toUpperCase cm_fourthBtn cm_brandClr " href="javascript: void(0)">check options</a>	
 						</div>
 					</div>
 				</div><!-- .cm_lookProdIndv -->
 					
-				<div class="cm_lookProdIndv" id="fullPdp02">
+				<div class="cm_lookProdIndv">
 					<header>
 						<h2 class="font18 cm_333">Surry1 Large Sideboard</h2>
 					</header>
@@ -537,85 +425,56 @@
 		</section>
 		
 	</section>
-	
-	<div class="cm_greyLayer"></div>
-	<section class="cm_checkoutMainDv allPopups all_checkOptions animated">
+	<!-- .Popups -->
+		<div class="cm_greyLayer"></div>
+		<section class="cm_checkoutMainDv allPopups cm_showAllItems  animated">
 			<article>
-				<header><h3 class="cm_toUpperCase">Other Available Options <a href="javascript: void(0)" class="floatRight cm_closePopup cm_headerIcons">Close</a></h3></header>
+				<header><h3 class="cm_toUpperCase">All Items <a href="javascript: void(0)" class="floatRight cm_closePopup cm_headerIcons">Close</a></h3></header>
+				<div class="cm_looksPriceBar font18 cm_333">
+					<span class="mt10 floatLeft">
+						<span class="mr50"><strong>5</strong> of 6 Items Selected </span> 
+						<span class="mr50">Sub-Total: <strong>Rs. 2,15, 000</strong></span>
+						<span>EMI: <strong>Rs. 12, 500</strong></span>
+					</span>
+				</div>
 				<div class="cm_chekoutBody">
-					<p>Not satisfied with the current product? Choose from the other available options of the same product:</p>
-					<section class="posRel cm_looksOptionsPop mt20" style="">
-						<div class="cm_looksGallery cm_sngProdGallery cm_checkOptionsPopupGall" style="display:block; border-top: none;padding: 0;">
-						
-						<ul>
+				 <div class="cm_looksGallery">
+						<ul class="cm_looksGlImgs">
 							<li>
-								<strong>Rs. 14, 045</strong> 
-								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+								<input type="checkbox" checked="checked" />Selected
 							</li>
 							<li>
-								<div class="cm_lookAllGal-popup">
-								
-									<div class="md_prev floatLeft mt10">
-										<span class="bx-prev cm_previousBtn cm_nextPrevImgs cm_previous" id="chkOpt-prev" title="Previous"></span>
-									</div>
-								
-									<ul class="cm_lookAllGal-imgGal bxslider-pager floatLeft" id="checkOptionsGallery">
-										<li>
-											<strong>Rs. 14, 045</strong> 
-											<a href="javascript: void(0)"><img src='http://wallpaper.pickywallpapers.com/1600x900/pink-cubic-love.jpg' /></a>
-											<div class="mt10"><div class="mt10"><input type="radio" name="checkOptRdo" checked="" />&nbsp;Select this</div></div>
-										</li>
-										<li>
-											<strong>Rs. 14, 045</strong> 
-											<a href="#fullPdp02"><img src='http://www.spacex.com/files/assets/img/20090110_vertical002.jpg' /></a>
-											<div class="mt10"><input type="radio" name="checkOptRdo"/>&nbsp;Select this</div>
-										</li>
-										<li>
-											<strong>Rs. 14, 045</strong> 
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="radio" name="checkOptRdo"/>&nbsp;Select this</div>
-										</li>
-										<li>
-											<strong>Rs. 14, 045</strong> 
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="radio"name="checkOptRdo" />&nbsp;Select this</div>
-										</li>
-										<li>
-											<strong>Rs. 14, 045</strong> 
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="radio"name="checkOptRdo"/>&nbsp;Select this</div>
-										</li>
-										<li>
-											<strong>Rs. 14, 045</strong> 
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="radio" name="checkOptRdo"/>&nbsp;Select this</div>
-										</li>
-										<li>
-											<strong>Rs. 14, 045</strong> 
-											<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg' /></a>
-											<div class="mt10"><input type="radio"name="checkOptRdo" />&nbsp;Select this</div>
-										</li>
-										
-									</ul>
-									<div class="md_next floatRight">
-										<span class="cm_nextBtn cm_nextPrevImgs cm_next" id = "chkOpt-next" title="Next"></span>
-									</div>
-								
-								</div>
-								
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+								<input type="checkbox" checked="checked" />Selected
+							</li>
+							<li>
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+								<input type="checkbox" checked="" />Selected
+							</li>
+							<li>
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+								<input type="checkbox" checked="" />Selected
+							</li>
+							
+							<li>
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+								<input type="checkbox" checked="" />Selected
+							</li>
+							<li>
+								<a href="javascript: void(0)"><img src='images/looks/completeDesign.jpg'/></a>
+								<input type="checkbox" checked="" />Selected
 							</li>
 							
 						</ul>
 					</div>
-					</section>
 					<footer>
-						<a href="javascript: void(0)" class="floatRight mt20 ml10 cm_toUpperCase cm_fourthBtn cm_brandClr ">Cancel</a>
-						<a class="floatRight cm_toUpperCase cm_primaryBtn mt20" href="javascript: void(0)">Done</a>
+						<a class="floatLeft cm_toUpperCase cm_primaryBtn mt20" href="javascript: void(0)">Add Address</a>
 					</footer>
 				</div>
-				
 			</article>
-		</section><!-- .checkOPtions -->
+		</section><!-- .cm_AccLoginPop -->
+		
 </div><!-- .cm_wrapper -->
 
 </body>
