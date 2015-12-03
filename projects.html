@@ -24,7 +24,13 @@
 				}
 			});
 		});
-			
+		
+		$('.cm_myProjectTb > tbody').children('tr').each(function(){
+			$(this).on('click', function(){
+				$(this).find('.cm_subTotal').show();
+				$(this).siblings('tr').find('.cm_subTotal').hide();
+			});
+		});
 		
 	});/*doc ends*/
 	
@@ -287,7 +293,7 @@
 					</header>
 					<div class="cm_indProjDivBody" style="padding: 20px 0; display: block;">
 						<section class="">
-							<table class="cm_cenralTable cm_cartTablePriceList" cellspacing="0" cellpadding="0">
+							<table class="cm_cenralTable cm_cartTablePriceList cm_myProjectTb" cellspacing="0" cellpadding="0">
 								<thead>
 									<tr>
 										<th align="left" width ="15%">Order ID</th>
@@ -298,40 +304,88 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
+										<td colspan='4' style="padding:0">
+											
+											<table width="100%" cellpadding="0" cellspacing="0">
+													<tr>
+														<td align="left" valign="top" width ="15%">12345</td>
+														<td align="left" valign="middle" width ="15%">Rs. 4,045</td>
+														<td align="left" valign="middle" width ="15%">25th Nov, 2015</td>
+														<td align="left" valign="middle" width ="15%">Pending</td>
+													</tr>
+											</table>
+											<table  class="disNone cm_subTotal" width="100%" cellpadding="0" cellspacing="0">
+													<tr>
+														<td align="left" width ="15%" valign="top"><strong>Product Name: ABC</strong></td>
+														<td align="left" width ="15%" valign="middle"><strong>Quantity: 4</strong></td>
+														<td align="left" width ="15%" valign="middle"><strong>Price: Rs. 4000</strong></td>
+														<td width ="15%">&nbsp;</td>
+													</tr>
+											</table>
+										</td>
 									</tr>
 									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Completed</td>
+										<td colspan='4' style="padding:0">
+											
+											<table width="100%" cellpadding="0" cellspacing="0">
+													<tr>
+														<td align="left" valign="top" width ="15%">12345</td>
+														<td align="left" valign="middle" width ="15%">Rs. 4,045</td>
+														<td align="left" valign="middle" width ="15%">25th Nov, 2015</td>
+														<td align="left" valign="middle" width ="15%">Pending</td>
+													</tr>
+											</table>
+											<table  class="disNone cm_subTotal" width="100%" cellpadding="0" cellspacing="0">
+													<tr>
+														<td align="left" width ="15%" valign="top"><strong>Product Name: ABC</strong></td>
+														<td align="left" width ="15%" valign="middle"><strong>Quantity: 4</strong></td>
+														<td align="left" width ="15%" valign="middle"><strong>Price: Rs. 4000</strong></td>
+														<td width ="15%">&nbsp;</td>
+													</tr>
+											</table>
+										</td>
 									</tr>
 									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
+										<td colspan='4' style="padding:0">
+											
+											<table width="100%" cellpadding="0" cellspacing="0">
+													<tr>
+														<td align="left" valign="top" width ="15%">12345</td>
+														<td align="left" valign="middle" width ="15%">Rs. 4,045</td>
+														<td align="left" valign="middle" width ="15%">25th Nov, 2015</td>
+														<td align="left" valign="middle" width ="15%">Pending</td>
+													</tr>
+											</table>
+											<table  class="disNone cm_subTotal" width="100%" cellpadding="0" cellspacing="0">
+													<tr>
+														<td align="left" width ="15%" valign="top"><strong>Product Name: ABC</strong></td>
+														<td align="left" width ="15%" valign="middle"><strong>Quantity: 4</strong></td>
+														<td align="left" width ="15%" valign="middle"><strong>Price: Rs. 4000</strong></td>
+														<td width ="15%">&nbsp;</td>
+													</tr>
+											</table>
+										</td>
 									</tr>
 									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
-									</tr>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
-									</tr>
-									<tr>
-										<td align="left" valign="top">12345</td>
-										<td align="left" valign="middle">Rs. 4,045</td>
-										<td align="left" valign="middle">25th Nov, 2015</td>
-										<td align="left" valign="middle">Pending</td>
+										<td colspan='4' style="padding:0">
+											
+											<table width="100%" cellpadding="0" cellspacing="0">
+													<tr>
+														<td align="left" valign="top" width ="15%">12345</td>
+														<td align="left" valign="middle" width ="15%">Rs. 4,045</td>
+														<td align="left" valign="middle" width ="15%">25th Nov, 2015</td>
+														<td align="left" valign="middle" width ="15%">Pending</td>
+													</tr>
+											</table>
+											<table  class="disNone cm_subTotal" width="100%" cellpadding="0" cellspacing="0">
+													<tr>
+														<td align="left" width ="15%" valign="top"><strong>Product Name: ABC</strong></td>
+														<td align="left" width ="15%" valign="middle"><strong>Quantity: 4</strong></td>
+														<td align="left" width ="15%" valign="middle"><strong>Price: Rs. 4000</strong></td>
+														<td width ="15%">&nbsp;</td>
+													</tr>
+											</table>
+										</td>
 									</tr>
 								</tbody>
 							</table>
